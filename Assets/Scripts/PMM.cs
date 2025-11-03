@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 public class PMM : MonoBehaviour
 {
     private bool isPaused = false;
-    public GameObject pauseMenu;
+    public GameObject pauseMenu, volumeMenu;
+
 
     public void Update()
     {
@@ -26,15 +27,26 @@ public class PMM : MonoBehaviour
     public void Pause()
     {
         pauseMenu.SetActive(true);   // Show the menu
+        volumeMenu.SetActive(false); // incase the volume menu is active it is hidden 
         Time.timeScale = 0f;           // Stop time
         isPaused = true;
     }
 
-    // Call this to resume the game
+    // Call this to resume the game 
     public void Resume()
     {
         pauseMenu.SetActive(false);  // Hide the menu
+        volumeMenu.SetActive(false); // incase the volume menu is active it is hidden 
         Time.timeScale = 1f;           // Resume time
         isPaused = false;
     }
+
+    // brings up the volume menu
+    public void volume()
+    {
+        pauseMenu.SetActive(false);  // Hide the menu
+        volumeMenu.SetActive(true);//  shows the volume menu 
+
+    }
+
 }
