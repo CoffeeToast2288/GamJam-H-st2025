@@ -6,8 +6,7 @@ public class Enemy_hitbox : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
-               
+            Debug.Log("hit you!");             
         }
     }
 }

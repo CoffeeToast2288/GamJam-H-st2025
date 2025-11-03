@@ -7,7 +7,7 @@ public class Enemy_Script : MonoBehaviour
     public float health;
     public float damage;
     public float stopDistance;
-    public float attackCooldown = 1f;
+    public float attackCooldown = 0.5f;
     public float attackRange = 1.2f;
     public GameObject hitboxObject; // assign the hitbox child here
 
@@ -29,6 +29,23 @@ public class Enemy_Script : MonoBehaviour
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if (hitty == true)
+        {
+            Hitty();
+        }
+        if (shooty == true)
+        {
+            Shooty();
+        }
+        if (tanky == true)
+        {
+            Tanky();
+        }
+        if (lungie == true)
+        {
+            Lungie();
+        }
     }
 
     // Update is called once per frame
@@ -48,8 +65,41 @@ public class Enemy_Script : MonoBehaviour
             TryAttack();
         }
 
+
     }
 
+    public void Hitty()
+    {
+        moveSpeed = 3f;
+        damage = 1f;
+        health = 3f;
+        stopDistance = 1.1f;
+        attackRange = 1.2f;
+    }
+    public void Shooty()
+    {
+        moveSpeed = 3f;
+        damage = 1f;
+        health = 2f;
+        stopDistance = 6f;
+        attackRange = 1.2f;
+    }
+    public void Tanky()
+    {
+        moveSpeed = 1.5f;
+        damage = 2f;
+        health = 6f;
+        stopDistance = 1.1f;
+        attackRange = 1.2f;
+    }
+    public void Lungie()
+    {
+        moveSpeed = 4f;
+        damage = 1f;
+        health = 1.5f;
+        stopDistance = 1.1f;
+        attackRange = 1.2f;
+    }
     void MoveTowardsPlayer()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
@@ -71,7 +121,7 @@ public class Enemy_Script : MonoBehaviour
     {
         canAttack = false;
         hitboxObject.SetActive(true); // enable hitbox briefly
-        yield return new WaitForSeconds(0.2f); // attack duration
+        yield return new WaitForSeconds(0.4f); // attack duration
         hitboxObject.SetActive(false);
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
