@@ -4,6 +4,7 @@ using UnityEngine.Rendering;
 
 public class Playermovment : MonoBehaviour
 {
+    PlayerStats stats;
     public float speed = 10f;
     private Rigidbody2D rb;
     private Vector2 input;
@@ -14,7 +15,8 @@ public class Playermovment : MonoBehaviour
     public float dashspeed = 20f;
     public float dashcooldown;
     public float totaldashcooldown = 5f;
-
+    public float DashCharges;
+    public float MaxDashCharges; 
     public bool walking_sounds_playing;
     public AudioSource[] walking_sounds;
     public AudioSource current_walking_sound;
@@ -29,6 +31,10 @@ public class Playermovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed += stats.speed;
+        MaxDashCharges += stats.dash_chargers;
+        totaldashcooldown /= stats.dash_coldown_reduction;
+
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
 
@@ -54,7 +60,7 @@ public class Playermovment : MonoBehaviour
 
             walking_sounds_playing = false;
         }
-
+        
 
     }
 
