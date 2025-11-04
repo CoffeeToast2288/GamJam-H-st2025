@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy_hitbox : MonoBehaviour
 {
-    new Enemy_Script enemy;
+    Enemy_Script enemy;
     float damage;
 
     private void Update()
