@@ -4,10 +4,14 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public PlayerStats stats;
+    public bool sword;
 
     public GameObject Attack;
     public bool Isattacking = false;
-   
+
+    public Transform spawnPos;
+    public GameObject bullet;
+
     float attack_duratin = 0.3f;
     float attack_timer;
     public float colldown;
@@ -25,13 +29,16 @@ public class PlayerAttack : MonoBehaviour
     {
         
         CheckTimer();
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0) && colldown == 0) // attack when buton is presed and no colldown 
+        if (Input.GetKey(KeyCode.E) || Input.GetMouseButton(0) && colldown == 0) // attack when buton is presed and no colldown 
         {
-
-            attacking();
-
-
-
+            if (sword == true)
+            {
+                Attacking();
+            }
+            else
+            {
+                Shoot();
+            }
 
         }
         if (colldown_active) //starts colldown
@@ -52,7 +59,7 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
-    void attacking() //atack funktion
+    void Attacking() //atack funktion
     {
 
         if (!Isattacking)
@@ -64,6 +71,18 @@ public class PlayerAttack : MonoBehaviour
             colldown = colldown_max;
         }
 
+
+    }
+    void Shoot() // shoot function
+    {
+        if (!Isattacking)
+        {
+            Instantiate(bullet, spawnPos.position, spawnPos.rotation);
+            Isattacking = true;
+            // Put animator script hear
+            colldown_active = true;
+            colldown = colldown_max;
+        }
 
     }
 
@@ -86,7 +105,7 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
-    void upgradeattack()
+    void Upgradeattack()
     {
         colldown_max /= stats.attack_speed;
 

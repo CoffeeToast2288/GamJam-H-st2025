@@ -739,8 +739,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6195940288990396066}
   - component: {fileID: 3456571589503116133}
+  - component: {fileID: 7513998786404539937}
   m_Layer: 0
-  m_Name: DSM
+  m_Name: GM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -778,6 +779,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 335160583033928096}
   deathScreen: {fileID: 3744223673325041637}
+--- !u!114 &7513998786404539937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3865082370239783837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22e85ef8643d7b4c8644ba369dc071c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  hp: 0
+  speed: 0
+  dash_chargers: 0
+  dash_coldown_reduction: 0
+  attack_speed: 0
 --- !u!1 &4275421590745167822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 1
   Hp_max: 1
+  stats: {fileID: 0}
   dead: 0
 --- !u!1 &7835841647643205077
 GameObject:
