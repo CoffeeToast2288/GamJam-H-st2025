@@ -5,7 +5,7 @@ public class Bullet_Script : MonoBehaviour
     [Header("Bullet Settings")]
     public float speed = 10f;
     public float lifetime = 5f;
-    public float damage = 10f;
+    public float damage = 1f;
     public string targetTag = "Enemy"; // who this bullet can hit
 
     void Start()
