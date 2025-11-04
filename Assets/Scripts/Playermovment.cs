@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -13,7 +14,12 @@ public class Playermovment : MonoBehaviour
     public float dashspeed = 20f;
     public float dashcooldown;
     public float totaldashcooldown = 5f;
-    
+
+    public bool walking_sounds_playing;
+    public AudioSource[] walking_sounds;
+    public AudioSource current_walking_sound;
+    public int current_walking_sound_val;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,7 +40,22 @@ public class Playermovment : MonoBehaviour
         {
             dashtime -= Time.deltaTime;
         }
+
+
         
+        if (input.y!=0 && !walking_sounds_playing|| input.x != 0 && !walking_sounds_playing)
+        {
+            StartCoroutine(walking_sounds_play());
+            walking_sounds_playing = true;
+
+        }
+        else if (input.y == 0 && input.x == 0 && walking_sounds_playing)
+        {
+
+            walking_sounds_playing = false;
+        }
+
+
     }
 
     private void FixedUpdate()
@@ -70,5 +91,27 @@ public class Playermovment : MonoBehaviour
         transform.up = (Vector2)mousepos - new Vector2(transform.position.x, transform.position.y);
     }
      
-    
+     IEnumerator walking_sounds_play()
+    {
+        current_walking_sound = walking_sounds[current_walking_sound_val];
+        current_walking_sound.Play();
+        if (current_walking_sound_val != 2)
+        {
+            current_walking_sound_val += 1;
+        }
+        else
+        {
+            current_walking_sound_val = 0;
+        }
+        yield return new WaitForSeconds(1f);
+
+        if (walking_sounds_playing)
+        {
+            StartCoroutine(walking_sounds_play());
+
+        }
+
+
+    }
+
 }
