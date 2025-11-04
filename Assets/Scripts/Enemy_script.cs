@@ -66,15 +66,17 @@ public class Enemy_Script : MonoBehaviour
             MoveTowardsPlayer();
             RotateTowardsPlayer();
         }
-        else if(distance <= shootrange && isShooty == true)
+        else if (distance <= attackRange)
+        {
+            TryAttack();
+        }   
+
+        if(distance <= shootrange && isShooty == true)
         {
             TryFire();
             RotateTowardsPlayer();
         }
-        else if (distance <= attackRange)
-        {
-            TryAttack();
-        }        
+             
     }
 
     public void Hitty()
@@ -91,6 +93,7 @@ public class Enemy_Script : MonoBehaviour
         damage = 1f;
         health = 2f;
         stopDistance = 6f;
+        shootrange = 10f;
         attackRange = 1.2f;
         isShooty = true;
     }
@@ -138,7 +141,6 @@ public class Enemy_Script : MonoBehaviour
     }
     void TryFire()
     {
-        Debug.Log("you aint shooting");
         if (!canshoot) return;
         StartCoroutine(ShootRoutine());
     }
@@ -146,7 +148,6 @@ public class Enemy_Script : MonoBehaviour
     System.Collections.IEnumerator ShootRoutine()
     {
         canshoot = false;
-        Debug.Log("you aint shooting");
         Instantiate(enemyBullet, spawnPos.position, spawnPos.rotation);
         yield return new WaitForSeconds(shootCooldown);
         canshoot = true;
