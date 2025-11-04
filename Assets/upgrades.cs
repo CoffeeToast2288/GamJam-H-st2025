@@ -27,6 +27,17 @@ public class upgrades : MonoBehaviour
 
 
     }
+
+
+    public void OnButtonClicked(int id)
+    {
+        Debug.Log($"Button {id} clicked!");
+
+
+    }
+
+
+
 }
 [System.Serializable]
 public class upgrade_node
