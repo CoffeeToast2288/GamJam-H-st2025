@@ -21,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        colldown_max *= Stats.attack_speed; // scales colldown with attack speed (attack sped will be a desimal)
+        colldown_max /= Stats.attack_speed; // scales colldown with attack speed (attack sped will be a desimal)
         CheckTimer();
         if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0) && colldown == 0) // attack when buton is presed and no colldown 
         {
