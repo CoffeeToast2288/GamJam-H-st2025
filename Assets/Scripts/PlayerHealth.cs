@@ -5,7 +5,7 @@ public class PlayerHealth : MonoBehaviour
     public float Hp;
     public float Hp_max;
     PlayerStats stats;
-    bool dead = false;
+    public bool dead = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
