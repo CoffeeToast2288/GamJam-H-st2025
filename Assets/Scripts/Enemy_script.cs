@@ -11,7 +11,12 @@ public class Enemy_Script : MonoBehaviour
     public float shootCooldown = 1f;
     public float attackRange = 1.2f;
     public float shootrange = 6f;
-    public GameObject hitboxObject; 
+    public float lungeSpeed = 10f;
+    public float lungeDuration = 0.3f;
+    public float lungeCooldown = 1.5f;
+    public float chargeTime = 0.5f;       // how long to charge before lunging
+    public float lungeRange = 8f;
+    public GameObject hitboxObject;
 
     [Header("References")]
     public Transform player;
@@ -19,11 +24,18 @@ public class Enemy_Script : MonoBehaviour
     private Rigidbody2D rb;
     public Transform spawnPos;
     public GameObject enemyBullet;
+    public SpriteRenderer spriteRenderer;    // assign your enemy sprite here
+
+
 
     private bool isDead = false;
     private bool canAttack = true;
     private bool canshoot = true;
     private bool isShooty = false;
+    private bool isLungie = false;
+    private bool isLunging = false;
+    private bool canLunge = true;
+    private int type;
 
     [Header("Type")]
     public bool shooty;
@@ -35,20 +47,21 @@ public class Enemy_Script : MonoBehaviour
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        type = Random.Range( 1, 5);
 
-        if (hitty == true)
+        if (type == 1)
         {
             Hitty();
         }
-        if (shooty == true)
+        if (type == 2)
         {
             Shooty();
         }
-        if (tanky == true)
+        if (type == 3)
         {
             Tanky();
         }
-        if (lungie == true)
+        if (type == 4)
         {
             Lungie();
         }
@@ -61,7 +74,12 @@ public class Enemy_Script : MonoBehaviour
 
         float distance = Vector2.Distance(transform.position, player.position);
 
-        if (distance > stopDistance)
+
+        if (distance <= lungeRange && canLunge && isLungie == true)
+        {
+            StartCoroutine(LungeAttack());
+        }
+        else if (distance > stopDistance && isLunging == false)
         {
             MoveTowardsPlayer();
             RotateTowardsPlayer();
@@ -69,18 +87,20 @@ public class Enemy_Script : MonoBehaviour
         else if (distance <= attackRange)
         {
             TryAttack();
-        }   
+        }
+        
 
-        if(distance <= shootrange && isShooty == true)
+        if (distance <= shootrange && isShooty == true)
         {
             TryFire();
             RotateTowardsPlayer();
         }
-             
+
     }
 
     public void Hitty()
     {
+        hitty = true;
         moveSpeed = 3f;
         damage = 1f;
         health = 3f;
@@ -89,6 +109,7 @@ public class Enemy_Script : MonoBehaviour
     }
     public void Shooty()
     {
+        shooty = true;
         moveSpeed = 3f;
         damage = 1f;
         health = 2f;
@@ -99,21 +120,28 @@ public class Enemy_Script : MonoBehaviour
     }
     public void Tanky()
     {
-        tankita.gameObject.transform.localScale += new Vector3(1f, 1f, 1f);
+        tanky = true;
+        tankita.gameObject.transform.localScale += new Vector3(1.2f, 1.2f, 1.2f);
         moveSpeed = 1.5f;
         damage = 2f;
         health = 6f;
-        stopDistance = 1.9f;
+        stopDistance = 1.8f;
         attackRange = 1.9f;
     }
     public void Lungie()
     {
+        lungie = true;
         moveSpeed = 4f;
         damage = 1f;
         health = 2f;
         stopDistance = 1.1f;
         attackRange = 1.2f;
-    }
+        isLungie = true;
+    }    
+
+    
+
+    
     void MoveTowardsPlayer() 
     {
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
@@ -153,6 +181,48 @@ public class Enemy_Script : MonoBehaviour
         yield return new WaitForSeconds(shootCooldown);
         canshoot = true;
     }
+
+    System.Collections.IEnumerator LungeAttack()
+    {
+        canLunge = false;
+        isLunging = true;
+
+        // --- Charge Phase ---
+        Vector3 originalPosition = transform.position;
+        Vector2 direction = (player.position - transform.position).normalized;
+
+        // Flash red to warn player
+        float chargeTimer = 0f;
+        while (chargeTimer < chargeTime)
+        {
+            chargeTimer += Time.deltaTime;
+            transform.position = originalPosition + (Vector3)(Random.insideUnitCircle * 0.05f);
+
+            yield return null;
+        }
+
+
+        transform.position = originalPosition;
+
+        // --- Lock Direction ---
+        Vector2 lockedDirection = player.position;
+        float lockedAngle = Mathf.Atan2(lockedDirection.y, lockedDirection.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, lockedAngle - 90f);
+
+        // --- Lunge Phase ---
+        float lungeTimer = 0f;
+        while (lungeTimer < lungeDuration)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, lockedDirection, lungeSpeed * Time.deltaTime);
+            lungeTimer += Time.deltaTime;
+            yield return null;
+        }
+
+        // --- Cooldown Phase ---
+        isLunging = false;
+        yield return new WaitForSeconds(lungeCooldown);
+        canLunge = true;
+    }
     public void TakeDamage(float damage) // 
     {
         if (isDead) return;
@@ -163,6 +233,7 @@ public class Enemy_Script : MonoBehaviour
         if (health <= 0)
             Die();
     }
+
 
     void Die() // dying script
     {
