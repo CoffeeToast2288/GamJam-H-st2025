@@ -3,7 +3,8 @@ using UnityEngine;
 public class stat_upgrade_intractable : MonoBehaviour
 {
     public GameObject upgrade_station_ui;
-    public bool has_entered, is_open;
+    public bool has_entered, is_open, round_bonus;
+    public upgrades upgrade_script;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,6 +20,11 @@ public class stat_upgrade_intractable : MonoBehaviour
         {
             upgrade_station_ui.SetActive(true);
             is_open = true;
+            if (round_bonus== true)
+            {
+                upgrade_script.upgrade_points += 2;
+
+            }
 
         }
         else if (has_entered && Input.GetKeyDown(KeyCode.F)&& is_open)
