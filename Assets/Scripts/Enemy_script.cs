@@ -11,14 +11,14 @@ public class Enemy_Script : MonoBehaviour
     public float shootCooldown = 1f;
     public float attackRange = 1.2f;
     public float shootrange = 6f;
-    public GameObject hitboxObject; // assign the hitbox child here
+    public GameObject hitboxObject; 
 
     [Header("References")]
     public Transform player;
+    public GameObject tankita;
     private Rigidbody2D rb;
     public Transform spawnPos;
     public GameObject enemyBullet;
-
 
     private bool isDead = false;
     private bool canAttack = true;
@@ -66,15 +66,17 @@ public class Enemy_Script : MonoBehaviour
             MoveTowardsPlayer();
             RotateTowardsPlayer();
         }
-        else if(distance <= shootrange && isShooty == true)
+        else if (distance <= attackRange)
+        {
+            TryAttack();
+        }   
+
+        if(distance <= shootrange && isShooty == true)
         {
             TryFire();
             RotateTowardsPlayer();
         }
-        else if (distance <= attackRange)
-        {
-            TryAttack();
-        }        
+             
     }
 
     public void Hitty()
@@ -91,67 +93,67 @@ public class Enemy_Script : MonoBehaviour
         damage = 1f;
         health = 2f;
         stopDistance = 6f;
+        shootrange = 10f;
         attackRange = 1.2f;
         isShooty = true;
     }
     public void Tanky()
     {
+        tankita.gameObject.transform.localScale += new Vector3(1f, 1f, 1f);
         moveSpeed = 1.5f;
         damage = 2f;
         health = 6f;
-        stopDistance = 1.1f;
-        attackRange = 1.2f;
+        stopDistance = 1.9f;
+        attackRange = 1.9f;
     }
     public void Lungie()
     {
         moveSpeed = 4f;
         damage = 1f;
-        health = 1.5f;
+        health = 2f;
         stopDistance = 1.1f;
         attackRange = 1.2f;
     }
-    void MoveTowardsPlayer()
+    void MoveTowardsPlayer() 
     {
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
     }
 
-    void RotateTowardsPlayer()
+    void RotateTowardsPlayer() // looks at the player
     {
         Vector2 direction = (player.position - transform.position);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle; // sets rotation around Z-axis in degrees
+        rb.rotation = angle; 
     }
-    void TryAttack()
+    void TryAttack() // makes the attack have a cooldown
     {
         if (!canAttack) return;
         StartCoroutine(AttackRoutine());
     }
 
-    System.Collections.IEnumerator AttackRoutine()
+    System.Collections.IEnumerator AttackRoutine() // attack script
     {
         canAttack = false;
         hitboxObject.SetActive(true); // enable hitbox briefly
         yield return new WaitForSeconds(0.4f); // attack duration
         hitboxObject.SetActive(false);
-        yield return new WaitForSeconds(attackCooldown);
+        yield return new WaitForSeconds(attackCooldown); 
         canAttack = true;
     }
-    void TryFire()
+    void TryFire() // Makes the shooting have a cooldown
     {
-        Debug.Log("you aint shooting");
         if (!canshoot) return;
         StartCoroutine(ShootRoutine());
     }
 
-    System.Collections.IEnumerator ShootRoutine()
+    System.Collections.IEnumerator ShootRoutine() // shooting script
     {
         canshoot = false;
-        Debug.Log("you aint shooting");
         Instantiate(enemyBullet, spawnPos.position, spawnPos.rotation);
         yield return new WaitForSeconds(shootCooldown);
         canshoot = true;
     }
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage) // 
     {
         if (isDead) return;
 
@@ -162,11 +164,11 @@ public class Enemy_Script : MonoBehaviour
             Die();
     }
 
-    void Die()
+    void Die() // dying script
     {
         isDead = true;
         rb.linearVelocity = Vector2.zero;
         Debug.Log($"{gameObject.name} died!");
-        Destroy(gameObject, 0.5f); // small delay before removal
+        Destroy(gameObject); // small delay before removal
     }
 }
