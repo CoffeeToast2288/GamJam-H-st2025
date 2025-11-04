@@ -4,17 +4,24 @@ using UnityEngine.SceneManagement;
 
 public class DSM : MonoBehaviour
 {
-    PlayerHealth isdead;
-    PlayerStats stats;
+    public PlayerHealth playerHealth;
     public GameObject deathScreen;
-    private bool dead;
 
+    public void Start()
+    {
+        // If not assigned in Inspector, try to find it on the same GameObject or in the scene
+        if (playerHealth == null)
+            playerHealth = GetComponent<PlayerHealth>();
+
+    }
     public void Update()
     {
-        dead = isdead.dead;
-        if (dead == true)
+        // Check the PlayerHealth's dead bool directly
+        if (playerHealth != null && playerHealth.dead)
         {
-            deathScreen.SetActive(true);
+            // Activate death screen only once
+            if (!deathScreen.activeSelf)
+                deathScreen.SetActive(true);
         }
     }
 
