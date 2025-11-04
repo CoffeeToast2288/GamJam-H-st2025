@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8185608723949739961, guid: 106b1b677b6a0c24bb69822cc1f85929, type: 3}
+  m_Sprite: {fileID: 8420924889813731061, guid: f08fe29eb0d6f3447835dc56c3db1806, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3375,6 +3375,7 @@ MonoBehaviour:
     bursts more often with less time between
   - You are strong so but you need skill to use that quickly this boon will increase
     how quickly you can attack your foes
+  stats: {fileID: 1370699583}
   text_box: {fileID: 1219647066}
   number_of_points: {fileID: 2097587436}
   upgrade_points: 0
@@ -4583,6 +4584,74 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &1370699582
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3865082370239783837, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_Name
+      value: GM
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195940288990396066, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 921.67303
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195940288990396066, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 533.1867
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195940288990396066, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.03277
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195940288990396066, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195940288990396066, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195940288990396066, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195940288990396066, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195940288990396066, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195940288990396066, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195940288990396066, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+--- !u!114 &1370699583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7513998786404539937, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+  m_PrefabInstance: {fileID: 1370699582}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22e85ef8643d7b4c8644ba369dc071c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1635439027
 GameObject:
   m_ObjectHideFlags: 0
@@ -5941,3 +6010,4 @@ SceneRoots:
   - {fileID: 714542114}
   - {fileID: 1316868792}
   - {fileID: 963006720}
+  - {fileID: 1370699582}

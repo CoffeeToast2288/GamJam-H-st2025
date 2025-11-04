@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 4919619f21d6e9844b785c38a4aa8642
+guid: 7224f36088eab3c44a7e1a49ea597f1c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5089642323228528179
-    second: biggunshothit_0
-  - first:
-      213: -122553054827727331
-    second: biggunshothit_1
-  - first:
-      213: -1808972700746346244
-    second: biggunshothit_2
-  - first:
-      213: 8127996147144749535
-    second: biggunshothit_3
-  - first:
-      213: -3104524099492305863
-    second: biggunshothit_4
+      213: -1980276851544534156
+    second: groundasset(5) (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,79 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: biggunshothit_0
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 31
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 33e84d51aba02a640800000000000000
-      internalID: 5089642323228528179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: biggunshothit_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 29
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d16badc55aa9c4ef0800000000000000
-      internalID: -122553054827727331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: biggunshothit_2
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 23
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cf092abb9ec35e6e0800000000000000
-      internalID: -1808972700746346244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: biggunshothit_3
+      name: groundasset(5) (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 34
-        height: 27
+        y: 0
+        width: 72
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd17e4e8e617cc070800000000000000
-      internalID: 8127996147144749535
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: biggunshothit_4
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 14
-        width: 12
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9342f1da7c38ae4d0800000000000000
-      internalID: -3104524099492305863
+      spriteID: 47352ca02b4a484e0800000000000000
+      internalID: -1980276851544534156
       vertices: []
       indices: 
       edges: []
@@ -234,12 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      biggunshothit_0: 5089642323228528179
-      biggunshothit_1: -122553054827727331
-      biggunshothit_2: -1808972700746346244
-      biggunshothit_3: 8127996147144749535
-      biggunshothit_4: -3104524099492305863
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

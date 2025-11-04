@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      charactershootingbigblicky_0: -4065452795910548668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

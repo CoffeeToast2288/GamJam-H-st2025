@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WoodStumpIcon_0: -8185608723949739961
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

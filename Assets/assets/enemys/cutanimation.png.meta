@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cutanimation_0: 599001721426443913
+      cutanimation_1: 9081717225725265432
+      cutanimation_2: -1491773335123806438
+      cutanimation_3: -7827039766801713086
+      cutanimation_4: 4941184416343768827
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

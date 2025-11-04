@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      charactershootingtheblicky_0: -5525723550061638503
+      charactershootingtheblicky_1: -6113852309561807257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

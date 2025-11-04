@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Shooty_0: 1137157821805767210
+      Shooty_1: 8964992583300063769
+      Shooty_2: -4498511740294076739
+      Shooty_3: 3227844321182227234
+      Shooty_4: 7014365741817970388
+      Shooty_5: 5020764057801518347
+      Shooty_6: 8036555782313186730
+      Shooty_7: 6333555828420123827
+      Shooty_8: -6614329822638322150
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
