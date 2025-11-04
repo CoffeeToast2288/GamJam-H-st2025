@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 public class PlayerStats : ScriptableObject
 {
     //stats 
-    public float damage;
+    public float damage; 
     public int hp;
     public int speed; 
     public int dash_chargers;
