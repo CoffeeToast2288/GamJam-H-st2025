@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class Melee : MonoBehaviour
 {
-    PlayerStats Stats;
+    public PlayerStats stats;
     float damage = 1;
     
     void update()
     {
-        damage += Stats.damage;
+      
 
 
     }
-
+    
     private void OnCollisionEnter2D(Collider2D collision)
     {
         Enemy_Script enemy = collision.GetComponent<Enemy_Script>();

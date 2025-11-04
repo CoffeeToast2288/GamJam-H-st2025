@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 
 public class Playermovment : MonoBehaviour
 {
-    PlayerStats stats;
+    public PlayerStats stats;
     public float speed = 10f;
     private Rigidbody2D rb;
     private Vector2 input;
@@ -26,14 +26,13 @@ public class Playermovment : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        speed += stats.speed;
-        MaxDashCharges += stats.dash_chargers;
-        totaldashcooldown /= stats.dash_coldown_reduction;
+        
 
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");

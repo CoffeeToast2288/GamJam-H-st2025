@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-[CreateAssetMenu(fileName = "PlayerStats", menuName = "Scriptable Objects/PlayerStats")]
+
 [System.Serializable]
-public class PlayerStats : ScriptableObject
+public class PlayerStats : MonoBehaviour
 {
+    static PlayerStats stats;
+    static PlayerStats GetStats;
     //stats 
     public float damage; 
     public int hp;

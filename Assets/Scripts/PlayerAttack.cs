@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public PlayerStats stats;
+
     public GameObject Attack;
     public bool Isattacking = false;
-    PlayerStats Stats;
+   
     float attack_duratin = 0.3f;
     float attack_timer;
     public float colldown;
@@ -21,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        colldown_max /= Stats.attack_speed; // scales colldown with attack speed (attack sped will be a desimal)
+        
         CheckTimer();
         if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0) && colldown == 0) // attack when buton is presed and no colldown 
         {
@@ -42,9 +44,11 @@ public class PlayerAttack : MonoBehaviour
         }
         if(colldown <= 0)
         {
+     
             colldown_active = false;
            
         }
+        
     }
 
 
@@ -79,6 +83,12 @@ public class PlayerAttack : MonoBehaviour
             }
         }
 
+
+    }
+
+    void upgradeattack()
+    {
+        colldown_max /= stats.attack_speed;
 
     }
     
