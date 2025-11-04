@@ -3367,9 +3367,11 @@ MonoBehaviour:
     down
   - With this you will have much greater speed and could outrun anything that might
     hunt you
-  - Tour power is great this boon will grant you more uses your bursts of speed
-  - 
-  - 
+  - Your power is great this boon will grant you more uses your bursts of speed
+  - Your great power must exhaust you this boon will allow you to use your speed
+    bursts more often with less time between
+  - You are strong so but you need skill to use that quickly this boon will increase
+    how quickly you can attack your foes
   text_box: {fileID: 1219647066}
   upgrade_points: 0
   stat_bonus_sound: {fileID: 615865065}
@@ -5678,7 +5680,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.43, y: -0.31, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_LocalScale: {x: 18, y: 15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1316868792}
