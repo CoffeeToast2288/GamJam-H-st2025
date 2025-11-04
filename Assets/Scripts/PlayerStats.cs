@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "Scriptable Objects/PlayerStats")]
+[System.Serializable]
 public class PlayerStats : ScriptableObject
 {
     //stats 
