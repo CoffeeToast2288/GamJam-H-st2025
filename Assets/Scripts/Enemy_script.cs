@@ -24,7 +24,8 @@ public class Enemy_Script : MonoBehaviour
     private Rigidbody2D rb;
     public Transform spawnPos;
     public GameObject enemyBullet;
-    public SpriteRenderer spriteRenderer;    // assign your enemy sprite here
+    public SpriteRenderer spriteRenderer;
+    public TrailRenderer trailRenderer;
 
 
 
@@ -47,8 +48,8 @@ public class Enemy_Script : MonoBehaviour
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        type = Random.Range( 1, 5);
-
+        //type = Random.Range( 1, 5);
+        type = 4;
         if (type == 1)
         {
             Hitty();
@@ -209,6 +210,10 @@ public class Enemy_Script : MonoBehaviour
         float lockedAngle = Mathf.Atan2(lockedDirection.y, lockedDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, lockedAngle - 90f);
 
+        // Enable Trail
+        if (trailRenderer != null)
+            trailRenderer.emitting = true;
+
         // --- Lunge Phase ---
         float lungeTimer = 0f;
         while (lungeTimer < lungeDuration)
@@ -217,6 +222,10 @@ public class Enemy_Script : MonoBehaviour
             lungeTimer += Time.deltaTime;
             yield return null;
         }
+
+        // Disable Trail
+        if (trailRenderer != null)
+            trailRenderer.emitting = false;
 
         // --- Cooldown Phase ---
         isLunging = false;
