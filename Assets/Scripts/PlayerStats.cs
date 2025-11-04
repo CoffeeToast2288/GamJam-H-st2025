@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -5,15 +6,16 @@ using UnityEngine.Rendering;
 [System.Serializable]
 public class PlayerStats : MonoBehaviour
 {
-    static PlayerStats stats;
-    static PlayerStats GetStats;
+ 
+
+    
     //stats 
-    public float damage; 
-    public int hp;
-    public int speed; 
-    public int dash_chargers;
-    public float dash_coldown_reduction;
-    public float attack_speed;
+    public float damage = 0; 
+    public int hp = 0;
+    public int speed = 0; 
+    public int dash_chargers = 0;
+    public float dash_coldown_reduction = 0;
+    public float attack_speed = 0;
 
     
 }
