@@ -3361,11 +3361,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a337390f7bdfbd7419c80bb59e57fc14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrade_descriptions: []
+  upgrade_descriptions:
+  - This will increase your power and cause you to deal more damage to your enemies
+  - This will grant you great durabilty and make your foes struggle to bring you
+    down
+  - With this you will have much greater speed and could outrun anything that might
+    hunt you
+  - Tour power is great this boon will grant you more uses your bursts of speed
+  - 
+  - 
   text_box: {fileID: 1219647066}
   upgrade_points: 0
   stat_bonus_sound: {fileID: 615865065}
-  displayer_text_boxes: []
+  displayer_text_boxes:
+  - {fileID: 993534169}
+  - {fileID: 960746132}
+  - {fileID: 799280586}
+  - {fileID: 1801716934}
+  - {fileID: 1927156979}
+  - {fileID: 2054001559}
 --- !u!1 &993534167
 GameObject:
   m_ObjectHideFlags: 0
