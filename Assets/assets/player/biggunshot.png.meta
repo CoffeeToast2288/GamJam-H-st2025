@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 12
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,11 +107,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 0
+        y: 26
         width: 10
-        height: 36
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -129,11 +129,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 13
-        y: 0
+        y: 24
         width: 10
-        height: 36
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -146,11 +146,99 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: biggunshot_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 12
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72df806adf2aa6f4285bca71e9d2f5b5
+      internalID: -627247806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biggunshot_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e206ac713a4a61a4481ebe3854403df8
+      internalID: 190945332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biggunshot_4
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 12
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aebb9b0fb7b1a294c9b94343488bad0b
+      internalID: -1186843647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biggunshot_5
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f142cd97e8d8e46428afd21acc1108e5
+      internalID: -1871315213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 33631d88ffba2cc42ae73f35a78f0297
     internalID: 0
     vertices: []
     indices: 
@@ -162,6 +250,10 @@ TextureImporter:
     nameFileIdTable:
       biggunshot_0: 8416954405166769476
       biggunshot_1: 3418129577304383537
+      biggunshot_2: -627247806
+      biggunshot_3: 190945332
+      biggunshot_4: -1186843647
+      biggunshot_5: -1871315213
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
