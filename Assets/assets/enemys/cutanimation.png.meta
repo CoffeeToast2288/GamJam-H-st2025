@@ -63,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,12 +115,12 @@ TextureImporter:
       name: cutanimation_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 14
+        x: 1
+        y: 15
         width: 10
-        height: 12
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,12 +137,12 @@ TextureImporter:
       name: cutanimation_1
       rect:
         serializedVersion: 2
-        x: 1
+        x: 2
         y: 24
-        width: 11
-        height: 10
+        width: 10
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: cutanimation_2
       rect:
         serializedVersion: 2
-        x: 12
-        y: 23
-        width: 11
-        height: 13
+        x: 13
+        y: 24
+        width: 10
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: cutanimation_3
       rect:
         serializedVersion: 2
-        x: 13
-        y: 16
-        width: 9
-        height: 8
+        x: 14
+        y: 17
+        width: 10
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: cutanimation_4
       rect:
         serializedVersion: 2
-        x: 23
-        y: 18
-        width: 12
-        height: 18
+        x: 24
+        y: 24
+        width: 10
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -221,11 +221,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: cutanimation_5
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 19
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f64c33de63c7a44b09dfec4c1d4643
+      internalID: 456578738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 64c7f6b790f21514b86e754c1b4536cf
     internalID: 0
     vertices: []
     indices: 
@@ -240,6 +262,7 @@ TextureImporter:
       cutanimation_2: -1491773335123806438
       cutanimation_3: -7827039766801713086
       cutanimation_4: 4941184416343768827
+      cutanimation_5: 456578738
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
