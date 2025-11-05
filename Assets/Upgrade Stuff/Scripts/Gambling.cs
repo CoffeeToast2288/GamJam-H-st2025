@@ -15,7 +15,7 @@ public class Gambling : MonoBehaviour
     public int upgradetype;
     public int whatupgrade;
     public PlayerAttack attack;
-    public GameObject sword;
+    
     private void Start()
     {
         spin.onClick.AddListener(gamble);
