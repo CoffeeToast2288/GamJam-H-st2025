@@ -3,36 +3,48 @@ using UnityEngine;
 public class Enemy_Bullet : MonoBehaviour
 {
     [Header("Enemy Bullet Settings")]
-    public float speed = 6.5f;
-    public float lifetime = 7.5f;
-    public float damage = 2f;
-    public string targetTag = "Player"; // who this bullet can hit
+    public float speed = 6.5f;              // How fast the bullet travels
+    public float lifetime = 7.5f;           // How long before it despawns
+    public float damage; // Assigned by the enemy on spawn
+
+    [Header("References")]
+    public Enemy_Script enemy;              // Reference to the parent enemy
+    public PlayerHealth player;             // Player health script reference
+    public string targetTag = "Player";     // Tag to identify the player target
 
     void Start()
     {
-        // Automatically destroy after 'lifetime' seconds
+        // Get Enemy_Script from parent (assuming this hitbox is a child of the enemy)
+        enemy = GetComponentInParent<Enemy_Script>();
+
+        // Get the damage value from the enemy
+        if (enemy != null)
+            damage = enemy.damage;
+
+        // Automatically destroy the bullet after its lifetime expires
         Destroy(gameObject, lifetime);
+
+        // Automatically find the player if not manually assigned
+        if (player == null)
+        {
+            player = FindFirstObjectByType<PlayerHealth>();
+        }
     }
 
     void Update()
     {
-        // Move bullet forward constantly (local up direction)
+        // Move bullet forward in its local "up" direction every frame
         transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // Only damage valid targets
-        if (collision.CompareTag(targetTag))
+        if (collision.CompareTag("Player"))
         {
-            // Example: deal damage if target has a TakeDamage() method
-            //var enemy = collision.GetComponent<Enemy_Script>();
-            //if (enemy != null)
-            {
-                //enemy.TakeDamage(damage);
-            }
 
-            // Destroy bullet after hitting something
+            player.TakeDamage(damage);
+            Debug.Log($"Enemy bullet hit player for {damage} damage!");
+            
             Destroy(gameObject);
         }
     }

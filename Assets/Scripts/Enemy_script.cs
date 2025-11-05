@@ -2,219 +2,261 @@ using UnityEngine;
 
 public class Enemy_Script : MonoBehaviour
 {
+    // ===== ENEMY SETTINGS =====
     [Header("Enemy Settings")]
-    public float moveSpeed;
-    public float health;
-    public float damage;
-    public float stopDistance;
-    public float attackCooldown = 0.5f;
-    public float shootCooldown = 1f;
-    public float attackRange = 1.2f;
-    public float shootrange = 6f;
-    public float lungeSpeed = 10f;
-    public float lungeDuration = 0.3f;
-    public float lungeCooldown = 1.5f;
-    public float chargeTime = 0.5f;       // how long to charge before lunging
-    public float lungeRange = 8f;
-    public GameObject hitboxObject;
+    public float moveSpeed;               // Movement speed
+    public float health;                  // Enemy HP
+    public float damage;                  // Base damage dealt to player
+    public float stopDistance;            // Distance to stop before reaching the player
+    public float attackCooldown = 0.5f;   // Delay between melee attacks
+    public float shootCooldown = 1f;      // Delay between ranged shots
+    public float attackRange = 1.2f;      // Range for melee attacks
+    public float shootrange = 6f;         // Range for shooting
+    public float lungeSpeed = 10f;        // Speed when lunging
+    public float lungeDuration = 0.3f;    // How long the lunge lasts
+    public float lungeCooldown = 1.5f;    // Time before the next lunge
+    public float chargeTime = 0.5f;       // Charging time before lunging
+    public float lungeRange = 8f;         // Distance within which the enemy can lunge
+    public GameObject hitboxObject;       // Object used to apply melee hit detection
 
+    // ===== REFERENCES =====
     [Header("References")]
-    public Transform player;
-    public GameObject tankita;
-    private Rigidbody2D rb;
-    public Transform spawnPos;
-    public GameObject enemyBullet;
-    public SpriteRenderer spriteRenderer;
-    public TrailRenderer trailRenderer;
+    public Transform player;              // Player reference
+    public GameObject tankita;            // Used to scale tanky enemies visually
+    private Rigidbody2D rb;               // Cached Rigidbody for movement
+    public Transform spawnPos;            // Position to spawn bullets from
+    public GameObject enemyBullet;        // Bullet prefab
+    public SpriteRenderer spriteRenderer; // Sprite for this enemy
+    public TrailRenderer trailRenderer;   // Trail used for lunging enemies
 
+    // ===== TYPE FLAGS =====
+    [Header("Type Flags")]
+    public bool shooty;                   // Marks this enemy as a shooter
+    public bool hitty;                    // Marks this enemy as melee
+    public bool tanky;                    // Marks this enemy as tank type
+    public bool lungie;                   // Marks this enemy as lunging type
 
+    // ===== ELITE SETTINGS =====
+    [Header("Elite Settings")]
+    [Tooltip("Whether this enemy is an elite variant")]
+    public bool isElite = false;          // If true, enemy stats are boosted
 
-    private bool isDead = false;
-    private bool canAttack = true;
-    private bool canshoot = true;
-    private bool isShooty = false;
-    private bool isLungie = false;
-    private bool isLunging = false;
-    private bool canLunge = true;
-    private int type;
+    [Tooltip("How much stronger elites are (stat multiplier)")]
+    public float eliteMultiplier = 1.5f;  // How much to multiply health & damage by
 
-    [Header("Type")]
-    public bool shooty;
-    public bool hitty;
-    public bool tanky;
-    public bool lungie;
+    // ===== CONTROL FLAGS =====
+    private bool isDead = false;          // Used to stop actions when dead
+    private bool canAttack = true;        // Melee attack cooldown control
+    private bool canshoot = true;         // Shooting cooldown control
+    private bool isShooty = false;        // Internal state for ranged type
+    private bool isLungie = false;        // Internal state for lunging type
+    private bool isLunging = false;       // True while lunging
+    private bool canLunge = true;         // Cooldown control for lunging
 
-
+    // ===== INITIALIZATION =====
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //type = Random.Range( 1, 5);
-        type = 4;
-        if (type == 1)
+
+        // Automatically assign behavior based on type flag
+        if (hitty)
         {
             Hitty();
         }
-        if (type == 2)
+        else if (shooty)
         {
             Shooty();
         }
-        if (type == 3)
+        else if (tanky)
         {
             Tanky();
         }
-        if (type == 4)
+        else if (lungie)
         {
             Lungie();
         }
     }
 
-    // Update is called once per frame
+    // ===== MAIN UPDATE LOOP =====
     void Update()
     {
+        // Stop all logic if dead or player missing
         if (isDead || player == null) return;
 
+        // Calculate distance to player
         float distance = Vector2.Distance(transform.position, player.position);
 
-
-        if (distance <= lungeRange && canLunge && isLungie == true)
+        // If in range and allowed, perform a lunge attack
+        if (distance <= lungeRange && canLunge && isLungie)
         {
             StartCoroutine(LungeAttack());
         }
-        else if (distance > stopDistance && isLunging == false)
+        // Otherwise move toward player until close enough to stop
+        else if (distance > stopDistance && !isLunging)
         {
             MoveTowardsPlayer();
             RotateTowardsPlayer();
         }
+        // If close enough, perform melee attack
         else if (distance <= attackRange)
         {
             TryAttack();
         }
-        
 
-        if (distance <= shootrange && isShooty == true)
+        // Handle ranged shooting
+        if (distance <= shootrange && isShooty)
         {
             TryFire();
             RotateTowardsPlayer();
         }
-
     }
 
+    // ===== ENEMY TYPE SETUPS =====
+    // Adjust stats depending on enemy type
     public void Hitty()
     {
-        hitty = true;
-        moveSpeed = 3f;
-        damage = 1f;
-        health = 3f;
+        moveSpeed += 3f;
+        damage += 1f;
+        health += 3f;
         stopDistance = 1.1f;
         attackRange = 1.2f;
     }
+
     public void Shooty()
     {
-        shooty = true;
         moveSpeed = 3f;
-        damage = 1f;
-        health = 2f;
+        damage += 1f;
+        health += 2f;
         stopDistance = 6f;
-        shootrange = 10f;
+        shootrange += 10f;
         attackRange = 1.2f;
         isShooty = true;
     }
+
     public void Tanky()
     {
-        tanky = true;
-        tankita.gameObject.transform.localScale += new Vector3(1.2f, 1.2f, 1.2f);
-        moveSpeed = 1.5f;
-        damage = 2f;
-        health = 6f;
+        // Make it visually bigger
+        tankita.transform.localScale += new Vector3(1.2f, 1.2f, 1.2f);
+        moveSpeed += 1.5f;
+        damage += 2f;
+        health += 6f;
         stopDistance = 1.8f;
         attackRange = 1.9f;
     }
+
     public void Lungie()
     {
-        lungie = true;
         moveSpeed = 4f;
-        damage = 1f;
-        health = 2f;
+        damage += 1f;
+        health += 2f;
         stopDistance = 1.1f;
         attackRange = 1.2f;
         isLungie = true;
-    }    
+    }
 
-    
-
-    
-    void MoveTowardsPlayer() 
+    // ===== ELITE HANDLING =====
+    public void SetElite(bool eliteStatus)
     {
+        isElite = eliteStatus;
+
+        if (isElite)
+        {
+            // Boost stats by multiplier
+            health *= eliteMultiplier;
+            damage *= eliteMultiplier;
+
+            // Example: could add red outline here later if desired
+        }
+    }
+
+    // ===== MOVEMENT =====
+    void MoveTowardsPlayer()
+    {
+        // Move directly toward player until within stopDistance
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
     }
 
-    void RotateTowardsPlayer() // looks at the player
+    void RotateTowardsPlayer()
     {
+        // Rotate enemy to face player
         Vector2 direction = (player.position - transform.position);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle; 
+        rb.rotation = angle;
     }
-    void TryAttack() // makes the attack have a cooldown
+
+    // ===== MELEE ATTACK =====
+    void TryAttack()
     {
         if (!canAttack) return;
         StartCoroutine(AttackRoutine());
     }
 
-    System.Collections.IEnumerator AttackRoutine() // attack script
+    System.Collections.IEnumerator AttackRoutine()
     {
         canAttack = false;
-        hitboxObject.SetActive(true); // enable hitbox briefly
-        yield return new WaitForSeconds(0.4f); // attack duration
+
+        // Enable hitbox briefly for attack
+        hitboxObject.SetActive(true);
+        yield return new WaitForSeconds(0.4f);
         hitboxObject.SetActive(false);
-        yield return new WaitForSeconds(attackCooldown); 
+
+        // Wait before next attack
+        yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }
-    void TryFire() // Makes the shooting have a cooldown
+
+    // ===== RANGED ATTACK =====
+    void TryFire()
     {
         if (!canshoot) return;
         StartCoroutine(ShootRoutine());
     }
 
-    System.Collections.IEnumerator ShootRoutine() // shooting script
+    System.Collections.IEnumerator ShootRoutine()
     {
         canshoot = false;
+
+        // Spawn bullet toward player
         Instantiate(enemyBullet, spawnPos.position, spawnPos.rotation);
+
         yield return new WaitForSeconds(shootCooldown);
         canshoot = true;
     }
 
+    // ===== LUNGE ATTACK =====
     System.Collections.IEnumerator LungeAttack()
     {
         canLunge = false;
         isLunging = true;
 
-        // --- Charge Phase ---
+        // Save starting point
         Vector3 originalPosition = transform.position;
+
+        // Find direction toward player
         Vector2 direction = (player.position - transform.position).normalized;
 
-        // Flash red to warn player
+        // Charge-up phase with shake
         float chargeTimer = 0f;
         while (chargeTimer < chargeTime)
         {
             chargeTimer += Time.deltaTime;
             transform.position = originalPosition + (Vector3)(Random.insideUnitCircle * 0.05f);
-
             yield return null;
         }
 
-
+        // Reset position after charge
         transform.position = originalPosition;
 
-        // --- Lock Direction ---
+        // Lock target position and face it
         Vector2 lockedDirection = player.position;
         float lockedAngle = Mathf.Atan2(lockedDirection.y, lockedDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, lockedAngle - 90f);
 
-        // Enable Trail
+        // Enable trail effect during lunge
         if (trailRenderer != null)
             trailRenderer.emitting = true;
 
-        // --- Lunge Phase ---
+        // Move rapidly toward player
         float lungeTimer = 0f;
         while (lungeTimer < lungeDuration)
         {
@@ -223,32 +265,28 @@ public class Enemy_Script : MonoBehaviour
             yield return null;
         }
 
-        // Disable Trail
+        // Stop trail and cooldown
         if (trailRenderer != null)
             trailRenderer.emitting = false;
 
-        // --- Cooldown Phase ---
         isLunging = false;
         yield return new WaitForSeconds(lungeCooldown);
         canLunge = true;
     }
-    public void TakeDamage(float damage) // 
+
+    // ===== DAMAGE & DEATH =====
+    public void TakeDamage(float damage)
     {
         if (isDead) return;
 
         health -= damage;
-        Debug.Log($"{gameObject.name} took {damage} damage. Health left: {health}");
-
-        if (health <= 0)
-            Die();
+        if (health <= 0) Die();
     }
 
-
-    void Die() // dying script
+    void Die()
     {
         isDead = true;
-        rb.linearVelocity = Vector2.zero;
-        Debug.Log($"{gameObject.name} died!");
-        Destroy(gameObject); // small delay before removal
+        rb.linearVelocity = Vector2.zero; // Stop moving
+        Destroy(gameObject);               // Remove from scene
     }
 }
