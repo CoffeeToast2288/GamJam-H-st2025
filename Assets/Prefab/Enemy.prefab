@@ -213,7 +213,7 @@ MonoBehaviour:
   chargeTime: 0.5
   lungeRange: 8
   hitboxObject: {fileID: 5380182243040380876}
-  player: {fileID: 1542395940406879610, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+  player: {fileID: 0}
   tankita: {fileID: 5354378433924161553}
   spawnPos: {fileID: 8449823108442139120}
   enemyBullet: {fileID: 8800408510217195185, guid: 8e7b365eca9affe4d9edd04cb23c65df, type: 3}
@@ -223,6 +223,8 @@ MonoBehaviour:
   hitty: 0
   tanky: 0
   lungie: 0
+  isElite: 0
+  eliteMultiplier: 1.5
 --- !u!61 &6769594783083612128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -525,6 +527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930b93d92a698b46b8c36673bf75118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6729286455980224989
 GameObject:
   m_ObjectHideFlags: 0

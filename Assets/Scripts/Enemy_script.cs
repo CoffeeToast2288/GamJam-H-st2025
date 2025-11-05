@@ -58,6 +58,20 @@ public class Enemy_Script : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
+        // Automatically find player if not set in Inspector
+        if (player == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                player = playerObj.transform;
+            }
+            else
+            {
+                Debug.LogWarning("Enemy_Script could not find player in scene!");
+            }
+        }
+
         // Automatically assign behavior based on type flag
         if (hitty)
         {
