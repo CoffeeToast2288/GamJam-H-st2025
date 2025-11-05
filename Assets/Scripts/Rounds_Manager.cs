@@ -44,8 +44,6 @@ public class WaveSystem : MonoBehaviour
     [Tooltip("Multiplier applied to enemy damage every 5th wave")]
     public float damageIncrease = 1.15f;
 
-    [Tooltip("Multiplier applied to enemy movement speed every 5th wave")]
-    public float speedIncrease = 1.1f;
 
 
     // --- Runtime Variables ---
@@ -82,7 +80,6 @@ public class WaveSystem : MonoBehaviour
                 // Every 5th wave, make enemies stronger
                 healthIncrease *= 1.2f;
                 damageIncrease *= 1.1f;
-                speedIncrease *= 1.1f;
                 Debug.Log("Enemies got stronger!");
             }
 
@@ -171,10 +168,14 @@ public class WaveSystem : MonoBehaviour
             int type = ChooseEnemyType();
             ApplyType(enemyScript, type);
 
+            // --- ELITE LOGIC ---
+            float eliteChance = Mathf.Min(0.05f + currentWave * 0.03f, 0.5f); // starts 5%, grows +3%/wave, max 50%
+            bool isElite = Random.value < eliteChance;
+            enemyScript.SetElite(isElite);
+
             // Scale stats based on wave difficulty
             enemyScript.health *= healthIncrease;
             enemyScript.damage *= damageIncrease;
-            enemyScript.moveSpeed *= speedIncrease;
 
             // Track active enemies
             activeEnemies.Add(enemy);
