@@ -8,6 +8,7 @@ public class Bullet_Script : MonoBehaviour
     public float damage = 1f;
     public string targetTag = "Enemy"; // who this bullet can hit
 
+    public GameObject explosion;
     void Start()
     {
         // Automatically destroy after 'lifetime' seconds
@@ -32,6 +33,7 @@ public class Bullet_Script : MonoBehaviour
                 enemy.TakeDamage(damage);
             }
 
+            Instantiate(explosion, transform.position, transform.rotation);
             // Destroy bullet after hitting something
             Destroy(gameObject);
         }

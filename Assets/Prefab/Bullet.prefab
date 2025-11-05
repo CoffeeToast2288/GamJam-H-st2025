@@ -259,6 +259,7 @@ MonoBehaviour:
   lifetime: 5
   damage: 10
   targetTag: Enemy
+  explosion: {fileID: 6932956013459667387, guid: 4ac286ed65894d14c937de9f3cb1cd4f, type: 3}
 --- !u!95 &6858088914273707032
 Animator:
   serializedVersion: 7
