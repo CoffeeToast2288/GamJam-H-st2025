@@ -1,4 +1,3 @@
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Melee : MonoBehaviour
@@ -13,7 +12,7 @@ public class Melee : MonoBehaviour
 
     }
     
-    private void OnCollisionEnter2D(Collider2D collision)
+    public void OnCollisionEnter2D(Collider2D collision)
     {
         Enemy_Script enemy = collision.GetComponent<Enemy_Script>();
         if(enemy != null)
