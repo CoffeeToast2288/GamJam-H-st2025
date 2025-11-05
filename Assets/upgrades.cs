@@ -8,7 +8,7 @@ public class upgrades : MonoBehaviour
 {
 
     public string[] upgrade_descriptions;
-    PlayerStats stats; // this refrances the player stats
+    public PlayerStats stats; // this refrances the player stats
     public TMP_Text text_box, number_of_points;
     public int upgrade_points;
     public AudioSource stat_bonus_sound;
