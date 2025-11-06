@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
-<<<<<<< HEAD
 using static UnityEngine.Rendering.DebugUI;
 using System.Collections;
-=======
->>>>>>> parent of b40c612 (health animation)
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -32,7 +29,6 @@ public class PlayerHealth : MonoBehaviour
     public bool dead = false;
     public bool revive = false;
 
-<<<<<<< HEAD
     public Animator animator;
     public bool is_below_7, is_below_10;
     public Sprite[] numbers;
@@ -40,8 +36,6 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer card_1, card_2;
     public int animation_charges;
 
-=======
->>>>>>> parent of b40c612 (health animation)
     void Update()
     {
         healthText.text = Hp + "/" + Hp_max + " HP";
@@ -64,9 +58,11 @@ public class PlayerHealth : MonoBehaviour
 
             if (flashText != null)
                 StartCoroutine(ShowFlash($"+{healing} HP!"));
+            check_health();
+
+
         }
     }
-<<<<<<< HEAD
     public void check_health()
     {
         if (Hp < 7)
@@ -133,8 +129,6 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-=======
->>>>>>> parent of b40c612 (health animation)
 
     public void TakeDamage(float damage)
     {
