@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy_Script : MonoBehaviour
 {
@@ -17,6 +17,7 @@ public class Enemy_Script : MonoBehaviour
     public float lungeCooldown = 1.5f;    // Time before the next lunge
     public float chargeTime = 0.5f;       // Charging time before lunging
     public float lungeRange = 8f;         // Distance within which the enemy can lunge
+    public float healthPackDropChance = 0.1f;  // 10% chance
     public GameObject hitboxObject;       // Object used to apply melee hit detection
 
     // ===== REFERENCES =====
@@ -28,6 +29,8 @@ public class Enemy_Script : MonoBehaviour
     public GameObject enemyBullet;        // Bullet prefab
     public SpriteRenderer spriteRenderer; // Sprite for this enemy
     public TrailRenderer trailRenderer;   // Trail used for lunging enemies
+    public GameObject healthPackPrefab;
+
 
     // ===== TYPE FLAGS =====
     [Header("Type Flags")]
@@ -300,7 +303,25 @@ public class Enemy_Script : MonoBehaviour
     void Die()
     {
         isDead = true;
-        rb.linearVelocity = Vector2.zero; // Stop moving
-        Destroy(gameObject);               // Remove from scene
+        rb.linearVelocity = Vector2.zero;
+
+        TryDropHealthPack();   // Attempt health pack drop
+
+        Destroy(gameObject);         // Remove from scene
+    }
+
+    void TryDropHealthPack()
+    {
+        // ✅ Ensure a prefab is assigned
+        if (healthPackPrefab == null)
+            return;
+
+        // ✅ Roll the chance
+        float roll = Random.value;  // 0.0 → 1.0
+
+        if (roll <= healthPackDropChance)
+        {
+            Instantiate(healthPackPrefab, transform.position, Quaternion.identity);
+        }
     }
 }

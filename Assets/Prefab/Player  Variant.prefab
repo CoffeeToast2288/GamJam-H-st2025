@@ -853,13 +853,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player  Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 928483609584508031, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: m_Name
+      value: Player Hurtbox
+      objectReference: {fileID: 0}
     - target: {fileID: 1542395940406879610, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.57
+      value: -3.8730025
       objectReference: {fileID: 0}
     - target: {fileID: 1542395940406879610, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.06254196
       objectReference: {fileID: 0}
     - target: {fileID: 1542395940406879610, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1020,35 +1024,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1542395940406879610, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1504239078668379470}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 623756351655905103, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3207637601008570941}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
---- !u!1 &11254362290769813 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 623756351655905103, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
-  m_PrefabInstance: {fileID: 616989647416576218}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3207637601008570941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11254362290769813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efca834c0ff46b4408f69e9077df901b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hp: 0
-  Hp_max: 1
-  stats: {fileID: 0}
-  healthText: {fileID: 0}
-  flashText: {fileID: 0}
-  flashDuration: 1
-  dead: 0
 --- !u!4 &2155056255946665376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1542395940406879610, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}

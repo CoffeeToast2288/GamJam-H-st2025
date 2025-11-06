@@ -1,35 +1,35 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Header("Health Settings")]
     public float Hp;
     public float Hp_max;
+    public float iFramesDuration = 1f;
+
+
+
+    [Header("References")]
+    public SpriteRenderer playerSprite; //  Drag your Player Sprite object here
     public PlayerStats stats;
     public TextMeshProUGUI healthText;
+    public GameObject playerHurtBox;
+
+    private bool framed = false;
 
     [Header("UI Feedback")]
-    public TextMeshProUGUI flashText;        // Assign a TMP UI Text prefab in Inspector
-    public float flashDuration = 1f;         // How long the flash shows
+    public TextMeshProUGUI flashText;
+    public float flashDuration = 1f;
 
     public bool dead = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        healthText.text = (Hp + "/"+Hp_max+" hp");
+        healthText.text = Hp + "/" + Hp_max + " HP";
 
-        if(Hp > Hp_max)
-        {
-
+        if (Hp > Hp_max)
             Hp = Hp_max;
-
-        }
     }
 
     public void Heal(float healing)
@@ -37,23 +37,52 @@ public class PlayerHealth : MonoBehaviour
         if (Hp < Hp_max)
         {
             Hp += healing;
-            // Show UI flash
+
             if (flashText != null)
-            {
                 StartCoroutine(ShowFlash($"+{healing} HP!"));
-            }
         }
     }
+
     public void TakeDamage(float damage)
-    {       
+    {
+        // ✅ BLOCK DAMAGE DURING I-FRAMES
+        if (framed)
+            return;
+
         Hp -= damage;
+
+        StartCoroutine(IFrames());
+
         if (Hp <= 0)
         {
             Hp = 0;
             dead = true;
-        }       
+        }
     }
-    // Coroutine to show temporary UI flash
+
+    private System.Collections.IEnumerator IFrames()
+    {
+        framed = true;
+        playerHurtBox.SetActive(false);
+
+        SpriteRenderer sr = playerSprite;
+
+        float timer = 0;
+        while (timer < iFramesDuration)
+        {
+            sr.enabled = false;
+            yield return new WaitForSeconds(0.1f);
+
+            sr.enabled = true;
+            yield return new WaitForSeconds(0.1f);
+
+            timer += 0.2f;
+        }
+
+        playerHurtBox.SetActive(true);
+        framed = false;
+    }
+
     private System.Collections.IEnumerator ShowFlash(string message)
     {
         flashText.text = message;

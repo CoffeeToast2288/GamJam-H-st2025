@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
 
     
     //stats 
-    public float damage = 0; 
+    public float damage = 1; 
     public int hp = 0;
     public int speed = 0; 
     public int dash_chargers = 0;
