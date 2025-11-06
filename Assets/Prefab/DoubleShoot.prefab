@@ -279,9 +279,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   lifetime: 5
+  player: {fileID: 0}
   damage: 10
   targetTag: Enemy
-  explosion: {fileID: 6932956013459667387, guid: 4ac286ed65894d14c937de9f3cb1cd4f, type: 3}
+  piercing: 0
+  explosionUpgrade: 1
+  explosionPrefab: {fileID: 6932956013459667387, guid: 4ac286ed65894d14c937de9f3cb1cd4f, type: 3}
+  explosionRadius: 2
+  explosionDamageMultiplier: 1
 --- !u!1 &6311107543238467110
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,9 +566,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   lifetime: 5
+  player: {fileID: 0}
   damage: 10
   targetTag: Enemy
-  explosion: {fileID: 6932956013459667387, guid: 4ac286ed65894d14c937de9f3cb1cd4f, type: 3}
+  piercing: 0
+  explosionUpgrade: 1
+  explosionPrefab: {fileID: 6932956013459667387, guid: 4ac286ed65894d14c937de9f3cb1cd4f, type: 3}
+  explosionRadius: 2
+  explosionDamageMultiplier: 1
 --- !u!1 &6381952166112228081
 GameObject:
   m_ObjectHideFlags: 0
