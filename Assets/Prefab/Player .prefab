@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 523188325183504780}
   - component: {fileID: 4809175442998585360}
   - component: {fileID: 5815116337329393923}
+  - component: {fileID: 8356551682126097726}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Player
@@ -134,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
+  attack: {fileID: 0}
   speed: 10
   dashtime: 0
   totaldashtime: 0.2
@@ -149,6 +151,10 @@ MonoBehaviour:
   - {fileID: 0}
   current_walking_sound: {fileID: 0}
   current_walking_sound_val: 0
+  dashattack: 0
+  dashtraile: 0
+  dashstart: {fileID: 0}
+  dashend: {fileID: 0}
 --- !u!114 &4809175442998585360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +177,7 @@ MonoBehaviour:
   BackAttack: 0
   Shotgun: 0
   doubleshoot: 0
+  dashattack: 0
   Isattacking: 0
   spawnPos: {fileID: 2520901315088859332}
   spawnPosBack: {fileID: 0}
@@ -203,6 +210,28 @@ MonoBehaviour:
   healthPack: {fileID: 7022408064233455878, guid: fa7215cad5fd8654c998b0a0210cf88c, type: 3}
   healthStation: {fileID: 0}
   isInSafeZone: 0
+--- !u!95 &8356551682126097726
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623756351655905103}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: afd6f31ce97065a4faa89dccbb8303f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &928483609584508031
 GameObject:
   m_ObjectHideFlags: 0

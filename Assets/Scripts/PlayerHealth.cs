@@ -104,7 +104,7 @@ public class PlayerHealth : MonoBehaviour
         flashText.gameObject.SetActive(false);
     }
 
-    void updatehealth()
+   public void updatehealth()
     {
         Hp_max = stats.hp;
 
