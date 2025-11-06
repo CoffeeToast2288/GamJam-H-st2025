@@ -15,7 +15,16 @@ public class Gambling : MonoBehaviour
     public int upgradetype;// misc or wepon
     public int whatupgrade; // number of the upgrade (6 wepon 4 misc curently implamented.)
     public PlayerAttack attack; // i think you know what this is 
-    
+
+    [Header("Refrences")]
+    public Melee mellescript;
+    public PlayerAttack PlayerAttackScript;
+    public PlayerHealth HealtScript;
+    public Bullet_Script Bullet;
+    public Playermovment MovmentScript;
+    public LightUpgrad light;
+    public Tekniikare sttinky;
+    public HealthPack HelthPackScript;
     private void Start()
     {
         spin.onClick.AddListener(gamble); 
@@ -24,7 +33,7 @@ public class Gambling : MonoBehaviour
     void gamble() // randomise the numbers
     {
         upgradetype = Random.Range(1, 4);
-        whatupgrade = Random.Range(1, 8);
+        whatupgrade = Random.Range(1, 7);
         hasrolled = true; // activates the butons to select shit
 
     }
@@ -36,39 +45,67 @@ public class Gambling : MonoBehaviour
             {
                 if(whatupgrade == 1)
                 {
-                    Debug.Log("1 wepon");
+                    PlayerAttackScript.SideAttacks = true;
                     
                 }
                 if (whatupgrade == 2)
                 {
-                    Debug.Log("2 wepon");
+                    PlayerAttackScript.BackAttack = true;
 
                 }
                 if (whatupgrade == 3)
                 {
-                    Debug.Log("3 wepon");
+                    if(PlayerAttackScript.sword == true)
+                    {
+                       
 
+                    }
+                    else
+                    {
+
+                        PlayerAttackScript.Shotgun = true;
+                    }
                 }
                 if (whatupgrade == 4)
                 {
-                    Debug.Log("4 wepon");
+                    if(PlayerAttackScript.sword == true)
+                    {
 
+                    }
+                    else
+                    {
+                        Bullet.piercing = true;
+
+                    }
                 }
                 if (whatupgrade == 5)
                 {
-                    Debug.Log("5 wepon");
+                    if(PlayerAttackScript.sword == true)
+                    {
+
+
+                    }
+                    else
+                    {
+
+                        PlayerAttackScript.doubleshoot = true;
+                    }
 
                 }
                 if (whatupgrade == 6)
                 {
-                    Debug.Log("6 wepon");
+                   if(PlayerAttackScript.sword == true)
+                    {
 
-                }
-                if (whatupgrade == 7)
-                {
-                    Debug.Log("7 wepon");
 
+                    }
+                    else
+                    {
+
+
+                    }
                 }
+                
             }
 
             if(upgradetype >= 3)
@@ -103,11 +140,7 @@ public class Gambling : MonoBehaviour
                     Debug.Log("6 misc");
 
                 }
-                if (whatupgrade == 7)
-                {
-                    Debug.Log("7 misc");
-
-                }
+               
 
 
 

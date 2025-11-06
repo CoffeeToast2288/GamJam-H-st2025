@@ -7,10 +7,14 @@ using UnityEngine.Rendering;
 public class PlayerStats : MonoBehaviour
 {
     [Header("Refrences")]
-   
+    PlayerHealth HealthScript;
+    PlayerAttack AttacScript;
+    Melee MeleeScript;
+    Bullet_Script Bullet;
+    Playermovment PlayermovmentScript;
 
-    
-    //stats 
+
+    [Header("Stats")]
     public float damage = 1; 
     public int hp = 4;
     public int speed = 5; 
@@ -21,12 +25,13 @@ public class PlayerStats : MonoBehaviour
     public bool upgraded = false;
 
 
-   private void Update()
+   public void Update()
     {
         if(upgraded == true)
         {
-
-
+            HealthScript.updatehealth();
+            PlayermovmentScript.speedupdate();
+            MeleeScript.damageupdate();
 
         }
     }

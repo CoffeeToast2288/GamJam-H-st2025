@@ -41,7 +41,7 @@ public class Melee : MonoBehaviour
         }
     }
 
-    void damageupdate()
+    public void damageupdate()
     {
         damage = stats.damage;
         critdamage = (float)(damage * 1.5);

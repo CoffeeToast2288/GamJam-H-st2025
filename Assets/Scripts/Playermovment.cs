@@ -35,25 +35,19 @@ public class Playermovment : MonoBehaviour
     public Transform dashend;
 
     //stat upgrades
-    void speedupdate()
+    public void speedupdate()
     {
         speed = stats.speed;
-        
-    }
-    void dashchargupdate()
-    {
-        MaxDashCharges = stats.dash_chargers;
-
-    }
-    void dashcoldownupdate()
-    {
         totaldashcooldown = 5f;
-        if(totaldashcooldown == 5f)
+        if (totaldashcooldown == 5f)
         {
             totaldashcooldown /= dashcooldown;
 
         }
+        MaxDashCharges = stats.dash_chargers;
+
     }
+   
    
     //
 
