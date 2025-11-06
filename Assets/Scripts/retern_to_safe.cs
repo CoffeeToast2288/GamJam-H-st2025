@@ -4,7 +4,10 @@ public class retern_to_safe : MonoBehaviour
 {
     [Header("Safe Zone Settings")]
     public Vector2 safe_zone;
+    public Vector2 returnPosition;
     public Transform self;
+    public GameObject healthPack;
+    public Transform healthStation;
 
     [HideInInspector] public bool isInSafeZone = false;
 
@@ -15,6 +18,8 @@ public class retern_to_safe : MonoBehaviour
         {
             self.position = safe_zone;
             isInSafeZone = true;
+            // Spawn bullet toward player
+            Instantiate(healthPack, healthStation.position, healthStation.rotation);
             Debug.Log($"{self.name} entered safe zone!");
         }
     }
@@ -23,6 +28,17 @@ public class retern_to_safe : MonoBehaviour
     public void ExitSafeZone()
     {
         isInSafeZone = false;
+        ReturnToBattle();
         Debug.Log($"{self.name} exited safe zone!");
     }
+    void ReturnToBattle()
+    {
+        isInSafeZone = false;
+
+        // Move player back into arena
+        self.position = returnPosition;
+
+    }
+
+
 }

@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Runtime.ConstrainedExecution;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
@@ -6,12 +9,39 @@ public class PlayerAttack : MonoBehaviour
     public PlayerStats stats;
     public bool sword;
 
+    //directional melee attack objets
     public GameObject Attack;
+    public GameObject AttackBack;
+    public GameObject AttackLeft;
+    public GameObject AttackRight;
+
+    // upgrade veriables
+    public bool SideAttacks = false;
+    public bool BackAttack = false;
+    public bool Shotgun = false;
+    public bool doubleshoot;
+    public bool dashattack;
+    
+
+    
+
+
+ 
     public bool Isattacking = false;
 
+    // shooting attack spawn points + bullet refrenc
     public Transform spawnPos;
+    public Transform spawnPosBack;
+    public Transform spawnPosLeft;
+    public Transform spawnPosRight;
+    public Transform spawnPosShotgunFront1;
+    public Transform spawnPosShotgunFront2;
+    public Transform spawnPosShotgunBack1;
+    public Transform spawnPosShotgunBack2;
     public GameObject bullet;
-
+    public GameObject doublebullets;
+    
+    // attack duration + coldown
     float attack_duratin = 0.3f;
     float attack_timer;
     public float colldown;
@@ -27,6 +57,11 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(doubleshoot == true)
+        {
+            bullet = doublebullets;
+
+        }
         
         CheckTimer();
         if (Input.GetKey(KeyCode.E) || Input.GetMouseButton(0) && colldown == 0) // attack when buton is presed and no colldown 
@@ -38,6 +73,7 @@ public class PlayerAttack : MonoBehaviour
             else
             {
                 Shoot();
+                
             }
 
         }
@@ -55,8 +91,15 @@ public class PlayerAttack : MonoBehaviour
             colldown_active = false;
            
         }
-        
+        if(dashattack == true)
+        {
+
+            Attacking();
+
+        }
+
     }
+    
 
 
     void Attacking() //atack funktion
@@ -69,6 +112,19 @@ public class PlayerAttack : MonoBehaviour
             // Put animator script hear
             colldown_active = true;
             colldown = colldown_max;
+            if(SideAttacks == true)
+            {
+                AttackLeft.SetActive(true);
+                AttackRight.SetActive(true);
+
+            }
+            if(BackAttack == true)
+            {
+                AttackBack.SetActive(true);
+
+
+            }
+            dashattack = false;
         }
 
 
@@ -82,6 +138,25 @@ public class PlayerAttack : MonoBehaviour
             // Put animator script hear
             colldown_active = true;
             colldown = colldown_max;
+            if(Shotgun == true)
+            {
+                Instantiate(bullet, spawnPosShotgunFront1.position, spawnPosShotgunFront1.rotation);
+                Instantiate(bullet, spawnPosShotgunFront2.position, spawnPosShotgunFront2.rotation);
+            }
+            if(SideAttacks == true)
+            {
+                Instantiate(bullet, spawnPosLeft.position, spawnPosLeft.rotation);
+                Instantiate(bullet, spawnPosRight.position, spawnPosRight.rotation);
+            }
+            if(BackAttack == true)
+            {
+                Instantiate(bullet, spawnPosBack.position, spawnPosBack.rotation);
+                if(Shotgun == true)
+                {
+                    Instantiate(bullet, spawnPosShotgunBack1.position, spawnPosShotgunBack1.rotation);
+                    Instantiate(bullet, spawnPosShotgunBack2.position, spawnPosShotgunBack2.rotation);
+                }
+            }
         }
 
     }
@@ -97,18 +172,30 @@ public class PlayerAttack : MonoBehaviour
                 Isattacking = false;
                 Attack.SetActive(false);
                 attack_timer = 0;
-                
+                AttackBack.SetActive(false);
+                AttackLeft.SetActive(false);
+                AttackRight.SetActive(false);
 
             }
         }
 
 
     }
-
-    void Upgradeattack()
+    // melee upgrades
+    void Upgradeattackwidth()
     {
-        colldown_max /= stats.attack_speed;
-
+        Attack.transform.localScale += new Vector3(1, 0, 0);
+        AttackBack.transform.localScale += new Vector3(1, 0, 0);
+        AttackLeft.transform.localScale += new Vector3(1, 0, 0);
+        AttackRight.transform.localScale += new Vector3(1, 0, 0);
     }
+    void Upgradeattackrange()
+    {
+        Attack.transform.localScale += new Vector3(0, 1, 0);
+        AttackBack.transform.localScale += new Vector3(0, 1, 0);
+        AttackLeft.transform.localScale += new Vector3(0, 1, 0);
+        AttackRight.transform.localScale += new Vector3(0, 1, 0);
+    }
+
     
 }

@@ -1,38 +1,42 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy_Bullet : MonoBehaviour
 {
     [Header("Enemy Bullet Settings")]
     public float speed = 6.5f;
     public float lifetime = 7.5f;
-    public float damage = 2f;
-    public string targetTag = "Player"; // who this bullet can hit
+    public float damage; // damage is set by the enemy when spawned
+
+    public PlayerHealth player;
+    public string targetTag = "Player";
 
     void Start()
     {
-        // Automatically destroy after 'lifetime' seconds
+        // Auto-destroy
         Destroy(gameObject, lifetime);
+
+        // Find player if not assigned
+        if (player == null)
+            player = FindFirstObjectByType<PlayerHealth>();
     }
 
     void Update()
     {
-        // Move bullet forward constantly (local up direction)
+        // Move forward in local up direction
         transform.Translate(Vector2.up * speed * Time.deltaTime);
+    }
+
+    // ✅ This function is called by the ENEMY when bullet is created
+    public void SetDamage(float dmg)
+    {
+        damage = dmg;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // Only damage valid targets
         if (collision.CompareTag(targetTag))
         {
-            // Example: deal damage if target has a TakeDamage() method
-            //var enemy = collision.GetComponent<Enemy_Script>();
-            //if (enemy != null)
-            {
-                //enemy.TakeDamage(damage);
-            }
-
-            // Destroy bullet after hitting something
+            player.TakeDamage(damage);
             Destroy(gameObject);
         }
     }

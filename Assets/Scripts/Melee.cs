@@ -1,26 +1,50 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Melee : MonoBehaviour
 {
     public PlayerStats stats;
     float damage = 1;
-    
-    void update()
+    float critdamage;
+    int crit;
+    bool kancrit = false;
+    int critchanse; // chans to crit 1-100%
+    private void Start()
     {
-      
-
-
+        damageupdate();
     }
-    
-    public void OnCollisionEnter2D(Collider2D collision)
+    public void Awake()
+    {
+        
+    }
+
+    public void OnCollisiderEnter2D(Collider2D collision)
     {
         Enemy_Script enemy = collision.GetComponent<Enemy_Script>();
         if(enemy != null)
         {
+            crit = Random.Range(1, 101); // randomiser for crit
+            if (kancrit && crit <= critchanse)
+            {
 
+                enemy.TakeDamage(critdamage);
 
-            enemy.TakeDamage(damage);
+            }
+            else 
+            {
+                enemy.TakeDamage(damage);
+
+            }
+
+            
 
         }
+    }
+
+    void damageupdate()
+    {
+        damage += stats.damage;
+        critdamage = (float)(damage * 1.5);
+        critchanse = stats.dash_chargers * 25;
     }
 }

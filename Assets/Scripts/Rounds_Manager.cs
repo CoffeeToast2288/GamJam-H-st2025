@@ -44,8 +44,6 @@ public class WaveSystem : MonoBehaviour
     [Tooltip("Multiplier applied to enemy damage every 5th wave")]
     public float damageIncrease = 1.15f;
 
-    [Tooltip("Multiplier applied to enemy movement speed every 5th wave")]
-    public float speedIncrease = 1.1f;
 
 
     // --- Runtime Variables ---
@@ -76,13 +74,16 @@ public class WaveSystem : MonoBehaviour
             uiController?.ShowMessage($"Wave {currentWave} Starting!");
             Debug.Log($"--- WAVE {currentWave} START ---");
 
+            // --- Fade out the message smoothly over 1.5 seconds ---
+            if (uiController != null)
+                yield return uiController.StartCoroutine(uiController.FadeOutMessage(0.5f));
+
             // --- Difficulty Scaling ---
             if (currentWave % 5 == 0)
             {
                 // Every 5th wave, make enemies stronger
                 healthIncrease *= 1.2f;
                 damageIncrease *= 1.1f;
-                speedIncrease *= 1.1f;
                 Debug.Log("Enemies got stronger!");
             }
 
@@ -164,17 +165,23 @@ public class WaveSystem : MonoBehaviour
 
             // Instantiate the enemy
             GameObject enemy = Instantiate(enemyPrefab, spawn.position, Quaternion.identity);
+
+            // Immediately assign the player reference
             Enemy_Script enemyScript = enemy.GetComponent<Enemy_Script>();
-            enemyScript.player = player;
+            enemyScript.player = GameObject.FindGameObjectWithTag("Player").transform;
 
             // Choose enemy type (Hitty, Shooty, Tanky, Lungie)
             int type = ChooseEnemyType();
             ApplyType(enemyScript, type);
 
+            // --- ELITE LOGIC ---
+            float eliteChance = Mathf.Min(0.05f + currentWave * 0.03f, 0.5f); // starts 5%, grows +3%/wave, max 50%
+            bool isElite = Random.value < eliteChance;
+            enemyScript.SetElite(isElite);
+
             // Scale stats based on wave difficulty
             enemyScript.health *= healthIncrease;
             enemyScript.damage *= damageIncrease;
-            enemyScript.moveSpeed *= speedIncrease;
 
             // Track active enemies
             activeEnemies.Add(enemy);
