@@ -359,7 +359,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      woodtiles (1)_0: -7155455516038488179
+      woodtiles (1)_1: -5369147205691779096
+      woodtiles (1)_2: 7189222495238218577
+      woodtiles (1)_3: 808383820147882055
+      woodtiles (1)_4: 7318819872291857967
+      woodtiles (1)_5: 8688464540794099998
+      woodtiles (1)_6: 4713672087405309784
+      woodtiles (1)_7: -5328798080457183206
+      woodtiles (1)_8: 957962040987513146
+      woodtiles (1)_9: 3544985832916808451
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
