@@ -74,6 +74,10 @@ public class WaveSystem : MonoBehaviour
             uiController?.ShowMessage($"Wave {currentWave} Starting!");
             Debug.Log($"--- WAVE {currentWave} START ---");
 
+            // --- Fade out the message smoothly over 1.5 seconds ---
+            if (uiController != null)
+                yield return uiController.StartCoroutine(uiController.FadeOutMessage(0.5f));
+
             // --- Difficulty Scaling ---
             if (currentWave % 5 == 0)
             {
@@ -161,8 +165,10 @@ public class WaveSystem : MonoBehaviour
 
             // Instantiate the enemy
             GameObject enemy = Instantiate(enemyPrefab, spawn.position, Quaternion.identity);
+
+            // Immediately assign the player reference
             Enemy_Script enemyScript = enemy.GetComponent<Enemy_Script>();
-            enemyScript.player = player;
+            enemyScript.player = GameObject.FindGameObjectWithTag("Player").transform;
 
             // Choose enemy type (Hitty, Shooty, Tanky, Lungie)
             int type = ChooseEnemyType();
