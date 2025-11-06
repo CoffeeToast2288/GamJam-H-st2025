@@ -63,24 +63,31 @@ public class Gambling : MonoBehaviour
                     {
                         mellescript.kancrit = true;
                     Name.text = "Crit";
-                    FlavorText.text = "This attack upgrade alows your sword strikes";
+                    FlavorText.text = "This attack upgrade alows your sword to criticaly stike enemies, dealing 1.5x more damage. Crit strike scales with dash charges and you gaine 25% for etch charg";
 
                 }
                     else
                     {
 
                         PlayerAttackScript.Shotgun = true;
-                    }
+                    Name.text = "Shotgun";
+                    FlavorText.text = "You now have a shotgun. Figure it out´.";
+
+                }
                 }
                 if (whatupgrade == 4)
                 {
                     if(PlayerAttackScript.sword == true)
                     {
                         PlayerAttackScript.Upgradeattackwidth();
+                    Name.text = "Swipe";
+                    FlavorText.text = "Your sword now swipes in wider arches, making it kapeble of hiting more enemies";
                     }
                     else
                     {
                         Bullet.piercing = true;
+                    Name.text = "Piercing";
+                    FlavorText.text = "Your bullets now pierce enemies, making them kapeble of hitting multiple enemies in a row";
 
                     }
                 }
@@ -90,11 +97,16 @@ public class Gambling : MonoBehaviour
                     {
 
                         MovmentScript.dashattack = true;
+                    Name.text = "Dash attack";
+                    FlavorText.text = "You now attack with your sword whenever you dash. This ignores the coldown on attacking from attack speed.";
+                         
                     }
                     else
                     {
 
                         PlayerAttackScript.doubleshoot = true;
+                    Name.text = "Double shoot";
+                    FlavorText.text = "You now shoot twice as mutch bulet for the price of one";
                     }
 
                 }
@@ -103,12 +115,14 @@ public class Gambling : MonoBehaviour
                    if(PlayerAttackScript.sword == true)
                     {
                         PlayerAttackScript.Upgradeattackrange();
-
+                    Name.text = "Lunge";
+                    FlavorText.text = "Your sword swings now have more range, alowing you to hit enemies that are further away";
                     }
                     else
                     {
 
-
+                    Name.text = "Exploding Bullet";
+                    FlavorText.text = "Kaboom";
                     }
                 }
                 
@@ -119,23 +133,24 @@ public class Gambling : MonoBehaviour
                 if (whatupgrade == 7)
                 {
                     HealtScript.revive = true;
-
+                Name.text = "Revive";
+                FlavorText.text = "You may defy death. But only once.";
                 }
                 if (whatupgrade == 8)
                 {
                     HelthPackScript.healupgrade = true;
+                Name.text = "Better healthpack";
+                FlavorText.text = "Eat the health pack!";
 
                 }
                 if (whatupgrade == 9)
                 {
                 stinky.unlocked = true;
+                Name.text = "Teknikare";
+                FlavorText.text = "Eftersom att plugar teknik så är det extrenmt osanolikt att du dushar . You stink so bad that enemies die";
 
                 }
-                if (whatupgrade == 10)
-                {
-                    Debug.Log("4 misc");
-
-                }
+              
                
                
 
