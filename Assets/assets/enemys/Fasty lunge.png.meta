@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: dc08cbc3b8017ce49afac57ea84284c3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3635017991620935715
+    second: Fasty lunge_0
+  - first:
+      213: 8924594998192812021
+    second: Fasty lunge_1
+  - first:
+      213: 4859077192795709276
+    second: Fasty lunge_2
+  - first:
+      213: -7433611566267579840
+    second: Fasty lunge_3
+  - first:
+      213: 7866112113008965567
+    second: Fasty lunge_4
+  - first:
+      213: -7464721000038253317
+    second: Fasty lunge_5
+  - first:
+      213: 3172361189710824956
+    second: Fasty lunge_6
+  - first:
+      213: 8973104092287806587
+    second: Fasty lunge_7
+  - first:
+      213: -1449454030905708511
+    second: Fasty lunge_8
+  - first:
+      213: -1149871290467930684
+    second: Fasty lunge_9
+  - first:
+      213: -5555401250429313439
+    second: Fasty lunge_10
+  - first:
+      213: 6734860377386481512
+    second: Fasty lunge_11
+  - first:
+      213: -1497837901473585418
+    second: Fasty lunge_12
+  - first:
+      213: 3762886311099708406
+    second: Fasty lunge_13
+  - first:
+      213: -20944323471115652
+    second: Fasty lunge_14
+  - first:
+      213: 6971341694260694274
+    second: Fasty lunge_15
+  - first:
+      213: 7528936501999972397
+    second: Fasty lunge_16
+  - first:
+      213: -7452833899547666537
+    second: Fasty lunge_17
+  - first:
+      213: 6842124778764857739
+    second: Fasty lunge_18
+  - first:
+      213: 1510363894828256972
+    second: Fasty lunge_19
+  - first:
+      213: -4845020170354301639
+    second: Fasty lunge_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 12
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fasty lunge_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 89
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddfb7415562dd8dc0800000000000000
+      internalID: -3635017991620935715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 89
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ffa287cdd78adb70800000000000000
+      internalID: 8924594998192812021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_2
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 89
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f5acc56f8ee6340800000000000000
+      internalID: 4859077192795709276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_3
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 89
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 042c26a5aa186d890800000000000000
+      internalID: -7433611566267579840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_4
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 89
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb7fb435a4b0a2d60800000000000000
+      internalID: 7866112113008965567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_5
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 67
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc325ddccbf76890800000000000000
+      internalID: -7464721000038253317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_6
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 67
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf503f3b1bd760c20800000000000000
+      internalID: 3172361189710824956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_7
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 67
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c2b6161aed68c70800000000000000
+      internalID: 8973104092287806587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_8
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 67
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1207b990d3182ebe0800000000000000
+      internalID: -1449454030905708511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_9
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 67
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd2d325726da00f0800000000000000
+      internalID: -1149871290467930684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_10
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 45
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e566b1fff37e2b0800000000000000
+      internalID: -5555401250429313439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_11
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 45
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86779f594d7077d50800000000000000
+      internalID: 6734860377386481512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_12
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 45
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f6ec8f4d5c963be0800000000000000
+      internalID: -1497837901473585418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_13
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 45
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f3374fc925783430800000000000000
+      internalID: 3762886311099708406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_14
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 45
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a717faf3795bff0800000000000000
+      internalID: -20944323471115652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 23
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d474ec55e2fb060800000000000000
+      internalID: 6971341694260694274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_16
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 23
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d203e2acbd72c7860800000000000000
+      internalID: 7528936501999972397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_17
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 23
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 797d87f1e07329890800000000000000
+      internalID: -7452833899547666537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_18
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 23
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b817d233c3c14fe50800000000000000
+      internalID: 6842124778764857739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_19
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 23
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cce40d8c5f3e5f410800000000000000
+      internalID: 1510363894828256972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fasty lunge_20
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935ed6833d703ccb0800000000000000
+      internalID: -4845020170354301639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 53dba009d9751ab4fac882c34031d68a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Fasty lunge_0: -3635017991620935715
+      Fasty lunge_1: 8924594998192812021
+      Fasty lunge_10: -5555401250429313439
+      Fasty lunge_11: 6734860377386481512
+      Fasty lunge_12: -1497837901473585418
+      Fasty lunge_13: 3762886311099708406
+      Fasty lunge_14: -20944323471115652
+      Fasty lunge_15: 6971341694260694274
+      Fasty lunge_16: 7528936501999972397
+      Fasty lunge_17: -7452833899547666537
+      Fasty lunge_18: 6842124778764857739
+      Fasty lunge_19: 1510363894828256972
+      Fasty lunge_2: 4859077192795709276
+      Fasty lunge_20: -4845020170354301639
+      Fasty lunge_3: -7433611566267579840
+      Fasty lunge_4: 7866112113008965567
+      Fasty lunge_5: -7464721000038253317
+      Fasty lunge_6: 3172361189710824956
+      Fasty lunge_7: 8973104092287806587
+      Fasty lunge_8: -1449454030905708511
+      Fasty lunge_9: -1149871290467930684
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

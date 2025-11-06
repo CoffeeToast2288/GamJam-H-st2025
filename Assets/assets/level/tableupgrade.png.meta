@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: cde13a7625295374593bdcc6d14d5fd1
+guid: b69aec2199e22714baac93ac013ad6df
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2865778737612722221
-    second: onlygrasstiles(4) (1) (1)_0
-  - first:
-      213: -6925961746937650455
-    second: onlygrasstiles(4) (1) (1)_1
+      213: 6879294884749895424
+    second: tableupgrade_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,45 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: onlygrasstiles(4) (1) (1)_0
+      name: tableupgrade_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 27
-        width: 18
-        height: 18
+        x: 1
+        y: 9
+        width: 46
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d20164c049a45c720800000000000000
-      internalID: 2865778737612722221
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: onlygrasstiles(4) (1) (1)_1
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 3
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e266d98c7a02ef90800000000000000
-      internalID: -6925961746937650455
+      spriteID: 007eda6ef3a287f50800000000000000
+      internalID: 6879294884749895424
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3f9afb0538a33b04d846e90fe6cedb03
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -159,9 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      onlygrasstiles(4) (1) (1)_0: 2865778737612722221
-      onlygrasstiles(4) (1) (1)_1: -6925961746937650455
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

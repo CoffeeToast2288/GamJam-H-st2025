@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 289064e926683804e937fa2fd3616da6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5042781958667565005
+    second: dashbarrefill(fixed)_0
+  - first:
+      213: -8341408101939233468
+    second: dashbarrefill(fixed)_1
+  - first:
+      213: 6440281283008693798
+    second: dashbarrefill(fixed)_2
+  - first:
+      213: -2720972568986620330
+    second: dashbarrefill(fixed)_3
+  - first:
+      213: 4792755198883770726
+    second: dashbarrefill(fixed)_4
+  - first:
+      213: 2599458161561469783
+    second: dashbarrefill(fixed)_5
+  - first:
+      213: -8144334937018594201
+    second: dashbarrefill(fixed)_6
+  - first:
+      213: 550874984349947759
+    second: dashbarrefill(fixed)_7
+  - first:
+      213: 8656958779764425885
+    second: dashbarrefill(fixed)_8
+  - first:
+      213: 7973972398568656334
+    second: dashbarrefill(fixed)_9
+  - first:
+      213: -7142469627445307249
+    second: dashbarrefill(fixed)_10
+  - first:
+      213: -1689480008180778838
+    second: dashbarrefill(fixed)_11
+  - first:
+      213: -2006336407261795183
+    second: dashbarrefill(fixed)_12
+  - first:
+      213: 2437551674928149007
+    second: dashbarrefill(fixed)_13
+  - first:
+      213: 4552360066127438723
+    second: dashbarrefill(fixed)_14
+  - first:
+      213: 3961096268315542640
+    second: dashbarrefill(fixed)_15
+  - first:
+      213: -1100514470759323923
+    second: dashbarrefill(fixed)_16
+  - first:
+      213: -8533413873263574513
+    second: dashbarrefill(fixed)_17
+  - first:
+      213: 4172507787299358016
+    second: dashbarrefill(fixed)_18
+  - first:
+      213: 8429357547317949859
+    second: dashbarrefill(fixed)_19
+  - first:
+      213: -7115333754314016190
+    second: dashbarrefill(fixed)_20
+  - first:
+      213: -6031769842891311923
+    second: dashbarrefill(fixed)_21
+  - first:
+      213: -8147474341217852498
+    second: dashbarrefill(fixed)_22
+  - first:
+      213: 5635367620335828673
+    second: dashbarrefill(fixed)_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 174
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7f02e397f8bf540800000000000000
+      internalID: 5042781958667565005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 174
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44db855a68d5d3c80800000000000000
+      internalID: -8341408101939233468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 174
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626845f64b9706950800000000000000
+      internalID: 6440281283008693798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 150
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e68f56dd92d3ad0800000000000000
+      internalID: -2720972568986620330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_4
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 150
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 661bfd4d579438240800000000000000
+      internalID: 4792755198883770726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_5
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 150
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7538c58ec61231420800000000000000
+      internalID: 2599458161561469783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 126
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c043b768289fe80800000000000000
+      internalID: -8144334937018594201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 126
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f67d3dd21e915a700800000000000000
+      internalID: 550874984349947759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_8
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 126
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94ce07c422b32870800000000000000
+      internalID: 8656958779764425885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 102
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecd447906ad39ae60800000000000000
+      internalID: 7973972398568656334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_10
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 102
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f881b1d57b9d0ec90800000000000000
+      internalID: -7142469627445307249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_11
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 102
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa8b24142e2cd88e0800000000000000
+      internalID: -1689480008180778838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 78
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19c2a39eaaf0824e0800000000000000
+      internalID: -2006336407261795183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_13
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 78
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0230c9655ce3d120800000000000000
+      internalID: 2437551674928149007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_14
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 78
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38323375c5b3d2f30800000000000000
+      internalID: 4552360066127438723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 54
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074c21ab114a8f630800000000000000
+      internalID: 3961096268315542640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_16
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 54
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de6a63c6bef2ab0f0800000000000000
+      internalID: -1100514470759323923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_17
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 54
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f020cb25b49339980800000000000000
+      internalID: -8533413873263574513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 30
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0458784c9b9b7e930800000000000000
+      internalID: 4172507787299358016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 30
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a5f4a457081bf470800000000000000
+      internalID: 8429357547317949859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_20
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 30
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24a34cb26a1414d90800000000000000
+      internalID: -7115333754314016190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 6
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc4bc8b1949da4ca0800000000000000
+      internalID: -6031769842891311923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_22
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 6
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea3a91bf04b5eee80800000000000000
+      internalID: -8147474341217852498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarrefill(fixed)_23
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 6
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cefad44ef8d43e40800000000000000
+      internalID: 5635367620335828673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c99addedf9ef54f44a5c9eba81933b2c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      dashbarrefill(fixed)_0: 5042781958667565005
+      dashbarrefill(fixed)_1: -8341408101939233468
+      dashbarrefill(fixed)_10: -7142469627445307249
+      dashbarrefill(fixed)_11: -1689480008180778838
+      dashbarrefill(fixed)_12: -2006336407261795183
+      dashbarrefill(fixed)_13: 2437551674928149007
+      dashbarrefill(fixed)_14: 4552360066127438723
+      dashbarrefill(fixed)_15: 3961096268315542640
+      dashbarrefill(fixed)_16: -1100514470759323923
+      dashbarrefill(fixed)_17: -8533413873263574513
+      dashbarrefill(fixed)_18: 4172507787299358016
+      dashbarrefill(fixed)_19: 8429357547317949859
+      dashbarrefill(fixed)_2: 6440281283008693798
+      dashbarrefill(fixed)_20: -7115333754314016190
+      dashbarrefill(fixed)_21: -6031769842891311923
+      dashbarrefill(fixed)_22: -8147474341217852498
+      dashbarrefill(fixed)_23: 5635367620335828673
+      dashbarrefill(fixed)_3: -2720972568986620330
+      dashbarrefill(fixed)_4: 4792755198883770726
+      dashbarrefill(fixed)_5: 2599458161561469783
+      dashbarrefill(fixed)_6: -8144334937018594201
+      dashbarrefill(fixed)_7: 550874984349947759
+      dashbarrefill(fixed)_8: 8656958779764425885
+      dashbarrefill(fixed)_9: 7973972398568656334
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

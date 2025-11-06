@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: b2675a74720e911448b02dee60b023bf
+guid: dc8b222dcadfe1945919bfc83095772c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2202577279431877309
-    second: groundasset(5) (2)_0
+      213: 6944198408012144939
+    second: Shooty_1animation_0
   - first:
-      213: -228475224813049210
-    second: groundasset(5) (2)_1
+      213: 990309703159995577
+    second: Shooty_1animation_1
   - first:
-      213: -5357999384530662713
-    second: groundasset(5) (2)_2
+      213: -869685273115564828
+    second: Shooty_1animation_2
   - first:
-      213: 8357459527583114400
-    second: groundasset(5) (2)_3
+      213: -8677212887277091548
+    second: Shooty_1animation_3
   - first:
-      213: 8319467100812828861
-    second: groundasset(5) (2)_4
+      213: -3009228761609161503
+    second: Shooty_1animation_4
   - first:
-      213: -3116518510693459964
-    second: groundasset(5) (2)_5
+      213: -4094673549498226295
+    second: Shooty_1animation_5
   - first:
-      213: 5893708399679024151
-    second: groundasset(5) (2)_6
+      213: 3986217384303143837
+    second: Shooty_1animation_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,13 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: groundasset(5) (2)_0
+      name: Shooty_1animation_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 51
-        width: 18
-        height: 18
+        x: 6
+        y: 62
+        width: 38
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db222eaad50219e10800000000000000
-      internalID: 2202577279431877309
+      spriteID: b21a56ff8afbe5060800000000000000
+      internalID: 6944198408012144939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_1
+      name: Shooty_1animation_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 51
-        width: 18
-        height: 18
+        x: 6
+        y: 2
+        width: 38
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68a6a095efa44dcf0800000000000000
-      internalID: -228475224813049210
+      spriteID: 9bc597a9d694ebd00800000000000000
+      internalID: 990309703159995577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_2
+      name: Shooty_1animation_2
       rect:
         serializedVersion: 2
-        x: 51
-        y: 51
-        width: 18
-        height: 18
+        x: 54
+        y: 62
+        width: 38
+        height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7cac94a92ff84a5b0800000000000000
-      internalID: -5357999384530662713
+      spriteID: 4e4ee851ad14ee3f0800000000000000
+      internalID: -869685273115564828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_3
+      name: Shooty_1animation_3
       rect:
         serializedVersion: 2
-        x: 3
-        y: 27
-        width: 18
-        height: 18
+        x: 102
+        y: 60
+        width: 38
+        height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a4ab4e1929abf370800000000000000
-      internalID: 8357459527583114400
+      spriteID: 42548655ad8549780800000000000000
+      internalID: -8677212887277091548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_4
+      name: Shooty_1animation_5
       rect:
         serializedVersion: 2
-        x: 27
-        y: 27
-        width: 18
-        height: 18
+        x: 54
+        y: 2
+        width: 38
+        height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db06f70ff3fa47370800000000000000
-      internalID: 8319467100812828861
+      spriteID: 98968fae91ccc27c0800000000000000
+      internalID: -4094673549498226295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_5
+      name: Shooty_1animation_6
       rect:
         serializedVersion: 2
-        x: 51
-        y: 27
-        width: 18
-        height: 18
+        x: 102
+        y: 2
+        width: 38
+        height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,30 +243,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 408df223de6efb4d0800000000000000
-      internalID: -3116518510693459964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: groundasset(5) (2)_6
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 3
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 71caa943098aac150800000000000000
-      internalID: 5893708399679024151
+      spriteID: d9b20e45793e15730800000000000000
+      internalID: 3986217384303143837
       vertices: []
       indices: 
       edges: []
@@ -275,7 +253,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4bc7d2de1c180534392cea790e9a7809
+    spriteID: 192c79b3244a76f47863480ebada25c9
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +263,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      groundasset(5) (2)_0: 2202577279431877309
-      groundasset(5) (2)_1: -228475224813049210
-      groundasset(5) (2)_2: -5357999384530662713
-      groundasset(5) (2)_3: 8357459527583114400
-      groundasset(5) (2)_4: 8319467100812828861
-      groundasset(5) (2)_5: -3116518510693459964
-      groundasset(5) (2)_6: 5893708399679024151
+      Shooty_1animation_0: 6944198408012144939
+      Shooty_1animation_1: 990309703159995577
+      Shooty_1animation_2: -869685273115564828
+      Shooty_1animation_3: -8677212887277091548
+      Shooty_1animation_4: -3009228761609161503
+      Shooty_1animation_5: -4094673549498226295
+      Shooty_1animation_6: 3986217384303143837
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: b2675a74720e911448b02dee60b023bf
+guid: 82ef25095d2f7134a8c88326851958a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2202577279431877309
-    second: groundasset(5) (2)_0
+      213: 8060457473620717575
+    second: dirtpaths_0
   - first:
-      213: -228475224813049210
-    second: groundasset(5) (2)_1
+      213: 275442063306143908
+    second: dirtpaths_1
   - first:
-      213: -5357999384530662713
-    second: groundasset(5) (2)_2
+      213: 4327218569252773817
+    second: dirtpaths_2
   - first:
-      213: 8357459527583114400
-    second: groundasset(5) (2)_3
+      213: 8599829147457351216
+    second: dirtpaths_3
   - first:
-      213: 8319467100812828861
-    second: groundasset(5) (2)_4
+      213: -6844720152892586496
+    second: dirtpaths_4
   - first:
-      213: -3116518510693459964
-    second: groundasset(5) (2)_5
+      213: -2880416806396107285
+    second: dirtpaths_5
   - first:
-      213: 5893708399679024151
-    second: groundasset(5) (2)_6
+      213: 6276148242391476457
+    second: dirtpaths_6
+  - first:
+      213: -1426113588316574129
+    second: dirtpaths_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: groundasset(5) (2)_0
+      name: dirtpaths_0
       rect:
         serializedVersion: 2
         x: 3
@@ -133,14 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db222eaad50219e10800000000000000
-      internalID: 2202577279431877309
+      spriteID: 7003e4abd5f7cdf60800000000000000
+      internalID: 8060457473620717575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_1
+      name: dirtpaths_1
       rect:
         serializedVersion: 2
         x: 27
@@ -155,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68a6a095efa44dcf0800000000000000
-      internalID: -228475224813049210
+      spriteID: 4a83093e81192d300800000000000000
+      internalID: 275442063306143908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_2
+      name: dirtpaths_2
       rect:
         serializedVersion: 2
         x: 51
@@ -177,14 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7cac94a92ff84a5b0800000000000000
-      internalID: -5357999384530662713
+      spriteID: 9bf19c5bc5e5d0c30800000000000000
+      internalID: 4327218569252773817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_3
+      name: dirtpaths_3
       rect:
         serializedVersion: 2
         x: 3
@@ -199,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a4ab4e1929abf370800000000000000
-      internalID: 8357459527583114400
+      spriteID: 03eee37bb0bb85770800000000000000
+      internalID: 8599829147457351216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_4
+      name: dirtpaths_4
       rect:
         serializedVersion: 2
         x: 27
@@ -221,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db06f70ff3fa47370800000000000000
-      internalID: 8319467100812828861
+      spriteID: 00641eb294ba201a0800000000000000
+      internalID: -6844720152892586496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_5
+      name: dirtpaths_5
       rect:
         serializedVersion: 2
         x: 51
@@ -243,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 408df223de6efb4d0800000000000000
-      internalID: -3116518510693459964
+      spriteID: be5e1b9fc24b608d0800000000000000
+      internalID: -2880416806396107285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_6
+      name: dirtpaths_6
       rect:
         serializedVersion: 2
         x: 3
@@ -265,8 +268,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71caa943098aac150800000000000000
-      internalID: 5893708399679024151
+      spriteID: 9e8af61f29b591750800000000000000
+      internalID: 6276148242391476457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dirtpaths_7
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 3
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4e680f4f3d653ce0800000000000000
+      internalID: -1426113588316574129
       vertices: []
       indices: 
       edges: []
@@ -275,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4bc7d2de1c180534392cea790e9a7809
+    spriteID: df9e55c3563ca3b4a9ee8fd274c2a48e
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      groundasset(5) (2)_0: 2202577279431877309
-      groundasset(5) (2)_1: -228475224813049210
-      groundasset(5) (2)_2: -5357999384530662713
-      groundasset(5) (2)_3: 8357459527583114400
-      groundasset(5) (2)_4: 8319467100812828861
-      groundasset(5) (2)_5: -3116518510693459964
-      groundasset(5) (2)_6: 5893708399679024151
+      dirtpaths_0: 8060457473620717575
+      dirtpaths_1: 275442063306143908
+      dirtpaths_2: 4327218569252773817
+      dirtpaths_3: 8599829147457351216
+      dirtpaths_4: -6844720152892586496
+      dirtpaths_5: -2880416806396107285
+      dirtpaths_6: 6276148242391476457
+      dirtpaths_7: -1426113588316574129
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

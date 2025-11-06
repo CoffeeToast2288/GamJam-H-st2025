@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: 160966aca6a470940b4be09780071aff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7718656490656390887
+    second: dashbarused(fixed)_0
+  - first:
+      213: 4007116288060775121
+    second: dashbarused(fixed)_1
+  - first:
+      213: 7407752581783284100
+    second: dashbarused(fixed)_2
+  - first:
+      213: -1136099521704707053
+    second: dashbarused(fixed)_3
+  - first:
+      213: 3428528675101316315
+    second: dashbarused(fixed)_4
+  - first:
+      213: 8189310777008998725
+    second: dashbarused(fixed)_5
+  - first:
+      213: 9138617848627885087
+    second: dashbarused(fixed)_6
+  - first:
+      213: 8514092093645259516
+    second: dashbarused(fixed)_7
+  - first:
+      213: 2079893644370185589
+    second: dashbarused(fixed)_8
+  - first:
+      213: -6280659481662209866
+    second: dashbarused(fixed)_9
+  - first:
+      213: -1811549513826800233
+    second: dashbarused(fixed)_10
+  - first:
+      213: 8915367412943174298
+    second: dashbarused(fixed)_11
+  - first:
+      213: -2763498108763212554
+    second: dashbarused(fixed)_12
+  - first:
+      213: 8168130641594221400
+    second: dashbarused(fixed)_13
+  - first:
+      213: 4463130031731320704
+    second: dashbarused(fixed)_14
+  - first:
+      213: -2280221684958217694
+    second: dashbarused(fixed)_15
+  - first:
+      213: -7849181929984360301
+    second: dashbarused(fixed)_16
+  - first:
+      213: -7962752078565404398
+    second: dashbarused(fixed)_17
+  - first:
+      213: 6134977725886414031
+    second: dashbarused(fixed)_18
+  - first:
+      213: -5477000620501390291
+    second: dashbarused(fixed)_19
+  - first:
+      213: -1757824436019286755
+    second: dashbarused(fixed)_20
+  - first:
+      213: 2087750173546178651
+    second: dashbarused(fixed)_21
+  - first:
+      213: 7844976745925939640
+    second: dashbarused(fixed)_22
+  - first:
+      213: -6017091404227871185
+    second: dashbarused(fixed)_23
+  - first:
+      213: 6822190399593489613
+    second: dashbarused(fixed)_24
+  - first:
+      213: 9008363185644389109
+    second: dashbarused(fixed)_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dashbarused(fixed)_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 198
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 911a92321d2d1e490800000000000000
+      internalID: -7718656490656390887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 198
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da5b8b88032c9730800000000000000
+      internalID: 4007116288060775121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 198
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489ec25a9bf9dc660800000000000000
+      internalID: 7407752581783284100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 174
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31cbc4b1183cb30f0800000000000000
+      internalID: -1136099521704707053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_4
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 174
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd497a53aa4949f20800000000000000
+      internalID: 3428528675101316315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_5
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 174
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54946ea43c646a170800000000000000
+      internalID: 8189310777008998725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 150
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f14728dc384e2de70800000000000000
+      internalID: 9138617848627885087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 150
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf200ba46a1282670800000000000000
+      internalID: 8514092093645259516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_8
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 150
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57d0743ff344ddc10800000000000000
+      internalID: 2079893644370185589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 126
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b0c5505a7d96d8a0800000000000000
+      internalID: -6280659481662209866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_10
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 126
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79d625fa0551cd6e0800000000000000
+      internalID: -1811549513826800233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_11
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 126
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9a329a2d6fb9bb70800000000000000
+      internalID: 8915367412943174298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 102
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f474b99c1516a9d0800000000000000
+      internalID: -2763498108763212554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_13
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 102
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853053bba870b5170800000000000000
+      internalID: 8168130641594221400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_14
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 102
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08729bffd1930fd30800000000000000
+      internalID: 4463130031731320704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 78
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a3cea65760b50e0800000000000000
+      internalID: -2280221684958217694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_16
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 78
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3900ed51f9a121390800000000000000
+      internalID: -7849181929984360301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_17
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 78
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2111b9a4c2f9e7190800000000000000
+      internalID: -7962752078565404398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 54
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fccb468bcb1d32550800000000000000
+      internalID: 6134977725886414031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 54
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2cab6c34f8cdf3b0800000000000000
+      internalID: -5477000620501390291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_20
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 54
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1da1912df3fa97e0800000000000000
+      internalID: -1757824436019286755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 30
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b58eaf1b8bd29fc10800000000000000
+      internalID: 2087750173546178651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_22
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 30
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b19d1439c4fedc60800000000000000
+      internalID: 7844976745925939640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_23
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 30
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2ef0fd6f3ffe7ca0800000000000000
+      internalID: -6017091404227871185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 6
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc4a9ddd50a4dae50800000000000000
+      internalID: 6822190399593489613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dashbarused(fixed)_25
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 6
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f24a08c692240d70800000000000000
+      internalID: 9008363185644389109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 693707316f205564cb7febddc9f50fbb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      dashbarused(fixed)_0: -7718656490656390887
+      dashbarused(fixed)_1: 4007116288060775121
+      dashbarused(fixed)_10: -1811549513826800233
+      dashbarused(fixed)_11: 8915367412943174298
+      dashbarused(fixed)_12: -2763498108763212554
+      dashbarused(fixed)_13: 8168130641594221400
+      dashbarused(fixed)_14: 4463130031731320704
+      dashbarused(fixed)_15: -2280221684958217694
+      dashbarused(fixed)_16: -7849181929984360301
+      dashbarused(fixed)_17: -7962752078565404398
+      dashbarused(fixed)_18: 6134977725886414031
+      dashbarused(fixed)_19: -5477000620501390291
+      dashbarused(fixed)_2: 7407752581783284100
+      dashbarused(fixed)_20: -1757824436019286755
+      dashbarused(fixed)_21: 2087750173546178651
+      dashbarused(fixed)_22: 7844976745925939640
+      dashbarused(fixed)_23: -6017091404227871185
+      dashbarused(fixed)_24: 6822190399593489613
+      dashbarused(fixed)_25: 9008363185644389109
+      dashbarused(fixed)_3: -1136099521704707053
+      dashbarused(fixed)_4: 3428528675101316315
+      dashbarused(fixed)_5: 8189310777008998725
+      dashbarused(fixed)_6: 9138617848627885087
+      dashbarused(fixed)_7: 8514092093645259516
+      dashbarused(fixed)_8: 2079893644370185589
+      dashbarused(fixed)_9: -6280659481662209866
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

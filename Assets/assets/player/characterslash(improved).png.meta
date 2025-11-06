@@ -1,28 +1,40 @@
 fileFormatVersion: 2
-guid: b2675a74720e911448b02dee60b023bf
+guid: 99887b92252e5984bbed778d5e1303cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2202577279431877309
-    second: groundasset(5) (2)_0
+      213: 6704753223409001622
+    second: characterslash(improved)_0
   - first:
-      213: -228475224813049210
-    second: groundasset(5) (2)_1
+      213: 5677030520723830034
+    second: characterslash(improved)_1
   - first:
-      213: -5357999384530662713
-    second: groundasset(5) (2)_2
+      213: 2865279100505170359
+    second: characterslash(improved)_2
   - first:
-      213: 8357459527583114400
-    second: groundasset(5) (2)_3
+      213: -7021050270808069038
+    second: characterslash(improved)_3
   - first:
-      213: 8319467100812828861
-    second: groundasset(5) (2)_4
+      213: -2417634965679009309
+    second: characterslash(improved)_4
   - first:
-      213: -3116518510693459964
-    second: groundasset(5) (2)_5
+      213: -4844265542837039397
+    second: characterslash(improved)_5
   - first:
-      213: 5893708399679024151
-    second: groundasset(5) (2)_6
+      213: -399331975964182779
+    second: characterslash(improved)_6
+  - first:
+      213: 6154589864763823035
+    second: characterslash(improved)_7
+  - first:
+      213: -7327700458309128068
+    second: characterslash(improved)_8
+  - first:
+      213: 6572189767976081820
+    second: characterslash(improved)_9
+  - first:
+      213: 6157668512839598376
+    second: characterslash(improved)_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,155 +130,243 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: groundasset(5) (2)_0
+      name: characterslash(improved)_0
       rect:
         serializedVersion: 2
         x: 3
-        y: 51
-        width: 18
-        height: 18
+        y: 67
+        width: 26
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db222eaad50219e10800000000000000
-      internalID: 2202577279431877309
+      spriteID: 694e2fb88811c0d50800000000000000
+      internalID: 6704753223409001622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_1
+      name: characterslash(improved)_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 51
-        width: 18
-        height: 18
+        x: 35
+        y: 67
+        width: 26
+        height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68a6a095efa44dcf0800000000000000
-      internalID: -228475224813049210
+      spriteID: 2157bce2e2dd8ce40800000000000000
+      internalID: 5677030520723830034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_2
+      name: characterslash(improved)_2
       rect:
         serializedVersion: 2
-        x: 51
-        y: 51
+        x: 67
+        y: 81
         width: 18
-        height: 18
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7cac94a92ff84a5b0800000000000000
-      internalID: -5357999384530662713
+      spriteID: 7b126f7392483c720800000000000000
+      internalID: 2865279100505170359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_3
+      name: characterslash(improved)_3
       rect:
         serializedVersion: 2
-        x: 3
-        y: 27
-        width: 18
-        height: 18
+        x: 69
+        y: 63
+        width: 26
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a4ab4e1929abf370800000000000000
-      internalID: 8357459527583114400
+      spriteID: 25c23525af7309e90800000000000000
+      internalID: -7021050270808069038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_4
+      name: characterslash(improved)_4
       rect:
         serializedVersion: 2
-        x: 27
-        y: 27
-        width: 18
-        height: 18
+        x: 1
+        y: 47
+        width: 8
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db06f70ff3fa47370800000000000000
-      internalID: 8319467100812828861
+      spriteID: 3e19322dec5d27ed0800000000000000
+      internalID: -2417634965679009309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_5
+      name: characterslash(improved)_5
       rect:
         serializedVersion: 2
-        x: 51
-        y: 27
-        width: 18
-        height: 18
+        x: 5
+        y: 31
+        width: 24
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 408df223de6efb4d0800000000000000
-      internalID: -3116518510693459964
+      spriteID: bde8881a726b5ccb0800000000000000
+      internalID: -4844265542837039397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_6
+      name: characterslash(improved)_6
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 45
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50733310fa9457af0800000000000000
+      internalID: -399331975964182779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterslash(improved)_7
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 31
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb39773afde796550800000000000000
+      internalID: 6154589864763823035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterslash(improved)_8
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 31
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c70740ac147ce4a90800000000000000
+      internalID: -7327700458309128068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterslash(improved)_9
       rect:
         serializedVersion: 2
         x: 3
         y: 3
-        width: 18
-        height: 18
+        width: 26
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71caa943098aac150800000000000000
-      internalID: 5893708399679024151
+      spriteID: c99dba4e5cb153b50800000000000000
+      internalID: 6572189767976081820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: characterslash(improved)_10
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 3
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 821896043ee647550800000000000000
+      internalID: 6157668512839598376
       vertices: []
       indices: 
       edges: []
@@ -275,7 +375,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4bc7d2de1c180534392cea790e9a7809
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -284,14 +384,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      groundasset(5) (2)_0: 2202577279431877309
-      groundasset(5) (2)_1: -228475224813049210
-      groundasset(5) (2)_2: -5357999384530662713
-      groundasset(5) (2)_3: 8357459527583114400
-      groundasset(5) (2)_4: 8319467100812828861
-      groundasset(5) (2)_5: -3116518510693459964
-      groundasset(5) (2)_6: 5893708399679024151
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

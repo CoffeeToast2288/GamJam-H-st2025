@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 1ac58149a42cee244a2b7e440b048538
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5618417796414514794
+    second: _E.T SHIELD BREAK_0
+  - first:
+      213: -4140013005424404232
+    second: _E.T SHIELD BREAK_1
+  - first:
+      213: -7149894517211838755
+    second: _E.T SHIELD BREAK_2
+  - first:
+      213: -3404207762850383504
+    second: _E.T SHIELD BREAK_3
+  - first:
+      213: 2671961590858049769
+    second: _E.T SHIELD BREAK_4
+  - first:
+      213: -8583208698448388495
+    second: _E.T SHIELD BREAK_5
+  - first:
+      213: -5562737924657551048
+    second: _E.T SHIELD BREAK_6
+  - first:
+      213: -5913619964088224820
+    second: _E.T SHIELD BREAK_7
+  - first:
+      213: -5549443322338750266
+    second: _E.T SHIELD BREAK_8
+  - first:
+      213: -2970457326779222945
+    second: _E.T SHIELD BREAK_9
+  - first:
+      213: -7981743201108420072
+    second: _E.T SHIELD BREAK_10
+  - first:
+      213: -4319927423003191446
+    second: _E.T SHIELD BREAK_11
+  - first:
+      213: 4300938026174538181
+    second: _E.T SHIELD BREAK_12
+  - first:
+      213: 5553401834272305800
+    second: _E.T SHIELD BREAK_13
+  - first:
+      213: 333138690371315182
+    second: _E.T SHIELD BREAK_14
+  - first:
+      213: 8296422351758563713
+    second: _E.T SHIELD BREAK_15
+  - first:
+      213: 1649875887614814495
+    second: _E.T SHIELD BREAK_16
+  - first:
+      213: -8970319705797808028
+    second: _E.T SHIELD BREAK_17
+  - first:
+      213: 6317759609615965575
+    second: _E.T SHIELD BREAK_18
+  - first:
+      213: -4811123381975212070
+    second: _E.T SHIELD BREAK_19
+  - first:
+      213: -5414907229232978381
+    second: _E.T SHIELD BREAK_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 12
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 165
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 699daf428ce5702b0800000000000000
+      internalID: -5618417796414514794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 165
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f85e263b18bb86c0800000000000000
+      internalID: -4140013005424404232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 165
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd6431081d876cc90800000000000000
+      internalID: -7149894517211838755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 165
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 079fca17313d1c0d0800000000000000
+      internalID: -3404207762850383504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_4
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 165
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e8e49409e6b41520800000000000000
+      internalID: 2671961590858049769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_5
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 125
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ed0ff1a2152e880800000000000000
+      internalID: -8583208698448388495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_6
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 125
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8396136845f2dc2b0800000000000000
+      internalID: -5562737924657551048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_7
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 125
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc3fcdf69f99eeda0800000000000000
+      internalID: -5913619964088224820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_8
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 125
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c0d5d653ba6cf2b0800000000000000
+      internalID: -5549443322338750266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_9
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 125
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f543ed8acc0d6c6d0800000000000000
+      internalID: -2970457326779222945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_10
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 85
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81a1b8109d62b3190800000000000000
+      internalID: -7981743201108420072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_11
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 83
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a671d6095e88c04c0800000000000000
+      internalID: -4319927423003191446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_12
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 83
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c16a13f85000bb30800000000000000
+      internalID: 4300938026174538181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_13
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 84
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 882bdca8b85a11d40800000000000000
+      internalID: 5553401834272305800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_14
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 84
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee56584bfdb8f9400800000000000000
+      internalID: 333138690371315182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_15
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 44
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1891e2f2c20d22370800000000000000
+      internalID: 8296422351758563713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_16
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 50
+        width: 27
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1963ccd06985e610800000000000000
+      internalID: 1649875887614814495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_17
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 51
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4603c3e11c5038380800000000000000
+      internalID: -8970319705797808028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_18
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 51
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d587b54e03da750800000000000000
+      internalID: 6317759609615965575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_19
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 51
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf9ac646c47b3db0800000000000000
+      internalID: -4811123381975212070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _E.T SHIELD BREAK_20
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 11
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 336afdd70926ad4b0800000000000000
+      internalID: -5414907229232978381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 52bf4193d2d5bbe49bcacb3256eda5a6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      _E.T SHIELD BREAK_0: -5618417796414514794
+      _E.T SHIELD BREAK_1: -4140013005424404232
+      _E.T SHIELD BREAK_10: -7981743201108420072
+      _E.T SHIELD BREAK_11: -4319927423003191446
+      _E.T SHIELD BREAK_12: 4300938026174538181
+      _E.T SHIELD BREAK_13: 5553401834272305800
+      _E.T SHIELD BREAK_14: 333138690371315182
+      _E.T SHIELD BREAK_15: 8296422351758563713
+      _E.T SHIELD BREAK_16: 1649875887614814495
+      _E.T SHIELD BREAK_17: -8970319705797808028
+      _E.T SHIELD BREAK_18: 6317759609615965575
+      _E.T SHIELD BREAK_19: -4811123381975212070
+      _E.T SHIELD BREAK_2: -7149894517211838755
+      _E.T SHIELD BREAK_20: -5414907229232978381
+      _E.T SHIELD BREAK_3: -3404207762850383504
+      _E.T SHIELD BREAK_4: 2671961590858049769
+      _E.T SHIELD BREAK_5: -8583208698448388495
+      _E.T SHIELD BREAK_6: -5562737924657551048
+      _E.T SHIELD BREAK_7: -5913619964088224820
+      _E.T SHIELD BREAK_8: -5549443322338750266
+      _E.T SHIELD BREAK_9: -2970457326779222945
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

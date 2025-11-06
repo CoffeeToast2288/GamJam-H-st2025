@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: b2675a74720e911448b02dee60b023bf
+guid: ec641ed792add5f429141fbe3562de15
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2202577279431877309
-    second: groundasset(5) (2)_0
+      213: -893864270322091281
+    second: shooty1bullet_0
   - first:
-      213: -228475224813049210
-    second: groundasset(5) (2)_1
+      213: 948541951334599369
+    second: shooty1bullet_1
   - first:
-      213: -5357999384530662713
-    second: groundasset(5) (2)_2
+      213: -5405850403378688606
+    second: shooty1bullet_2
   - first:
-      213: 8357459527583114400
-    second: groundasset(5) (2)_3
+      213: 5644062313764289599
+    second: shooty1bullet_3
   - first:
-      213: 8319467100812828861
-    second: groundasset(5) (2)_4
+      213: 5782720202729474480
+    second: shooty1bullet_4
   - first:
-      213: -3116518510693459964
-    second: groundasset(5) (2)_5
+      213: -8704732996080990041
+    second: shooty1bullet_5
   - first:
-      213: 5893708399679024151
-    second: groundasset(5) (2)_6
+      213: 3611360920528492004
+    second: shooty1bullet_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 12
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,155 +118,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: groundasset(5) (2)_0
+      name: shooty1bullet_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 51
-        width: 18
-        height: 18
+        x: 4
+        y: 50
+        width: 16
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db222eaad50219e10800000000000000
-      internalID: 2202577279431877309
+      spriteID: feab90a9e2b5893f0800000000000000
+      internalID: -893864270322091281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_1
+      name: shooty1bullet_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 51
-        width: 18
-        height: 18
+        x: 28
+        y: 50
+        width: 16
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68a6a095efa44dcf0800000000000000
-      internalID: -228475224813049210
+      spriteID: 9cacadf01e5e92d00800000000000000
+      internalID: 948541951334599369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_2
+      name: shooty1bullet_2
       rect:
         serializedVersion: 2
-        x: 51
-        y: 51
-        width: 18
-        height: 18
+        x: 52
+        y: 48
+        width: 16
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7cac94a92ff84a5b0800000000000000
-      internalID: -5357999384530662713
+      spriteID: 2ad06b513bf8af4b0800000000000000
+      internalID: -5405850403378688606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_3
+      name: shooty1bullet_3
       rect:
         serializedVersion: 2
-        x: 3
-        y: 27
-        width: 18
-        height: 18
+        x: 4
+        y: 26
+        width: 16
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a4ab4e1929abf370800000000000000
-      internalID: 8357459527583114400
+      spriteID: f3cf61655ccb35e40800000000000000
+      internalID: 5644062313764289599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_4
+      name: shooty1bullet_4
       rect:
         serializedVersion: 2
-        x: 27
-        y: 27
-        width: 18
-        height: 18
+        x: 28
+        y: 26
+        width: 16
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db06f70ff3fa47370800000000000000
-      internalID: 8319467100812828861
+      spriteID: 0b94a2fd269504050800000000000000
+      internalID: 5782720202729474480
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_5
+      name: shooty1bullet_5
       rect:
         serializedVersion: 2
-        x: 51
-        y: 27
-        width: 18
-        height: 18
+        x: 52
+        y: 24
+        width: 16
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 408df223de6efb4d0800000000000000
-      internalID: -3116518510693459964
+      spriteID: 7a888ffa573923780800000000000000
+      internalID: -8704732996080990041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_6
+      name: shooty1bullet_6
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 18
-        height: 18
+        x: 4
+        y: 2
+        width: 16
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71caa943098aac150800000000000000
-      internalID: 5893708399679024151
+      spriteID: 4e514d79f912e1230800000000000000
+      internalID: 3611360920528492004
       vertices: []
       indices: 
       edges: []
@@ -275,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4bc7d2de1c180534392cea790e9a7809
+    spriteID: 33312191f61439a4e95337c03ccf44cc
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      groundasset(5) (2)_0: 2202577279431877309
-      groundasset(5) (2)_1: -228475224813049210
-      groundasset(5) (2)_2: -5357999384530662713
-      groundasset(5) (2)_3: 8357459527583114400
-      groundasset(5) (2)_4: 8319467100812828861
-      groundasset(5) (2)_5: -3116518510693459964
-      groundasset(5) (2)_6: 5893708399679024151
+      shooty1bullet_0: -893864270322091281
+      shooty1bullet_1: 948541951334599369
+      shooty1bullet_2: -5405850403378688606
+      shooty1bullet_3: 5644062313764289599
+      shooty1bullet_4: 5782720202729474480
+      shooty1bullet_5: -8704732996080990041
+      shooty1bullet_6: 3611360920528492004
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

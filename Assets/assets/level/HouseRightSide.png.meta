@@ -1,28 +1,40 @@
 fileFormatVersion: 2
-guid: b2675a74720e911448b02dee60b023bf
+guid: d4b13881c3052e54fa61c7e74c32c4e1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2202577279431877309
-    second: groundasset(5) (2)_0
+      213: 8586266359257217193
+    second: HouseRightSide_0
   - first:
-      213: -228475224813049210
-    second: groundasset(5) (2)_1
+      213: 1500693479839440049
+    second: HouseRightSide_1
   - first:
-      213: -5357999384530662713
-    second: groundasset(5) (2)_2
+      213: 1395698460608360913
+    second: HouseRightSide_2
   - first:
-      213: 8357459527583114400
-    second: groundasset(5) (2)_3
+      213: 7990379718980612960
+    second: HouseRightSide_3
   - first:
-      213: 8319467100812828861
-    second: groundasset(5) (2)_4
+      213: 6530021431951036183
+    second: HouseRightSide_4
   - first:
-      213: -3116518510693459964
-    second: groundasset(5) (2)_5
+      213: -8809733321413031677
+    second: HouseRightSide_5
   - first:
-      213: 5893708399679024151
-    second: groundasset(5) (2)_6
+      213: -529732308130764955
+    second: HouseRightSide_6
+  - first:
+      213: 1626384082855048044
+    second: HouseRightSide_7
+  - first:
+      213: 1092380400124258568
+    second: HouseRightSide_8
+  - first:
+      213: 4340122369671718631
+    second: HouseRightSide_9
+  - first:
+      213: 8674649965817821970
+    second: HouseRightSide_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,155 +130,243 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: groundasset(5) (2)_0
+      name: HouseRightSide_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 51
-        width: 18
-        height: 18
+        x: 16
+        y: 91
+        width: 26
+        height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db222eaad50219e10800000000000000
-      internalID: 2202577279431877309
+      spriteID: 9a8b96203cb882770800000000000000
+      internalID: 8586266359257217193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_1
+      name: HouseRightSide_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 51
-        width: 18
-        height: 18
+        x: 50
+        y: 111
+        width: 22
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68a6a095efa44dcf0800000000000000
-      internalID: -228475224813049210
+      spriteID: 1bc1396d4c883d410800000000000000
+      internalID: 1500693479839440049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_2
+      name: HouseRightSide_2
       rect:
         serializedVersion: 2
-        x: 51
-        y: 51
-        width: 18
-        height: 18
+        x: 81
+        y: 93
+        width: 26
+        height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7cac94a92ff84a5b0800000000000000
-      internalID: -5357999384530662713
+      spriteID: 1d1fe1eea548e5310800000000000000
+      internalID: 1395698460608360913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_3
+      name: HouseRightSide_3
       rect:
         serializedVersion: 2
-        x: 3
-        y: 27
-        width: 18
-        height: 18
+        x: 15
+        y: 65
+        width: 6
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a4ab4e1929abf370800000000000000
-      internalID: 8357459527583114400
+      spriteID: 0633352050883ee60800000000000000
+      internalID: 7990379718980612960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_4
+      name: HouseRightSide_4
       rect:
         serializedVersion: 2
-        x: 27
-        y: 27
-        width: 18
-        height: 18
+        x: 101
+        y: 69
+        width: 6
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db06f70ff3fa47370800000000000000
-      internalID: 8319467100812828861
+      spriteID: 71f012315eb4f9a50800000000000000
+      internalID: 6530021431951036183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_5
+      name: HouseRightSide_5
       rect:
         serializedVersion: 2
-        x: 51
-        y: 27
-        width: 18
-        height: 18
+        x: 15
+        y: 30
+        width: 6
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 408df223de6efb4d0800000000000000
-      internalID: -3116518510693459964
+      spriteID: 309014b583a8db580800000000000000
+      internalID: -8809733321413031677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groundasset(5) (2)_6
+      name: HouseRightSide_6
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 18
-        height: 18
+        x: 101
+        y: 45
+        width: 6
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71caa943098aac150800000000000000
-      internalID: 5893708399679024151
+      spriteID: 56761dbb54306a8f0800000000000000
+      internalID: -529732308130764955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseRightSide_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c63bce6d4b3129610800000000000000
+      internalID: 1626384082855048044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseRightSide_8
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 2
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 809610daf2ae82f00800000000000000
+      internalID: 1092380400124258568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseRightSide_9
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 22
+        width: 6
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e6620edc463b3c30800000000000000
+      internalID: 4340122369671718631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseRightSide_10
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 2
+        width: 22
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21bfc630f2c826870800000000000000
+      internalID: 8674649965817821970
       vertices: []
       indices: 
       edges: []
@@ -275,7 +375,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4bc7d2de1c180534392cea790e9a7809
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -284,14 +384,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      groundasset(5) (2)_0: 2202577279431877309
-      groundasset(5) (2)_1: -228475224813049210
-      groundasset(5) (2)_2: -5357999384530662713
-      groundasset(5) (2)_3: 8357459527583114400
-      groundasset(5) (2)_4: 8319467100812828861
-      groundasset(5) (2)_5: -3116518510693459964
-      groundasset(5) (2)_6: 5893708399679024151
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
