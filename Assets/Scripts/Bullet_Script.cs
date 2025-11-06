@@ -9,7 +9,9 @@ public class Bullet_Script : MonoBehaviour
     public float damage;
     public string targetTag = "Enemy"; // who this bullet can hit
 
+    [Header("Upgrade Stuff")]
     public GameObject explosion;
+    public bool piercing = false;
     void Start()
     {
         if (player == null)
@@ -38,10 +40,18 @@ public class Bullet_Script : MonoBehaviour
             {
                 enemy.TakeDamage(damage);
             }
-
-            Instantiate(explosion, transform.position, transform.rotation);
-            // Destroy bullet after hitting something
-            Destroy(gameObject);
+            if(piercing == false)
+            {
+                Instantiate(explosion, transform.position, transform.rotation);
+                // Destroy bullet after hitting something
+                Destroy(gameObject);
+            }
+            
         }
+    }
+
+    public void damageupdate()
+    {
+        damage = player.damage;
     }
 }

@@ -211,12 +211,12 @@ GameObject:
   - component: {fileID: 117962686}
   - component: {fileID: 117962685}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Upgrade Ui
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &117962685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1949,6 +1949,10 @@ PrefabInstance:
       propertyPath: attack
       value: 
       objectReference: {fileID: 964602414}
+    - target: {fileID: 1138638652023900502, guid: 9c29de867e52e4141b5da48f7f458662, type: 3}
+      propertyPath: walking_sounds_playing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2155056255946665376, guid: 9c29de867e52e4141b5da48f7f458662, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.57
