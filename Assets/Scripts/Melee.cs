@@ -43,7 +43,7 @@ public class Melee : MonoBehaviour
 
     void damageupdate()
     {
-        damage += stats.damage;
+        damage = stats.damage;
         critdamage = (float)(damage * 1.5);
         critchanse = stats.dash_chargers * 25;
     }

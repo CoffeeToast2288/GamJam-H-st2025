@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -33,7 +34,29 @@ public class Playermovment : MonoBehaviour
     public Transform dashstart;
     public Transform dashend;
 
-    
+    //stat upgrades
+    void speedupdate()
+    {
+        speed = stats.speed;
+        
+    }
+    void dashchargupdate()
+    {
+        MaxDashCharges = stats.dash_chargers;
+
+    }
+    void dashcoldownupdate()
+    {
+        totaldashcooldown = 5f;
+        if(totaldashcooldown == 5f)
+        {
+            totaldashcooldown /= dashcooldown;
+
+        }
+    }
+   
+    //
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

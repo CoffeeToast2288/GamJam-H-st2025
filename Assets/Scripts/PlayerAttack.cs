@@ -196,6 +196,17 @@ public class PlayerAttack : MonoBehaviour
         AttackLeft.transform.localScale += new Vector3(0, 1, 0);
         AttackRight.transform.localScale += new Vector3(0, 1, 0);
     }
+    void UpdateAtackSpeed()
+    {
+        colldown_max = 5f;
+        if(colldown_max == 5f)
+        {
 
+            colldown_max /= stats.attack_speed;
+
+        }
+
+
+    }
     
 }

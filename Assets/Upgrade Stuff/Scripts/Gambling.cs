@@ -8,27 +8,27 @@ using Debug = UnityEngine.Debug;
 
 public class Gambling : MonoBehaviour
 {
-    public Button spin;
-    public Button select;
+    public Button spin; // randomises the numbers
+    public Button select; // select the perk
     public bool hasrolled = false;
 
-    public int upgradetype;
-    public int whatupgrade;
-    public PlayerAttack attack;
+    public int upgradetype;// misc or wepon
+    public int whatupgrade; // number of the upgrade (6 wepon 4 misc curently implamented.)
+    public PlayerAttack attack; // i think you know what this is 
     
     private void Start()
     {
-        spin.onClick.AddListener(gamble);
+        spin.onClick.AddListener(gamble); 
         select.onClick.AddListener(pickskill);
     }
-    void gamble()
+    void gamble() // randomise the numbers
     {
         upgradetype = Random.Range(1, 4);
         whatupgrade = Random.Range(1, 8);
-        hasrolled = true;
+        hasrolled = true; // activates the butons to select shit
 
     }
-    void pickskill()
+    void pickskill() // void to determin withc buton corisponds to what skill and selecting them 
     {
         if(hasrolled == true)
         {
