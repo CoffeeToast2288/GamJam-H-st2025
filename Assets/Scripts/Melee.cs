@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 public class Melee : MonoBehaviour
 {
     public PlayerStats stats;
-    float damage = 1;
+    float damage;
     float critdamage;
     int crit;
     bool kancrit = false;
@@ -18,7 +18,7 @@ public class Melee : MonoBehaviour
         
     }
 
-    public void OnCollisiderEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         Enemy_Script enemy = collision.GetComponent<Enemy_Script>();
         if(enemy != null)

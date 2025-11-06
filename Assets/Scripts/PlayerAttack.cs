@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Runtime.ConstrainedExecution;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
@@ -6,30 +6,35 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [Header("Attack Setting")]
     public PlayerStats stats;
-    public bool sword;
 
-    //directional melee attack objets
+    [Header("directional melee attack objets")]
     public GameObject Attack;
     public GameObject AttackBack;
     public GameObject AttackLeft;
     public GameObject AttackRight;
 
-    // upgrade veriables
+
+    [Header("Upgrade Variables")]
     public bool SideAttacks = false;
     public bool BackAttack = false;
     public bool Shotgun = false;
     public bool doubleshoot;
     public bool dashattack;
-    
-
-    
 
 
- 
-    public bool Isattacking = false;
 
-    // shooting attack spawn points + bullet refrenc
+    [Header("Melee Visual Cue")]
+    public SpriteRenderer meleeFlash;
+    public float flashFadeIn = 0.05f;
+    public float flashStay = 0.05f;
+    public float flashFadeOut = 0.2f;
+    public float flashScaleMultiplier = 1.3f;
+
+
+
+    [Header("References")]
     public Transform spawnPos;
     public Transform spawnPosBack;
     public Transform spawnPosLeft;
@@ -40,14 +45,15 @@ public class PlayerAttack : MonoBehaviour
     public Transform spawnPosShotgunBack2;
     public GameObject bullet;
     public GameObject doublebullets;
-    
-    // attack duration + coldown
+
+    [Header("Attack logic")]
     float attack_duratin = 0.3f;
     float attack_timer;
     public float colldown;
     public float colldown_max = 5;
+    public bool sword;
     public bool colldown_active = false;
-
+    public bool Isattacking = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -99,36 +105,78 @@ public class PlayerAttack : MonoBehaviour
         }
 
     }
-    
 
 
-    void Attacking() //atack funktion
+
+    void Attacking()
     {
-
         if (!Isattacking)
         {
             Attack.SetActive(true);
             Isattacking = true;
-            // Put animator script hear
+
             colldown_active = true;
             colldown = colldown_max;
-            if(SideAttacks == true)
+
+            if (SideAttacks)
             {
                 AttackLeft.SetActive(true);
                 AttackRight.SetActive(true);
-
             }
-            if(BackAttack == true)
+            if (BackAttack)
             {
                 AttackBack.SetActive(true);
-
-
             }
+
             dashattack = false;
+
+            // ✅ NEW
+            StartCoroutine(MeleeFlashEffect());
+        }
+    }
+
+    private IEnumerator MeleeFlashEffect()
+    {
+        if (meleeFlash == null)
+            yield break;
+
+        // Reset
+        Color c = meleeFlash.color;
+        c.a = 0f;
+        meleeFlash.color = c;
+
+        Vector3 originalScale = meleeFlash.transform.localScale;
+        Vector3 enlargedScale = originalScale * flashScaleMultiplier;
+
+        // --- Fade In ---
+        float t = 0;
+        while (t < flashFadeIn)
+        {
+            t += Time.deltaTime;
+            float alpha = Mathf.Lerp(0, 1, t / flashFadeIn);
+            meleeFlash.color = new Color(c.r, c.g, c.b, alpha);
+            meleeFlash.transform.localScale = Vector3.Lerp(originalScale, enlargedScale, t / flashFadeIn);
+            yield return null;
         }
 
+        // --- Hold ---
+        yield return new WaitForSeconds(flashStay);
 
+        // --- Fade Out ---
+        t = 0;
+        while (t < flashFadeOut)
+        {
+            t += Time.deltaTime;
+            float alpha = Mathf.Lerp(1, 0, t / flashFadeOut);
+            meleeFlash.color = new Color(c.r, c.g, c.b, alpha);
+            meleeFlash.transform.localScale = Vector3.Lerp(enlargedScale, originalScale, t / flashFadeOut);
+            yield return null;
+        }
+
+        meleeFlash.color = new Color(c.r, c.g, c.b, 0);
+        meleeFlash.transform.localScale = originalScale;
     }
+
     void Shoot() // shoot function
     {
         if (!Isattacking)
