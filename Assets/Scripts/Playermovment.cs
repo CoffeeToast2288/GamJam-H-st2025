@@ -4,7 +4,12 @@ using UnityEngine.Rendering;
 
 public class Playermovment : MonoBehaviour
 {
+    
+    [Header("Refrences")]
     public PlayerStats stats;
+    public PlayerAttack attack;
+
+    [Header("General veriables")]
     public float speed = 10f;
     private Rigidbody2D rb;
     private Vector2 input;
@@ -22,6 +27,13 @@ public class Playermovment : MonoBehaviour
     public AudioSource current_walking_sound;
     public int current_walking_sound_val;
 
+    [Header("Upgrade Stuff")]
+    public bool dashattack = false;
+    public bool dashtraile = false;
+    public Transform dashstart;
+    public Transform dashend;
+
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -71,12 +83,20 @@ public class Playermovment : MonoBehaviour
             dashtime = totaldashtime;
             rb.linearVelocity = input * dashspeed;
             dashcooldown = totaldashcooldown;
+            dashstart.position = rb.position;
+            if(dashattack == true)
+            {
+
+                attack.dashattack = true;
+
+            }
 
         }
         else if (dashtime <= 0)
         {
             rb.linearVelocity = input * speed;
             dashtime = 0;
+            dashend.position = rb.position;
             if (dashcooldown > 0)
             {
                 dashcooldown -= Time.deltaTime;

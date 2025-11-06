@@ -12,6 +12,9 @@ public class HealthPack : MonoBehaviour
 
 
     private Transform playerTransform;
+
+    [Header("Upgrade Veriables")]
+    public bool healupgrade = false;
     public void Start()
     {
         // Automatically find the player if not manually assigned

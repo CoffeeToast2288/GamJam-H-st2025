@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Runtime.ConstrainedExecution;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
     public bool BackAttack = false;
     public bool Shotgun = false;
     public bool doubleshoot;
-    
+    public bool dashattack;
     
 
     
@@ -90,8 +91,15 @@ public class PlayerAttack : MonoBehaviour
             colldown_active = false;
            
         }
-        
+        if(dashattack == true)
+        {
+
+            Attacking();
+
+        }
+
     }
+    
 
 
     void Attacking() //atack funktion
@@ -116,6 +124,7 @@ public class PlayerAttack : MonoBehaviour
 
 
             }
+            dashattack = false;
         }
 
 
