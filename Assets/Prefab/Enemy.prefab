@@ -212,6 +212,7 @@ MonoBehaviour:
   lungeCooldown: 1.5
   chargeTime: 0.5
   lungeRange: 8
+  healthPackDropChance: 0.05
   hitboxObject: {fileID: 5380182243040380876}
   player: {fileID: 0}
   tankita: {fileID: 5354378433924161553}
@@ -219,6 +220,7 @@ MonoBehaviour:
   enemyBullet: {fileID: 8800408510217195185, guid: 8e7b365eca9affe4d9edd04cb23c65df, type: 3}
   spriteRenderer: {fileID: 175909166100222787}
   trailRenderer: {fileID: 8064449365702610019}
+  healthPackPrefab: {fileID: 7022408064233455878, guid: fa7215cad5fd8654c998b0a0210cf88c, type: 3}
   shooty: 0
   hitty: 0
   tanky: 0
@@ -306,7 +308,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5354378433924161553}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

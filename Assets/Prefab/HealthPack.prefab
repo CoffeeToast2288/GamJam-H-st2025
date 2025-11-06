@@ -103,11 +103,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healAmount: 10
   playerTag: Player
-  magnetRange: 6
-  magnetSpeed: 4
+  magnetRange: 4
+  magnetSpeed: 5
   player: {fileID: 0}
-  flashText: {fileID: 0}
-  flashDuration: 1
+  healupgrade: 0
 --- !u!58 &7602498038155743062
 CircleCollider2D:
   m_ObjectHideFlags: 0

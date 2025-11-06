@@ -18,6 +18,13 @@ public class HealthPack : MonoBehaviour
     public float upgradedhealAmount;
     public void Start()
     {
+        if (playerTransform == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag(playerTag);
+
+            if (playerObj != null)
+                playerTransform = playerObj.transform;
+        }
         // Automatically find the player if not manually assigned
         if (player == null)
         {

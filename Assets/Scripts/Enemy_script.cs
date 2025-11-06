@@ -75,6 +75,9 @@ public class Enemy_Script : MonoBehaviour
             }
         }
 
+        if (trailRenderer != null)
+            trailRenderer.emitting = false;
+
         // Automatically assign behavior based on type flag
         if (hitty)
         {
@@ -233,8 +236,14 @@ public class Enemy_Script : MonoBehaviour
     {
         canshoot = false;
 
-        // Spawn bullet toward player
-        Instantiate(enemyBullet, spawnPos.position, spawnPos.rotation);
+        GameObject bulletObj = Instantiate(enemyBullet, spawnPos.position, spawnPos.rotation);
+
+        // Pass damage to bullet
+        Enemy_Bullet bullet = bulletObj.GetComponent<Enemy_Bullet>();
+        if (bullet != null)
+        {
+            bullet.SetDamage(damage);
+        }
 
         yield return new WaitForSeconds(shootCooldown);
         canshoot = true;
