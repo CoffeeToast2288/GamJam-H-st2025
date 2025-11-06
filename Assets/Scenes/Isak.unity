@@ -315,6 +315,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2570535672044708120, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 655.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3865082370239783837, guid: 717b42488177a574988e7bf906fbb275, type: 3}
       propertyPath: m_Name
       value: GM
@@ -373,6 +377,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6195940288990396066, guid: 717b42488177a574988e7bf906fbb275, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444986100260254211, guid: 717b42488177a574988e7bf906fbb275, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7040294812268871352, guid: 717b42488177a574988e7bf906fbb275, type: 3}
@@ -529,6 +537,30 @@ PrefabInstance:
       propertyPath: stats
       value: 
       objectReference: {fileID: 732330824}
+    - target: {fileID: 5346444857427468490, guid: 9c29de867e52e4141b5da48f7f458662, type: 3}
+      propertyPath: sword
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346444857427468490, guid: 9c29de867e52e4141b5da48f7f458662, type: 3}
+      propertyPath: Shotgun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346444857427468490, guid: 9c29de867e52e4141b5da48f7f458662, type: 3}
+      propertyPath: BackAttack
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346444857427468490, guid: 9c29de867e52e4141b5da48f7f458662, type: 3}
+      propertyPath: SideAttacks
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346444857427468490, guid: 9c29de867e52e4141b5da48f7f458662, type: 3}
+      propertyPath: doubleshoot
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346444857427468490, guid: 9c29de867e52e4141b5da48f7f458662, type: 3}
+      propertyPath: bulletExplosion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6358112556737698265, guid: 9c29de867e52e4141b5da48f7f458662, type: 3}
       propertyPath: healthStation
       value: 
