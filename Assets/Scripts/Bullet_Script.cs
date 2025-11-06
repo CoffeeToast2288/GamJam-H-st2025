@@ -9,17 +9,13 @@ public class Bullet_Script : MonoBehaviour
     public float damage;
     public string targetTag = "Enemy";
 
-    [Header("Upgrade Settings")]
+    [Header("Explosion Upgrade")]
+    public bool explosionEnabled = false;      // ✅ PlayerAttack sets this
+    public float radius = 1f;                  // ✅ PlayerAttack sets this
+    public GameObject explosionPrefab;         // Assign your explosion prefab
+
+    [Header("Piercing")]
     public bool piercing = false;
-
-    [Tooltip("Enable explosion effect + AoE damage")]
-    public bool explosionUpgrade = false;
-
-    public GameObject explosionPrefab;  // Visual effect
-    public float explosionRadius = 2f;  // Area of effect radius
-    public float explosionDamageMultiplier = 0.5f; // half damage by default
-    public bool explosionEnabled = false;
-    public float radius = 1f;
 
     void Start()
     {
@@ -38,60 +34,39 @@ public class Bullet_Script : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(targetTag))
+        if (!collision.CompareTag(targetTag))
+            return;
+
+        Enemy_Script enemy = collision.GetComponent<Enemy_Script>();
+
+        if (enemy != null)
         {
-            Enemy_Script enemy = collision.GetComponent<Enemy_Script>();
-            if (enemy != null)
-                enemy.TakeDamage(damage);
+            enemy.TakeDamage(damage);
+        }
 
-            // ✅ Explosion logic
-            if (explosionUpgrade)
-            {
-                DoExplosion();
-            }
+        // ✅ Explosion logic
+        if (explosionEnabled)
+        {
+            GameObject boom = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
-            // ✅ Only destroy if not piercing
-            if (!piercing)
+            // ✅ Scale explosion visual
+            boom.transform.localScale = new Vector3(radius, radius, 1);
+
+            explosion exp = boom.GetComponent<explosion>();
+            if (exp != null)
             {
-                Destroy(gameObject);
+                exp.damage = damage;   // explosion damage = bullet damage
+                exp.radius = radius;
             }
         }
+
+        // ✅ Piercing = bullet keeps going
+        if (!piercing)
+            Destroy(gameObject);
     }
-
-    private void DoExplosion()
-    {
-        // ✅ Spawn explosion and scale it to radius
-        if (explosionPrefab != null)
-        {
-            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            float scale = explosionRadius * 2f;
-            explosion.transform.localScale = new Vector3(scale, scale, 1f);
-        }
-
-        // ✅ Damage enemies in radius
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-
-        foreach (Collider2D hit in hits)
-        {
-            Enemy_Script enemy = hit.GetComponent<Enemy_Script>();
-            if (enemy != null)
-            {
-                float aoeDamage = damage * explosionDamageMultiplier;
-                enemy.TakeDamage(aoeDamage);
-            }
-        }
-    }
-
 
     public void damageupdate()
     {
         damage = player.damage;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        // Shows explosion radius in the editor
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }

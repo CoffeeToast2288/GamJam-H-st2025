@@ -6,13 +6,26 @@ public class explosion : MonoBehaviour
     public Animator death_animation;
     public string animation_name;
     private int layer = 0;
+    public float radius = 1f;
+    public float damage = 5f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        // Damage enemies in radius
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius);
+
+        foreach (Collider2D hit in hits)
+        {
+            Enemy_Script enemy = hit.GetComponent<Enemy_Script>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+        }
+
 
     }
+
 
     // Update is called once per frame
     void Update()
