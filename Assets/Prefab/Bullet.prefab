@@ -262,10 +262,12 @@ MonoBehaviour:
   damage: 1
   targetTag: Enemy
   piercing: 0
-  explosionUpgrade: 1
+  explosionUpgrade: 0
   explosionPrefab: {fileID: 6932956013459667387, guid: 4ac286ed65894d14c937de9f3cb1cd4f, type: 3}
   explosionRadius: 3
   explosionDamageMultiplier: 1
+  explosionEnabled: 0
+  radius: 1
 --- !u!95 &6858088914273707032
 Animator:
   serializedVersion: 7
