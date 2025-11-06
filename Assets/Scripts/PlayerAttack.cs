@@ -20,8 +20,9 @@ public class PlayerAttack : MonoBehaviour
     public bool SideAttacks = false;
     public bool BackAttack = false;
     public bool Shotgun = false;
-    public bool doubleshoot = false;
-    public bool dashattack = false;
+    public bool doubleshoot;
+    public bool dashattack;
+    public bool bulletExplosion = false;
 
 
 
