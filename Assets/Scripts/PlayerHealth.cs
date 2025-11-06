@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using static UnityEngine.Rendering.DebugUI;
+using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
     public Sprite[] numbers;
     public string[] animtions_heal, animations_hurt;
     public SpriteRenderer card_1, card_2;
+    public int animation_charges;
 
     void Update()
     {
@@ -40,6 +42,12 @@ public class PlayerHealth : MonoBehaviour
 
         if (Hp > Hp_max)
             Hp = Hp_max;
+
+    if (Input.GetKeyDown(KeyCode.I))
+        {
+            TakeDamage(2);
+        }
+
     }
 
     public void Heal(float healing)
@@ -86,11 +94,18 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    public void health_charge_animation_damage()
+    public IEnumerator health_charge_animation_damage()
     {
-        int val = Mathf.FloorToInt(Hp);
+        int val = Mathf.FloorToInt(Hp +animation_charges-1);
         animator.Play(animations_hurt[val]);
-
+        animation_charges -= 1;
+        AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
+        float clipLength = clipInfo[0].clip.length;
+        yield return new WaitForSeconds(clipLength);
+        if (animation_charges < 0)
+        {
+            StartCoroutine(health_charge_animation_damage());
+        }
 
     }
 
@@ -122,6 +137,17 @@ public class PlayerHealth : MonoBehaviour
             return;
 
         Hp -= damage;
+        int val = Mathf.FloorToInt(Hp);
+        animation_charges = val;
+        if (is_below_7)
+        {
+
+
+        }
+        else
+        {
+            health_card_change();
+        }
 
         StartCoroutine(IFrames());
 
