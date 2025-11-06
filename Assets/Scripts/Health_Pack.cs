@@ -15,6 +15,7 @@ public class HealthPack : MonoBehaviour
 
     [Header("Upgrade Veriables")]
     public bool healupgrade = false;
+    public float upgradedhealAmount;
     public void Start()
     {
         // Automatically find the player if not manually assigned
@@ -22,6 +23,7 @@ public class HealthPack : MonoBehaviour
         {
             player = FindFirstObjectByType<PlayerHealth>();
         }
+        upgradedhealAmount = (float)(healAmount * 1.5);
     }
 
     void Update()
@@ -51,6 +53,11 @@ public class HealthPack : MonoBehaviour
 
             // Destroy the health pack after use
             Destroy(gameObject);
+        }
+        else if (other.CompareTag(playerTag) && healupgrade == true)
+        {
+            player.Heal(upgradedhealAmount);
+            
         }
     }
 

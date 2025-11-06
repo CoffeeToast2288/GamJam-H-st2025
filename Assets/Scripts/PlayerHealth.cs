@@ -22,7 +22,10 @@ public class PlayerHealth : MonoBehaviour
     public TextMeshProUGUI flashText;
     public float flashDuration = 1f;
 
+
+    [Header("Upgrade + death stuff")]
     public bool dead = false;
+    public bool revive = false;
 
     void Update()
     {
@@ -56,7 +59,15 @@ public class PlayerHealth : MonoBehaviour
         if (Hp <= 0)
         {
             Hp = 0;
-            dead = true;
+           if(revive == true)
+            {
+                revive = false;
+                Hp = Hp_max / 2;
+            }
+            else
+            {
+                dead = true;
+            }
         }
     }
 

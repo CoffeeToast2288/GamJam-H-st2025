@@ -6,25 +6,24 @@ public class Melee : MonoBehaviour
     public PlayerStats stats;
     float damage = 1;
     float critdamage;
-    int crit = Random.Range(1, 101);
+    int crit;
     bool kancrit = false;
-    int critchanse;
+    int critchanse; // chans to crit 1-100%
     private void Start()
     {
         damageupdate();
     }
-    void update()
+    public void Awake()
     {
-      
-
-
+        
     }
-    
-    public void OnCollisionEnter2D(Collider2D collision)
+
+    public void OnCollisiderEnter2D(Collider2D collision)
     {
         Enemy_Script enemy = collision.GetComponent<Enemy_Script>();
         if(enemy != null)
         {
+            crit = Random.Range(1, 101); // randomiser for crit
             if (kancrit && crit <= critchanse)
             {
 
