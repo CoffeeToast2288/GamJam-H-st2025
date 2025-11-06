@@ -31,8 +31,7 @@ public class Playermovment : MonoBehaviour
     [Header("Upgrade Stuff")]
     public bool dashattack = false;
     public bool dashtraile = false;
-    public Transform dashstart;
-    public Transform dashend;
+   
 
     //stat upgrades
     public void speedupdate()
@@ -100,7 +99,7 @@ public class Playermovment : MonoBehaviour
             dashtime = totaldashtime;
             rb.linearVelocity = input * dashspeed;
             dashcooldown = totaldashcooldown;
-            dashstart.position = rb.position;
+          
             if(dashattack == true)
             {
 
@@ -113,7 +112,7 @@ public class Playermovment : MonoBehaviour
         {
             rb.linearVelocity = input * speed;
             dashtime = 0;
-            dashend.position = rb.position;
+           
             if (dashcooldown > 0)
             {
                 dashcooldown -= Time.deltaTime;

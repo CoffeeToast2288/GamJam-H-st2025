@@ -11,9 +11,9 @@ public class Gambling : MonoBehaviour
     public Button spin; // randomises the numbers
     public Button select; // select the perk
     public bool hasrolled = false;
-    public Text FlavorText;
-    public Text Name;
-
+    public TMP_Text FlavorText;
+    public TMP_Text Name;
+    
     
     public int whatupgrade; // number of the upgrade (6 wepon 4 misc curently implamented.)
     public PlayerAttack attack; // i think you know what this is 

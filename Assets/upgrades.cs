@@ -105,7 +105,7 @@ public class upgrades : MonoBehaviour
                     stat_bonus_sound.Play();
                     break;
             }
-
+            
         }
 
 
