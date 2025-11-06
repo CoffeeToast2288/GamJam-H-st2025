@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 260673363e2012042bd3409054e68ab7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1472655751345998303
+    second: _tanky hit_0
+  - first:
+      213: 7476565022882550806
+    second: _tanky hit_1
+  - first:
+      213: 5474405412627258524
+    second: _tanky hit_2
+  - first:
+      213: -7742424604120741641
+    second: _tanky hit_3
+  - first:
+      213: -3395447433070542298
+    second: _tanky hit_4
+  - first:
+      213: 244057961018121891
+    second: _tanky hit_5
+  - first:
+      213: 1109805448175075778
+    second: _tanky hit_6
+  - first:
+      213: -8250917092893766010
+    second: _tanky hit_7
+  - first:
+      213: -8699637380071358242
+    second: _tanky hit_8
+  - first:
+      213: -1791860664139900952
+    second: _tanky hit_9
+  - first:
+      213: -8906358320539995829
+    second: _tanky hit_10
+  - first:
+      213: 8956624636341555809
+    second: _tanky hit_11
+  - first:
+      213: 267365123875828205
+    second: _tanky hit_12
+  - first:
+      213: -9025580403573338254
+    second: _tanky hit_13
+  - first:
+      213: -7341598349991264610
+    second: _tanky hit_14
+  - first:
+      213: -5378202584251791421
+    second: _tanky hit_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 12
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _tanky hit_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 130
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd90a677a9cef6410800000000000000
+      internalID: 1472655751345998303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 130
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6145609964812c760800000000000000
+      internalID: 7476565022882550806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_2
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 130
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9c9f18d7bef8fb40800000000000000
+      internalID: 5474405412627258524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_3
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 130
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f8832bf7d16d8490800000000000000
+      internalID: -7742424604120741641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_4
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 90
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 622815aac82f0e0d0800000000000000
+      internalID: -3395447433070542298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 90
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ae57172c61136300800000000000000
+      internalID: 244057961018121891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_6
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 90
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1c444dc22d66f00800000000000000
+      internalID: 1109805448175075778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_7
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 90
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e4ed68e9ade7d80800000000000000
+      internalID: -8250917092893766010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 47
+        width: 34
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed0032e35eda44780800000000000000
+      internalID: -8699637380071358242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_9
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 47
+        width: 33
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e712fa38380227e0800000000000000
+      internalID: -1791860664139900952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_10
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 46
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b417edd9b42466480800000000000000
+      internalID: -8906358320539995829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_11
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 45
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16296ab07a25c4c70800000000000000
+      internalID: 8956624636341555809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 8
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de172f1e92fd5b300800000000000000
+      internalID: 267365123875828205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_13
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 9
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27fc8494172beb280800000000000000
+      internalID: -9025580403573338254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 10
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e3d29b2376d1a90800000000000000
+      internalID: -7341598349991264610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _tanky hit_15
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 10
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c7859b9e39cc55b0800000000000000
+      internalID: -5378202584251791421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      _tanky hit_0: 1472655751345998303
+      _tanky hit_1: 7476565022882550806
+      _tanky hit_10: -8906358320539995829
+      _tanky hit_11: 8956624636341555809
+      _tanky hit_12: 267365123875828205
+      _tanky hit_13: -9025580403573338254
+      _tanky hit_14: -7341598349991264610
+      _tanky hit_15: -5378202584251791421
+      _tanky hit_2: 5474405412627258524
+      _tanky hit_3: -7742424604120741641
+      _tanky hit_4: -3395447433070542298
+      _tanky hit_5: 244057961018121891
+      _tanky hit_6: 1109805448175075778
+      _tanky hit_7: -8250917092893766010
+      _tanky hit_8: -8699637380071358242
+      _tanky hit_9: -1791860664139900952
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
