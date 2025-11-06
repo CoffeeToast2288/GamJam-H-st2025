@@ -1439,7 +1439,6 @@ MonoBehaviour:
   dash_chargers: 0
   dash_coldown_reduction: 0
   attack_speed: 0
-  upgraded: 0
 --- !u!114 &4230855344771973717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2339,36 +2338,6 @@ MonoBehaviour:
   flashDuration: 1
   dead: 0
   revive: 0
-  animator: {fileID: 0}
-  is_below_7: 0
-  is_below_10: 0
-  numbers:
-  - {fileID: 6895714166310109737, guid: 8299497367e390c45852beec3a8f0ce2, type: 3}
-  - {fileID: -6508469360449037452, guid: 36a4d5e2fdf71654cbdc2cb338e7251f, type: 3}
-  - {fileID: 3965734906070499118, guid: 95be09d0763d9ca479ba924b5bc8dc3c, type: 3}
-  - {fileID: -5842821031867018358, guid: 2e3e5e1dbff9a2644930c3bde6c23bb5, type: 3}
-  - {fileID: 7083345407296789733, guid: 48228bd81fc905049b7ca5d3ef61cec1, type: 3}
-  - {fileID: -8999631785949917908, guid: 9b42bb15f62773e40ac43ef7b4f9fd22, type: 3}
-  - {fileID: -7455673875435747879, guid: 4c313a8d60d173446a087c524a153ded, type: 3}
-  - {fileID: -5783070500053526354, guid: 416e099745673a648a20d0787b965bdc, type: 3}
-  - {fileID: -5003009874407531481, guid: cf643c91d9617d24caff8a21131fbfd6, type: 3}
-  - {fileID: 7451175002288261011, guid: 0bb11d6f29867984bbb3ce185709728b, type: 3}
-  animtions_heal:
-  - revive
-  - heal 1-2
-  - heal 2-3
-  - heal 3-4
-  - heal 4-5
-  - heal 5-6
-  animations_hurt:
-  - death
-  - loose health 2-1
-  - loose health 3-2
-  - loose health 4-3
-  - loose health 5-3
-  - loose health 6-5
-  card_1: {fileID: 0}
-  card_2: {fileID: 0}
 --- !u!1 &7664057773343070636
 GameObject:
   m_ObjectHideFlags: 0
