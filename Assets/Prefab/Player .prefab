@@ -84,8 +84,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 80
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
+  m_Sprite: {fileID: 4473843673331768709, guid: 1113149a080d5324a96560098e0563e8, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -168,7 +168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
-  sword: 0
   Attack: {fileID: 7218105634972355831}
   AttackBack: {fileID: 0}
   AttackLeft: {fileID: 0}
@@ -178,7 +177,11 @@ MonoBehaviour:
   Shotgun: 0
   doubleshoot: 0
   dashattack: 0
-  Isattacking: 0
+  meleeFlash: {fileID: 0}
+  flashFadeIn: 0.05
+  flashStay: 0.05
+  flashFadeOut: 0.2
+  flashScaleMultiplier: 1.3
   spawnPos: {fileID: 2520901315088859332}
   spawnPosBack: {fileID: 0}
   spawnPosLeft: {fileID: 0}
@@ -191,7 +194,9 @@ MonoBehaviour:
   doublebullets: {fileID: 0}
   colldown: 1
   colldown_max: 0.2
+  sword: 0
   colldown_active: 0
+  Isattacking: 0
 --- !u!114 &5815116337329393923
 MonoBehaviour:
   m_ObjectHideFlags: 0
