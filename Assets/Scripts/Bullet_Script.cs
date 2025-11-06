@@ -18,6 +18,8 @@ public class Bullet_Script : MonoBehaviour
     public GameObject explosionPrefab;  // Visual effect
     public float explosionRadius = 2f;  // Area of effect radius
     public float explosionDamageMultiplier = 0.5f; // half damage by default
+    public bool explosionEnabled = false;
+    public float radius = 1f;
 
     void Start()
     {

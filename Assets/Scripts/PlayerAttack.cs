@@ -1,7 +1,4 @@
 ﻿using System.Collections;
-using System.Runtime.ConstrainedExecution;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -9,12 +6,11 @@ public class PlayerAttack : MonoBehaviour
     [Header("Attack Setting")]
     public PlayerStats stats;
 
-    [Header("directional melee attack objets")]
+    [Header("Directional Melee Attack Objects")]
     public GameObject Attack;
     public GameObject AttackBack;
     public GameObject AttackLeft;
     public GameObject AttackRight;
-
 
     [Header("Upgrade Variables")]
     public bool SideAttacks = false;
@@ -22,9 +18,9 @@ public class PlayerAttack : MonoBehaviour
     public bool Shotgun = false;
     public bool doubleshoot;
     public bool dashattack;
-    public bool bulletExplosion = false;
 
-
+    [Header("Bullet Upgrades")]
+    public bool bulletExplosion = false;   // ✅ NEW
 
     [Header("Melee Visual Cue")]
     public SpriteRenderer meleeFlash;
@@ -32,8 +28,6 @@ public class PlayerAttack : MonoBehaviour
     public float flashStay = 0.05f;
     public float flashFadeOut = 0.2f;
     public float flashScaleMultiplier = 1.3f;
-
-
 
     [Header("References")]
     public Transform spawnPos;
@@ -47,67 +41,57 @@ public class PlayerAttack : MonoBehaviour
     public GameObject bullet;
     public GameObject doublebullets;
 
-    [Header("Attack logic")]
-    float attack_duratin = 0.3f;
+    [Header("Attack Logic")]
+    float attack_duration = 0.3f;
     float attack_timer;
     public float colldown;
-    public float colldown_max = 5;
+    public float colldown_max = 5f;
     public bool sword;
     public bool colldown_active = false;
     public bool Isattacking = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         colldown = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(doubleshoot == true)
-        {
+        if (doubleshoot)
             bullet = doublebullets;
 
-        }
-        
         CheckTimer();
-        if (Input.GetKey(KeyCode.E) || Input.GetMouseButton(0) && colldown == 0) // attack when buton is presed and no colldown 
+
+        if ((Input.GetKey(KeyCode.E) || Input.GetMouseButton(0)) && colldown == 0)
         {
-            if (sword == true)
-            {
+            if (sword)
                 Attacking();
-            }
             else
-            {
                 Shoot();
-                
-            }
-
         }
-        if (colldown_active) //starts colldown
-        {
+
+        if (colldown_active)
             colldown -= Time.deltaTime;
-        }
-        if(colldown < 0)
-        {
+
+        if (colldown < 0)
             colldown = 0;
-        }
-        if(colldown <= 0)
-        {
-     
+
+        if (colldown <= 0)
             colldown_active = false;
-           
-        }
-        if(dashattack == true)
-        {
 
+        if (dashattack)
             Attacking();
-
-        }
-
     }
 
-
+    // ✅ Applies upgrades to bullets
+    void ApplyBulletUpgrades(GameObject bulletObj)
+    {
+        Bullet_Script bs = bulletObj.GetComponent<Bullet_Script>();
+        if (bs != null)
+        {
+            bs.explosionEnabled = bulletExplosion;
+        }
+    }
 
     void Attacking()
     {
@@ -124,14 +108,12 @@ public class PlayerAttack : MonoBehaviour
                 AttackLeft.SetActive(true);
                 AttackRight.SetActive(true);
             }
+
             if (BackAttack)
-            {
                 AttackBack.SetActive(true);
-            }
 
             dashattack = false;
 
-            // ✅ NEW
             StartCoroutine(MeleeFlashEffect());
         }
     }
@@ -141,7 +123,6 @@ public class PlayerAttack : MonoBehaviour
         if (meleeFlash == null)
             yield break;
 
-        // Reset
         Color c = meleeFlash.color;
         c.a = 0f;
         meleeFlash.color = c;
@@ -149,7 +130,7 @@ public class PlayerAttack : MonoBehaviour
         Vector3 originalScale = meleeFlash.transform.localScale;
         Vector3 enlargedScale = originalScale * flashScaleMultiplier;
 
-        // --- Fade In ---
+        // Fade In
         float t = 0;
         while (t < flashFadeIn)
         {
@@ -160,10 +141,10 @@ public class PlayerAttack : MonoBehaviour
             yield return null;
         }
 
-        // --- Hold ---
+        // Stay
         yield return new WaitForSeconds(flashStay);
 
-        // --- Fade Out ---
+        // Fade Out
         t = 0;
         while (t < flashFadeOut)
         {
@@ -178,74 +159,92 @@ public class PlayerAttack : MonoBehaviour
         meleeFlash.transform.localScale = originalScale;
     }
 
-    void Shoot() // shoot function
+    void Shoot()
     {
         if (!Isattacking)
         {
-            Instantiate(bullet, spawnPos.position, spawnPos.rotation);
+            // Front shot
+            GameObject b = Instantiate(bullet, spawnPos.position, spawnPos.rotation);
+            ApplyBulletUpgrades(b);
+
             Isattacking = true;
-            // Put animator script hear
             colldown_active = true;
             colldown = colldown_max;
-            if(Shotgun == true)
+
+            // Shotgun
+            if (Shotgun)
             {
-                Instantiate(bullet, spawnPosShotgunFront1.position, spawnPosShotgunFront1.rotation);
-                Instantiate(bullet, spawnPosShotgunFront2.position, spawnPosShotgunFront2.rotation);
+                GameObject s1 = Instantiate(bullet, spawnPosShotgunFront1.position, spawnPosShotgunFront1.rotation);
+                ApplyBulletUpgrades(s1);
+
+                GameObject s2 = Instantiate(bullet, spawnPosShotgunFront2.position, spawnPosShotgunFront2.rotation);
+                ApplyBulletUpgrades(s2);
             }
-            if(SideAttacks == true)
+
+            // Sides
+            if (SideAttacks)
             {
-                Instantiate(bullet, spawnPosLeft.position, spawnPosLeft.rotation);
-                Instantiate(bullet, spawnPosRight.position, spawnPosRight.rotation);
+                GameObject l = Instantiate(bullet, spawnPosLeft.position, spawnPosLeft.rotation);
+                ApplyBulletUpgrades(l);
+
+                GameObject r = Instantiate(bullet, spawnPosRight.position, spawnPosRight.rotation);
+                ApplyBulletUpgrades(r);
             }
-            if(BackAttack == true)
+
+            // Back
+            if (BackAttack)
             {
-                Instantiate(bullet, spawnPosBack.position, spawnPosBack.rotation);
-                if(Shotgun == true)
+                GameObject back = Instantiate(bullet, spawnPosBack.position, spawnPosBack.rotation);
+                ApplyBulletUpgrades(back);
+
+                if (Shotgun)
                 {
-                    Instantiate(bullet, spawnPosShotgunBack1.position, spawnPosShotgunBack1.rotation);
-                    Instantiate(bullet, spawnPosShotgunBack2.position, spawnPosShotgunBack2.rotation);
+                    GameObject b1 = Instantiate(bullet, spawnPosShotgunBack1.position, spawnPosShotgunBack1.rotation);
+                    ApplyBulletUpgrades(b1);
+
+                    GameObject b2 = Instantiate(bullet, spawnPosShotgunBack2.position, spawnPosShotgunBack2.rotation);
+                    ApplyBulletUpgrades(b2);
                 }
             }
         }
-
     }
 
-    void CheckTimer() // checks attack duration
+    void CheckTimer()
     {
-
         if (Isattacking)
         {
             attack_timer += Time.deltaTime;
-            if(attack_timer > attack_duratin)
+
+            if (attack_timer > attack_duration)
             {
                 Isattacking = false;
-                Attack.SetActive(false);
                 attack_timer = 0;
+
+                Attack.SetActive(false);
                 AttackBack.SetActive(false);
                 AttackLeft.SetActive(false);
                 AttackRight.SetActive(false);
-
             }
         }
-
-
     }
+
+
     // melee upgrades
-    void Upgradeattackwidth()
+    public void Upgradeattackwidth()
     {
         Attack.transform.localScale += new Vector3(1, 0, 0);
         AttackBack.transform.localScale += new Vector3(1, 0, 0);
         AttackLeft.transform.localScale += new Vector3(1, 0, 0);
         AttackRight.transform.localScale += new Vector3(1, 0, 0);
     }
-    void Upgradeattackrange()
+    public void Upgradeattackrange()
     {
         Attack.transform.localScale += new Vector3(0, 1, 0);
         AttackBack.transform.localScale += new Vector3(0, 1, 0);
         AttackLeft.transform.localScale += new Vector3(0, 1, 0);
         AttackRight.transform.localScale += new Vector3(0, 1, 0);
     }
-    void UpdateAtackSpeed()
+    public void UpdateAtackSpeed()
     {
         colldown_max = 5f;
         if(colldown_max == 5f)
