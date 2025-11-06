@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour
             HealthScript.updatehealth();
             PlayermovmentScript.speedupdate();
             MeleeScript.damageupdate();
+            AttacScript.UpdateAtackSpeed();
 
         }
     }

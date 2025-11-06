@@ -11,8 +11,10 @@ public class Gambling : MonoBehaviour
     public Button spin; // randomises the numbers
     public Button select; // select the perk
     public bool hasrolled = false;
+    public Text FlavorText;
+    public Text Name;
 
-    public int upgradetype;// misc or wepon
+    
     public int whatupgrade; // number of the upgrade (6 wepon 4 misc curently implamented.)
     public PlayerAttack attack; // i think you know what this is 
 
@@ -23,7 +25,7 @@ public class Gambling : MonoBehaviour
     public Bullet_Script Bullet;
     public Playermovment MovmentScript;
     public LightUpgrad light;
-    public Tekniikare sttinky;
+    public Tekniikare stinky;
     public HealthPack HelthPackScript;
     private void Start()
     {
@@ -32,8 +34,8 @@ public class Gambling : MonoBehaviour
     }
     void gamble() // randomise the numbers
     {
-        upgradetype = Random.Range(1, 4);
-        whatupgrade = Random.Range(1, 7);
+       
+        whatupgrade = Random.Range(1, 11);
         hasrolled = true; // activates the butons to select shit
 
     }
@@ -41,25 +43,29 @@ public class Gambling : MonoBehaviour
     {
         if(hasrolled == true)
         {
-            if(upgradetype < 3) 
-            {
+           
+            
                 if(whatupgrade == 1)
                 {
                     PlayerAttackScript.SideAttacks = true;
-                    
+                    Name.text = "Side Attack";
+                    FlavorText.text = "This attack upgrade allows your attacks to hit enemies to your sides";
                 }
                 if (whatupgrade == 2)
                 {
                     PlayerAttackScript.BackAttack = true;
-
-                }
+                    Name.text = "Back Attack";
+                    FlavorText.text = "This attack upgrade allows your attacks to hit enemies behind you";
+            }
                 if (whatupgrade == 3)
                 {
                     if(PlayerAttackScript.sword == true)
                     {
-                       
+                        mellescript.kancrit = true;
+                    Name.text = "Crit";
+                    FlavorText.text = "This attack upgrade alows your sword strikes";
 
-                    }
+                }
                     else
                     {
 
@@ -70,7 +76,7 @@ public class Gambling : MonoBehaviour
                 {
                     if(PlayerAttackScript.sword == true)
                     {
-
+                        PlayerAttackScript.Upgradeattackwidth();
                     }
                     else
                     {
@@ -83,7 +89,7 @@ public class Gambling : MonoBehaviour
                     if(PlayerAttackScript.sword == true)
                     {
 
-
+                        MovmentScript.dashattack = true;
                     }
                     else
                     {
@@ -96,7 +102,7 @@ public class Gambling : MonoBehaviour
                 {
                    if(PlayerAttackScript.sword == true)
                     {
-
+                        PlayerAttackScript.Upgradeattackrange();
 
                     }
                     else
@@ -106,49 +112,40 @@ public class Gambling : MonoBehaviour
                     }
                 }
                 
-            }
+            
 
-            if(upgradetype >= 3)
-            {
-                if (whatupgrade == 1)
+            
+            
+                if (whatupgrade == 7)
                 {
-                    Debug.Log("1 misc");
+                    HealtScript.revive = true;
 
                 }
-                if (whatupgrade == 2)
+                if (whatupgrade == 8)
                 {
-                    Debug.Log("2 misc");
+                    HelthPackScript.healupgrade = true;
 
                 }
-                if (whatupgrade == 3)
+                if (whatupgrade == 9)
                 {
-                    Debug.Log("3 misc");
+                stinky.unlocked = true;
 
                 }
-                if (whatupgrade == 4)
+                if (whatupgrade == 10)
                 {
                     Debug.Log("4 misc");
 
                 }
-                if (whatupgrade == 5)
-                {
-                    Debug.Log("5 misc");
-
-                }
-                if (whatupgrade == 6)
-                {
-                    Debug.Log("6 misc");
-
-                }
+               
                
 
 
 
-            }
+         }
 
 
 
 
-        }
+        
     }
 }
