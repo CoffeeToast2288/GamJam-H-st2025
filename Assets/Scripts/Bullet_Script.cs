@@ -8,11 +8,13 @@ public class Bullet_Script : MonoBehaviour
     public PlayerStats player;
     public float damage;
     public string targetTag = "Enemy";
+    
 
     [Header("Explosion Upgrade")]
     public bool explosionEnabled = false;      // ✅ PlayerAttack sets this
     public float radius = 1f;                  // ✅ PlayerAttack sets this
     public GameObject explosionPrefab;         // Assign your explosion prefab
+    public float explosionDamageMultiplier = 0.5f;
 
     [Header("Piercing")]
     public bool piercing = false;
@@ -20,49 +22,56 @@ public class Bullet_Script : MonoBehaviour
     void Start()
     {
         if (player == null)
-            player = FindFirstObjectByType<PlayerStats>();
+            player = FindFirstObjectByType<PlayerStats>(); // Finds player - Isac
 
-        damage = player.damage;
+        damage = player.damage; // Gets the damage stat from player stats - Isac
 
-        Destroy(gameObject, lifetime);
-    }
+        Destroy(gameObject, lifetime); //Destroyes bullet once liftime is up - Isac 
+    } 
 
     void Update()
     {
         transform.Translate(Vector2.up * speed * Time.deltaTime);
+       
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if (!collision.CompareTag(targetTag))
-            return;
+        if (!col.CompareTag(targetTag)) return;
 
-        Enemy_Script enemy = collision.GetComponent<Enemy_Script>();
+        Enemy_Script enemy = col.GetComponent<Enemy_Script>();
 
         if (enemy != null)
-        {
             enemy.TakeDamage(damage);
-        }
 
-        // ✅ Explosion logic
         if (explosionEnabled)
+            DoExplosion();
+
+        if (!piercing)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void DoExplosion()
+    {
+        if (explosionPrefab != null)
         {
             GameObject boom = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
-            // ✅ Scale explosion visual
-            boom.transform.localScale = new Vector3(radius, radius, 1);
-
-            explosion exp = boom.GetComponent<explosion>();
-            if (exp != null)
-            {
-                exp.damage = damage;   // explosion damage = bullet damage
-                exp.radius = radius;
-            }
+            boom.transform.localScale = Vector3.one * (radius * 2f);
         }
 
-        // ✅ Piercing = bullet keeps going
-        if (!piercing)
-            Destroy(gameObject);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius);
+
+        foreach (Collider2D h in hits)
+        {
+            Enemy_Script e = h.GetComponent<Enemy_Script>();
+            if (e != null)
+            {
+                float aoeDamage = damage * explosionDamageMultiplier;
+                e.TakeDamage(aoeDamage);
+            }
+        }
     }
 
     public void damageupdate()

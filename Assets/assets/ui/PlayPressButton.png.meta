@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 52bd56f5f8a6a474e85614fb780b99fa
+guid: ecb1958d9acdde64896d0e957565ab80
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 751536002971668074
-    second: trashbag(trust it looks good far away)_0
+      213: 3739042443018529263
+    second: PlayPressButton_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: trashbag(trust it looks good far away)_0
+      name: PlayPressButton_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 1
-        width: 20
-        height: 20
+        x: 1
+        y: 10
+        width: 57
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a6e0b0d430efd6a00800000000000000
-      internalID: 751536002971668074
+      spriteID: fe96a38aa4fb3e330800000000000000
+      internalID: 3739042443018529263
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      trashbag(trust it looks good far away)_0: 751536002971668074
+      PlayPressButton_0: 3739042443018529263
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

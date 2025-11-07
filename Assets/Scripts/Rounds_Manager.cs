@@ -7,6 +7,8 @@ using UnityEngine;
 /// triggering safe zone events, and coordinating UI feedback.
 /// Attach this script to an empty GameObject (e.g., "WaveManager").
 /// </summary>
+/// 
+// Isak was only here
 public class WaveSystem : MonoBehaviour
 {
     [Header("References")]

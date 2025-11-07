@@ -207,8 +207,8 @@ MonoBehaviour:
   shootCooldown: 1.75
   attackRange: 1.2
   shootrange: 6
-  lungeSpeed: 10
-  lungeDuration: 0.75
+  lungeSpeed: 15
+  lungeDuration: 1.25
   lungeCooldown: 1.5
   chargeTime: 0.5
   lungeRange: 8
