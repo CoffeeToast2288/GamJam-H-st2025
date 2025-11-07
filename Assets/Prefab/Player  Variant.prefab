@@ -1212,6 +1212,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8896741948791612900}
     - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: DashCharges
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: MaxDashCharges
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: animations.Array.size
       value: 6
       objectReference: {fileID: 0}
