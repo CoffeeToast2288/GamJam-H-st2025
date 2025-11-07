@@ -400,7 +400,7 @@ public class Enemy_Script : MonoBehaviour
 
     void Die()
     {
-        animator.CrossFade("death by gun", 0.2f);
+        animator.Play("death by gun");
         isDead = true;
         rb.linearVelocity = Vector2.zero;
 
