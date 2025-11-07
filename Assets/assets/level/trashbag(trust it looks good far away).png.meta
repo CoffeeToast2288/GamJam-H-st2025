@@ -52,7 +52,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   spritePixelsToUnits: 16
+=======
+  spritePixelsToUnits: 18
+>>>>>>> Stashed changes
 =======
   spritePixelsToUnits: 18
 >>>>>>> Stashed changes
