@@ -1213,11 +1213,31 @@ PrefabInstance:
       objectReference: {fileID: 8896741948791612900}
     - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: animations.Array.size
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: 'animations.Array.data[0]'
       value: player walk
+      objectReference: {fileID: 0}
+    - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'animations.Array.data[1]'
+      value: hurt
+      objectReference: {fileID: 0}
+    - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'animations.Array.data[2]'
+      value: melee attack player
+      objectReference: {fileID: 0}
+    - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'animations.Array.data[3]'
+      value: 'death '
+      objectReference: {fileID: 0}
+    - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'animations.Array.data[4]'
+      value: player_gun_attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'animations.Array.data[5]'
+      value: player dash animation
       objectReference: {fileID: 0}
     - target: {fileID: 623756351655905103, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_Name
@@ -1402,6 +1422,14 @@ PrefabInstance:
     - target: {fileID: 7218105634972355831, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471230148172533061, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471230148172533061, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

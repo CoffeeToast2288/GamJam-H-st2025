@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     public bool bulletExplosion = false;   // ✅ NEW
 
     [Header("Melee Visual Cue")]
-    public SpriteRenderer meleeFlash;
+    public SpriteRenderer[] meleeFlashes;
     public float flashFadeIn = 0.05f;
     public float flashStay = 0.05f;
     public float flashFadeOut = 0.2f;
@@ -137,44 +137,81 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator MeleeFlashEffect()
     {
-        if (meleeFlash == null)
+        if (meleeFlashes == null || meleeFlashes.Length == 0)
             yield break;
 
-        Color c = meleeFlash.color;
-        c.a = 0f;
-        meleeFlash.color = c;
+        // store original scales
+        Vector3[] originalScales = new Vector3[meleeFlashes.Length];
+        Vector3[] bigScales = new Vector3[meleeFlashes.Length];
 
-        Vector3 originalScale = meleeFlash.transform.localScale;
-        Vector3 enlargedScale = originalScale * flashScaleMultiplier;
+        for (int i = 0; i < meleeFlashes.Length; i++)
+        {
+            if (meleeFlashes[i] == null) continue;
 
-        // Fade In
+            // reset alpha
+            Color c = meleeFlashes[i].color;
+            meleeFlashes[i].color = new Color(c.r, c.g, c.b, 0f);
+
+            originalScales[i] = meleeFlashes[i].transform.localScale;
+            bigScales[i] = originalScales[i] * flashScaleMultiplier;
+        }
+
+        // ---------- FADE IN ----------
         float t = 0;
         while (t < flashFadeIn)
         {
             t += Time.deltaTime;
-            float alpha = Mathf.Lerp(0, 1, t / flashFadeIn);
-            meleeFlash.color = new Color(c.r, c.g, c.b, alpha);
-            meleeFlash.transform.localScale = Vector3.Lerp(originalScale, enlargedScale, t / flashFadeIn);
+            float a = t / flashFadeIn;
+
+            for (int i = 0; i < meleeFlashes.Length; i++)
+            {
+                if (meleeFlashes[i] == null) continue;
+
+                Color c = meleeFlashes[i].color;
+                meleeFlashes[i].color = new Color(c.r, c.g, c.b, a);
+
+                meleeFlashes[i].transform.localScale =
+                    Vector3.Lerp(originalScales[i], bigScales[i], a);
+            }
+
             yield return null;
         }
 
-        // Stay
+        // ---------- HOLD ----------
         yield return new WaitForSeconds(flashStay);
 
-        // Fade Out
+        // ---------- FADE OUT ----------
         t = 0;
         while (t < flashFadeOut)
         {
             t += Time.deltaTime;
-            float alpha = Mathf.Lerp(1, 0, t / flashFadeOut);
-            meleeFlash.color = new Color(c.r, c.g, c.b, alpha);
-            meleeFlash.transform.localScale = Vector3.Lerp(enlargedScale, originalScale, t / flashFadeOut);
+            float a = 1 - (t / flashFadeOut);
+
+            for (int i = 0; i < meleeFlashes.Length; i++)
+            {
+                if (meleeFlashes[i] == null) continue;
+
+                Color c = meleeFlashes[i].color;
+                meleeFlashes[i].color = new Color(c.r, c.g, c.b, a);
+
+                meleeFlashes[i].transform.localScale =
+                    Vector3.Lerp(bigScales[i], originalScales[i], 1 - a);
+            }
+
             yield return null;
         }
 
-        meleeFlash.color = new Color(c.r, c.g, c.b, 0);
-        meleeFlash.transform.localScale = originalScale;
+        // reset to original
+        for (int i = 0; i < meleeFlashes.Length; i++)
+        {
+            if (meleeFlashes[i] == null) continue;
+
+            Color c = meleeFlashes[i].color;
+            meleeFlashes[i].color = new Color(c.r, c.g, c.b, 0f);
+            meleeFlashes[i].transform.localScale = originalScales[i];
+        }
     }
+
 
     void Shoot()
     {
