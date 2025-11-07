@@ -1,23 +1,31 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UpgradeBench : MonoBehaviour
 {
     public GameObject UpgradeUi;
-    public GameObject  activate;
+    public Button  activate;
+    public GameObject activefather;
     public retern_to_safe GoBack;
 
+
+    public void Start()
+    {
+        activate.onClick.AddListener(showUi);
+    }
     private void Update()
     {
         if(GoBack.isInSafeZone == true)
         {
-            activate.SetActive(true);
+            activefather.SetActive(true);
 
 
         }
         if (GoBack.isInSafeZone == false)
         {
-            activate.SetActive(false);
+            activefather.SetActive(false);
 
 
         }
