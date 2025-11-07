@@ -9,8 +9,7 @@ public class DSM : MonoBehaviour
     public PlayerHealth playerHealth;
     public GameObject deathScreen;
 
-    public Animator player_animator;
-    public string[] play_animations;
+
 
     public void Start()
     {
@@ -25,7 +24,7 @@ public class DSM : MonoBehaviour
         if (playerHealth != null && playerHealth.dead)
         {
             
-            player_animator.Play(play_animations[3]);
+
            
             // Activate death screen only once
             if (!deathScreen.activeSelf)
