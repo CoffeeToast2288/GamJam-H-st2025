@@ -47,12 +47,30 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+
+
         healthText.text = Hp + "/" + Hp_max + " HP";
 
         if (Hp > Hp_max)
             Hp = Hp_max;
 
-    if (Input.GetKeyDown(KeyCode.I))
+
+        if (Hp <= 0)
+        {
+            Hp = 0;
+
+            if (revive)
+            {
+                revive = false;
+                Hp = Hp_max / 2;
+                return;
+            }
+
+            dead = true;
+            Die();   // ✅ IMPORTANT
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
         {
             TakeDamage(2);
            
@@ -269,6 +287,7 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("PLAYER DIED!");
 
+        player_animator.Play(play_animations[3]);
         // Stop movement
         var move = FindFirstObjectByType<Playermovment>();
         if (move) move.enabled = false;
