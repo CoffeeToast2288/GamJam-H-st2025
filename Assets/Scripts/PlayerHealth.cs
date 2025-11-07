@@ -2,6 +2,7 @@
 using TMPro;
 using static UnityEngine.Rendering.DebugUI;
 using System.Collections;
+using JetBrains.Annotations;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
 
     public Animator player_animator;
     public string[] play_animations;
+    public AudioSource heal;
 
     private void Start()
     {
@@ -78,7 +80,7 @@ public class PlayerHealth : MonoBehaviour
         {
             check_health();
             Hp += healing;
-
+            heal.Play();
             if (flashText != null)
                 StartCoroutine(ShowFlash($"+{healing} HP!"));
 

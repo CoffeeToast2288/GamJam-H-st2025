@@ -11,6 +11,7 @@ public class DSM : MonoBehaviour
 
     public Animator player_animator;
     public string[] play_animations;
+    public AudioSource die;
 
     public void Start()
     {

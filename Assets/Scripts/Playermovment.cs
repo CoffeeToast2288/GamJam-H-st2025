@@ -38,7 +38,7 @@ public class Playermovment : MonoBehaviour
     public Animator animator, bar_1,bar_2;
     public string[] animations;
     public bool is_walking;
-
+    public audiocontroler audiocontroler;
     
 
     
@@ -148,6 +148,7 @@ public class Playermovment : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && DashCharges > 0 ) // checs so that you have dashcharges and the starts the dash scipt stuff if you do so and pres space 
         {
             DashCharges--;
+            audiocontroler.audio_list[6].Play();
             animator.CrossFade(animations[4], 0.2f);
             StartCoroutine(player_animations_reset());
             StartCoroutine(dash_charge_cooldown());
@@ -212,15 +213,15 @@ public class Playermovment : MonoBehaviour
      
      IEnumerator walking_sounds_play()
     {
-        current_walking_sound = walking_sounds[current_walking_sound_val];
+        current_walking_sound = audiocontroler.audio_list[current_walking_sound_val];
         current_walking_sound.Play();
-        if (current_walking_sound_val != 2)
+        if (current_walking_sound_val != 5)
         {
             current_walking_sound_val += 1;
         }
         else
         {
-            current_walking_sound_val = 0;
+            current_walking_sound_val = 3;
         }
         yield return new WaitForSeconds(1f);
 
