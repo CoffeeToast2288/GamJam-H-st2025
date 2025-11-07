@@ -50,6 +50,10 @@ public class PlayerAttack : MonoBehaviour
     public bool colldown_active = false;
     public bool Isattacking = false;
 
+
+    public Animator player_animator;
+    public string[] play_animations;
+
     void Start()
     {
         colldown = 0;
@@ -93,10 +97,23 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    public IEnumerator player_animations_reset()
+    {
+        AnimatorClipInfo[] clipInfo = player_animator.GetCurrentAnimatorClipInfo(0);
+        float clipLength = clipInfo[0].clip.length;
+        Debug.Log("clip length " + clipLength);
+        yield return new WaitForSeconds(clipLength);
+        player_animator.CrossFade(play_animations[0], 0.2f);
+    }
+
+
     void Attacking()
     {
         if (!Isattacking)
         {
+            player_animator.CrossFade(play_animations[2], 0.2f);
+            StartCoroutine(player_animations_reset());
+
             Attack.SetActive(true);
             Isattacking = true;
 
@@ -163,6 +180,9 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!Isattacking)
         {
+            player_animator.CrossFade(play_animations[4], 0.2f);
+            StartCoroutine(player_animations_reset());
+
             // Front shot
             GameObject b = Instantiate(bullet, spawnPos.position, spawnPos.rotation);
             ApplyBulletUpgrades(b);

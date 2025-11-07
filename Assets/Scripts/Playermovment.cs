@@ -33,11 +33,18 @@ public class Playermovment : MonoBehaviour
     public bool dashtraile = false;
    
 
+    public Animator animator, bar_1,bar_2;
+    public string[] animations;
+    public bool is_walking;
+
+    
+
     //stat upgrades
     public void speedupdate()
     {
         speed = stats.speed;
         totaldashcooldown = 5f;
+        StartCoroutine(dash_charge_cooldown());
         if (totaldashcooldown == 5f)
         {
             totaldashcooldown /= dashcooldown;
@@ -53,7 +60,7 @@ public class Playermovment : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        animator.Play(animations[0]);
         
     }
 
@@ -91,11 +98,80 @@ public class Playermovment : MonoBehaviour
 
     }
 
+    public IEnumerator player_animations_reset()
+    {
+        AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
+        float clipLength = clipInfo[0].clip.length;
+        Debug.Log("clip length " + clipLength);
+        yield return new WaitForSeconds(clipLength);
+        animator.CrossFade(animations[0], 0.2f);
+    }
+
+    public IEnumerator dash_charge_cooldown()
+    {
+
+        yield return new WaitForSeconds(dashcooldown);
+        if (DashCharges< MaxDashCharges)
+        {
+            DashCharges++;
+            switch (DashCharges)
+            {
+                case 1:
+                    bar_1.Play("dash charge 0-1");
+
+                    break;
+                case 2:
+                    bar_1.Play("1-2");
+
+                    break;
+                case 3:
+                    bar_2.Play("dash charge 2-3");
+
+                    break;
+                case 4:
+                    bar_2.Play("dash charge 3-4");
+
+                    break;
+
+            }
+            StartCoroutine(dash_charge_cooldown());
+        }
+        
+    }
+
+
     private void FixedUpdate()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && dashcooldown == 0)
+        if (Input.GetKeyDown(KeyCode.Space) && DashCharges > 0 )
         {
+            DashCharges--;
+            animator.CrossFade(animations[4], 0.2f);
+            StartCoroutine(player_animations_reset());
+            StartCoroutine(dash_charge_cooldown());
+            switch (DashCharges)
+            {
+                case 0:
+                    bar_1.Play("1-0 dash charges");
+
+                    break;
+                case 1:
+                    bar_1.Play("2-1 dash charges");
+
+                    break;
+                case 2:
+                    bar_2.Play("3-2");
+
+                    break;
+                case 3:
+                    bar_2.Play("4-3");
+
+                    break;
+                
+            }
+            
+
+
             dashtime = totaldashtime;
             rb.linearVelocity = input * dashspeed;
             dashcooldown = totaldashcooldown;

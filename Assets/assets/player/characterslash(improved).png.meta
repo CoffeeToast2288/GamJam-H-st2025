@@ -81,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -130,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: characterslash(improved)_0
+      name: 0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 67
-        width: 26
-        height: 20
+        x: 4
+        y: 68
+        width: 24
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,13 +152,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characterslash(improved)_1
+      name: 1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 67
-        width: 26
-        height: 26
+        x: 36
+        y: 68
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,35 +174,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characterslash(improved)_2
+      name: 2
       rect:
         serializedVersion: 2
-        x: 67
-        y: 81
-        width: 18
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7b126f7392483c720800000000000000
-      internalID: 2865279100505170359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: characterslash(improved)_3
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 63
+        x: 68
+        y: 64
         width: 26
-        height: 30
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,34 +196,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characterslash(improved)_4
+      name: 3
       rect:
         serializedVersion: 2
-        x: 1
-        y: 47
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e19322dec5d27ed0800000000000000
-      internalID: -2417634965679009309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: characterslash(improved)_5
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 31
-        width: 24
+        x: 2
+        y: 32
+        width: 26
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -262,35 +218,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characterslash(improved)_6
+      name: 4
       rect:
         serializedVersion: 2
-        x: 31
-        y: 45
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 50733310fa9457af0800000000000000
-      internalID: -399331975964182779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: characterslash(improved)_7
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 31
-        width: 24
-        height: 30
+        x: 32
+        y: 32
+        width: 26
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,13 +240,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characterslash(improved)_8
+      name: 5
       rect:
         serializedVersion: 2
-        x: 69
-        y: 31
-        width: 22
-        height: 30
+        x: 70
+        y: 32
+        width: 20
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,13 +262,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characterslash(improved)_9
+      name: 6
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 26
-        height: 22
+        x: 4
+        y: 4
+        width: 24
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,13 +284,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characterslash(improved)_10
+      name: 7
       rect:
         serializedVersion: 2
-        x: 35
-        y: 3
-        width: 26
-        height: 20
+        x: 36
+        y: 4
+        width: 24
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -375,7 +309,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4086a73ba8746c74a91bff8d9d2eec22
     internalID: 0
     vertices: []
     indices: 
@@ -385,17 +319,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      characterslash(improved)_0: 6704753223409001622
-      characterslash(improved)_1: 5677030520723830034
-      characterslash(improved)_10: 6157668512839598376
+      0: 6704753223409001622
+      1: 5677030520723830034
+      2: -7021050270808069038
+      3: -4844265542837039397
+      4: 6154589864763823035
+      5: -7327700458309128068
+      6: 6572189767976081820
+      7: 6157668512839598376
       characterslash(improved)_2: 2865279100505170359
-      characterslash(improved)_3: -7021050270808069038
       characterslash(improved)_4: -2417634965679009309
-      characterslash(improved)_5: -4844265542837039397
       characterslash(improved)_6: -399331975964182779
-      characterslash(improved)_7: 6154589864763823035
-      characterslash(improved)_8: -7327700458309128068
-      characterslash(improved)_9: 6572189767976081820
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

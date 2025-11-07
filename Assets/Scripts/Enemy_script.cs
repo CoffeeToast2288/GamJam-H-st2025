@@ -56,9 +56,15 @@ public class Enemy_Script : MonoBehaviour
     private bool isLunging = false;       // True while lunging
     private bool canLunge = true;         // Cooldown control for lunging
 
+    // ====== ANIMATIONS=========
+    public Animator animator;
+
+
     // ===== INITIALIZATION =====
     public void Start()
     {
+
+
         rb = GetComponent<Rigidbody2D>();
 
         // Automatically find player if not set in Inspector
@@ -78,23 +84,59 @@ public class Enemy_Script : MonoBehaviour
         if (trailRenderer != null)
             trailRenderer.emitting = false;
 
-        // Automatically assign behavior based on type flag
+        // Automatically assign behavior based on type flag and sets the walking animation to start
         if (hitty)
         {
+           
             Hitty();
+           
         }
         else if (shooty)
         {
+           
             Shooty();
         }
         else if (tanky)
         {
+           
             Tanky();
         }
         else if (lungie)
         {
+            
             Lungie();
         }
+
+        if (canAttack && rb.linearVelocity.magnitude > 0.01f && !animator.GetCurrentAnimatorStateInfo(0).IsTag("move"))
+        {
+            if (hitty)
+            {
+                Debug.Log("tanky ");
+                animator.Play("tanky");
+            }
+            else if (shooty)
+            {
+                Debug.Log("shooty ");
+                animator.Play("shooty movy", 0, 0f);
+            }
+            else if (tanky)
+            {
+                Debug.Log("tanky ");
+                animator.Play("tanky");
+            }
+            else if (shooty)
+            {
+                Debug.Log("shooty ");
+                animator.Play("shooty movy", 0, 0f);
+            }
+            else if (lungie)
+            {
+                Debug.Log("fast ");
+                animator.Play("fast");
+            }
+        }
+       
+
     }
 
     // ===== MAIN UPDATE LOOP =====
@@ -129,12 +171,17 @@ public class Enemy_Script : MonoBehaviour
             TryFire();
             RotateTowardsPlayer();
         }
+
+       
+
     }
 
     // ===== ENEMY TYPE SETUPS =====
-    // Adjust stats depending on enemy type
+    // Adjust stats depending on enemy type and sets thier animations
     public void Hitty()
     {
+        Debug.Log("hitty ");
+        animator.Play("hitty walk");
         moveSpeed += 3f;
         damage += 1f;
         health += 3f;
@@ -144,6 +191,8 @@ public class Enemy_Script : MonoBehaviour
 
     public void Shooty()
     {
+        Debug.Log("shooty ");
+        animator.Play("shooty movy", 0, 0f);
         moveSpeed = 3f;
         damage += 1f;
         health += 2f;
@@ -155,6 +204,9 @@ public class Enemy_Script : MonoBehaviour
 
     public void Tanky()
     {
+        Debug.Log("tanky ");
+        animator.Play("tanky");
+
         // Make it visually bigger
         tankita.transform.localScale += new Vector3(1.2f, 1.2f, 1.2f);
         moveSpeed += 1.5f;
@@ -166,6 +218,8 @@ public class Enemy_Script : MonoBehaviour
 
     public void Lungie()
     {
+        Debug.Log("fast ");
+        animator.Play("fast");
         moveSpeed = 4f;
         damage += 1f;
         health += 2f;
@@ -194,6 +248,9 @@ public class Enemy_Script : MonoBehaviour
     {
         // Move directly toward player until within stopDistance
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+        // animation controler 
+       
     }
 
     void RotateTowardsPlayer()
@@ -207,8 +264,24 @@ public class Enemy_Script : MonoBehaviour
     // ===== MELEE ATTACK =====
     void TryAttack()
     {
-        if (!canAttack) return;
+        if (!canAttack) return; 
+        
+        if (hitty)
+        {
+            animator.CrossFade("hitty hit", 0.2f);
+        }
+        else if (tanky)
+        {
+            animator.CrossFade("tanky hit", 0.2f);
+
+        }
+        else if (lungie)
+        {
+            animator.CrossFade("fast hit", 0.2f);
+
+        }
         StartCoroutine(AttackRoutine());
+
     }
 
     System.Collections.IEnumerator AttackRoutine()
@@ -229,6 +302,8 @@ public class Enemy_Script : MonoBehaviour
     void TryFire()
     {
         if (!canshoot) return;
+
+        animator.CrossFade("shooty shoot", 0.2f);
         StartCoroutine(ShootRoutine());
     }
 
@@ -254,7 +329,7 @@ public class Enemy_Script : MonoBehaviour
     {
         canLunge = false;
         isLunging = true;
-
+        animator.CrossFade("fast lunge", 0.2f);
         // Save starting point
         Vector3 originalPosition = transform.position;
 
@@ -304,6 +379,7 @@ public class Enemy_Script : MonoBehaviour
     public void TakeDamage(float damage)
     {
         if (isDead) return;
+        ;
 
         health -= damage;
         if (health <= 0) Die();
@@ -311,6 +387,7 @@ public class Enemy_Script : MonoBehaviour
 
     void Die()
     {
+        animator.CrossFade("death by gun", 0.2f);
         isDead = true;
         rb.linearVelocity = Vector2.zero;
 
