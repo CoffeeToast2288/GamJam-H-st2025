@@ -8,6 +8,7 @@ public class Bullet_Script : MonoBehaviour
     public PlayerStats player;
     public float damage;
     public string targetTag = "Enemy";
+    
 
     [Header("Explosion Upgrade")]
     public bool explosionEnabled = false;      // ✅ PlayerAttack sets this
@@ -20,16 +21,17 @@ public class Bullet_Script : MonoBehaviour
     void Start()
     {
         if (player == null)
-            player = FindFirstObjectByType<PlayerStats>();
+            player = FindFirstObjectByType<PlayerStats>(); // Finds player - Isac
 
-        damage = player.damage;
+        damage = player.damage; // Gets the damage stat from player stats - Isac
 
-        Destroy(gameObject, lifetime);
-    }
+        Destroy(gameObject, lifetime); //Destroyes bullet once liftime is up - Isac 
+    } 
 
     void Update()
     {
         transform.Translate(Vector2.up * speed * Time.deltaTime);
+       
     }
 
     void OnTriggerEnter2D(Collider2D collision)

@@ -85,7 +85,7 @@ public class Gambling : MonoBehaviour
                     }
                     else
                     {
-                        Bullet.piercing = true;
+                    attack.Pierce = true;
                     Name.text = "Piercing";
                     FlavorText.text = "Your bullets now pierce enemies, making them kapeble of hitting multiple enemies in a row";
 
@@ -120,7 +120,7 @@ public class Gambling : MonoBehaviour
                     }
                     else
                     {
-
+                    attack.bulletExplosion = true;
                     Name.text = "Exploding Bullet";
                     FlavorText.text = "Kaboom";
                     }
