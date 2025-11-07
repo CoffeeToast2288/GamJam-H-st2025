@@ -60,12 +60,22 @@ public class Enemy_Script : MonoBehaviour
 
     // ====== ANIMATIONS=========
     public Animator animator;
+    public audiocontroler audiocontrol;
 
 
     // ===== INITIALIZATION =====
     public void Start()
     {
-
+        GameObject audioObj = GameObject.FindGameObjectWithTag("Audiocontrol");
+        if (audiocontrol != null)
+        {
+            audiocontrol = audioObj.GetComponent<audiocontroler>();
+           
+        }
+        else
+        {
+            Debug.LogWarning("Enemy_Script could not find player in scene!");
+        }
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -332,6 +342,7 @@ public class Enemy_Script : MonoBehaviour
         canLunge = false;
         isLunging = true;
         animator.CrossFade("fast lunge", 0.2f);
+        audiocontrol.audio_list[7].Play();
         // Save starting point
         Vector3 originalPosition = transform.position;
 
