@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Enemy_hitbox : MonoBehaviour
 {
-
-    // Isaks code mine mine mine mine
     [Header("References")]
     public Enemy_Script enemy;        // Reference to the parent enemy
     public PlayerHealth player;       // Reference to the player’s health script

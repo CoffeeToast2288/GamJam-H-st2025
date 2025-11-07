@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 [System.Serializable]
 public class PlayerStats : MonoBehaviour
 {
-    [Header("Refrences")] // Refrenc to the varius scripts that the stats interact with - Nino
+    [Header("Refrences")]
     PlayerHealth HealthScript;
     PlayerAttack AttacScript;
     Melee MeleeScript;
@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
     Playermovment PlayermovmentScript;
 
 
-    [Header("Stats")] // the stats - Nino
+    [Header("Stats")]
     public float damage = 1; 
     public int hp = 4;
     public int speed = 5; 
@@ -25,7 +25,7 @@ public class PlayerStats : MonoBehaviour
     public bool upgraded = false;
 
 
-   public void Update() // Refrences funktions to update the stats in verius scripts - Nino
+   public void Update()
     {
         if(upgraded == true)
         {

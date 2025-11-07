@@ -18,12 +18,12 @@ public class PlayerAttack : MonoBehaviour
     public bool Shotgun = false;
     public bool doubleshoot;
     public bool dashattack;
-    public bool Pierce;
-    public bool bulletExplosion = false;
-    public bool piercingUpgrade = false;  // ✅ NEW
+
+    [Header("Bullet Upgrades")]
+    public bool bulletExplosion = false;   // ✅ NEW
 
     [Header("Melee Visual Cue")]
-    public SpriteRenderer[] meleeFlashes;
+    public SpriteRenderer meleeFlash;
     public float flashFadeIn = 0.05f;
     public float flashStay = 0.05f;
     public float flashFadeOut = 0.2f;
@@ -87,7 +87,15 @@ public class PlayerAttack : MonoBehaviour
             Attacking();
     }
 
-
+    // ✅ Applies upgrades to bullets
+    void ApplyBulletUpgrades(GameObject bulletObj)
+    {
+        Bullet_Script bs = bulletObj.GetComponent<Bullet_Script>();
+        if (bs != null)
+        {
+            bs.explosionEnabled = bulletExplosion;
+        }
+    }
 
     public IEnumerator player_animations_reset()
     {
@@ -129,129 +137,97 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator MeleeFlashEffect()
     {
-        if (meleeFlashes == null || meleeFlashes.Length == 0)
+        if (meleeFlash == null)
             yield break;
 
-        // store original scales
-        Vector3[] originalScales = new Vector3[meleeFlashes.Length];
-        Vector3[] bigScales = new Vector3[meleeFlashes.Length];
+        Color c = meleeFlash.color;
+        c.a = 0f;
+        meleeFlash.color = c;
 
-        for (int i = 0; i < meleeFlashes.Length; i++)
-        {
-            if (meleeFlashes[i] == null) continue;
+        Vector3 originalScale = meleeFlash.transform.localScale;
+        Vector3 enlargedScale = originalScale * flashScaleMultiplier;
 
-            // reset alpha
-            Color c = meleeFlashes[i].color;
-            meleeFlashes[i].color = new Color(c.r, c.g, c.b, 0f);
-
-            originalScales[i] = meleeFlashes[i].transform.localScale;
-            bigScales[i] = originalScales[i] * flashScaleMultiplier;
-        }
-
-        // ---------- FADE IN ----------
+        // Fade In
         float t = 0;
         while (t < flashFadeIn)
         {
             t += Time.deltaTime;
-            float a = t / flashFadeIn;
-
-            for (int i = 0; i < meleeFlashes.Length; i++)
-            {
-                if (meleeFlashes[i] == null) continue;
-
-                Color c = meleeFlashes[i].color;
-                meleeFlashes[i].color = new Color(c.r, c.g, c.b, a);
-
-                meleeFlashes[i].transform.localScale =
-                    Vector3.Lerp(originalScales[i], bigScales[i], a);
-            }
-
+            float alpha = Mathf.Lerp(0, 1, t / flashFadeIn);
+            meleeFlash.color = new Color(c.r, c.g, c.b, alpha);
+            meleeFlash.transform.localScale = Vector3.Lerp(originalScale, enlargedScale, t / flashFadeIn);
             yield return null;
         }
 
-        // ---------- HOLD ----------
+        // Stay
         yield return new WaitForSeconds(flashStay);
 
-        // ---------- FADE OUT ----------
+        // Fade Out
         t = 0;
         while (t < flashFadeOut)
         {
             t += Time.deltaTime;
-            float a = 1 - (t / flashFadeOut);
-
-            for (int i = 0; i < meleeFlashes.Length; i++)
-            {
-                if (meleeFlashes[i] == null) continue;
-
-                Color c = meleeFlashes[i].color;
-                meleeFlashes[i].color = new Color(c.r, c.g, c.b, a);
-
-                meleeFlashes[i].transform.localScale =
-                    Vector3.Lerp(bigScales[i], originalScales[i], 1 - a);
-            }
-
+            float alpha = Mathf.Lerp(1, 0, t / flashFadeOut);
+            meleeFlash.color = new Color(c.r, c.g, c.b, alpha);
+            meleeFlash.transform.localScale = Vector3.Lerp(enlargedScale, originalScale, t / flashFadeOut);
             yield return null;
         }
 
-        // reset to original
-        for (int i = 0; i < meleeFlashes.Length; i++)
-        {
-            if (meleeFlashes[i] == null) continue;
-
-            Color c = meleeFlashes[i].color;
-            meleeFlashes[i].color = new Color(c.r, c.g, c.b, 0f);
-            meleeFlashes[i].transform.localScale = originalScales[i];
-        }
+        meleeFlash.color = new Color(c.r, c.g, c.b, 0);
+        meleeFlash.transform.localScale = originalScale;
     }
-
 
     void Shoot()
     {
         if (!Isattacking)
         {
-            FireBullet(spawnPos);
+            player_animator.CrossFade(play_animations[4], 0.2f);
+            StartCoroutine(player_animations_reset());
+
+            // Front shot
+            GameObject b = Instantiate(bullet, spawnPos.position, spawnPos.rotation);
+            ApplyBulletUpgrades(b);
 
             Isattacking = true;
             colldown_active = true;
             colldown = colldown_max;
 
+            // Shotgun
             if (Shotgun)
             {
-                FireBullet(spawnPosShotgunFront1);
-                FireBullet(spawnPosShotgunFront2);
+                GameObject s1 = Instantiate(bullet, spawnPosShotgunFront1.position, spawnPosShotgunFront1.rotation);
+                ApplyBulletUpgrades(s1);
+
+                GameObject s2 = Instantiate(bullet, spawnPosShotgunFront2.position, spawnPosShotgunFront2.rotation);
+                ApplyBulletUpgrades(s2);
             }
+
+            // Sides
             if (SideAttacks)
             {
-                FireBullet(spawnPosLeft);
-                FireBullet(spawnPosRight);
+                GameObject l = Instantiate(bullet, spawnPosLeft.position, spawnPosLeft.rotation);
+                ApplyBulletUpgrades(l);
+
+                GameObject r = Instantiate(bullet, spawnPosRight.position, spawnPosRight.rotation);
+                ApplyBulletUpgrades(r);
             }
+
+            // Back
             if (BackAttack)
             {
-                FireBullet(spawnPosBack);
+                GameObject back = Instantiate(bullet, spawnPosBack.position, spawnPosBack.rotation);
+                ApplyBulletUpgrades(back);
 
                 if (Shotgun)
                 {
-                    FireBullet(spawnPosShotgunBack1);
-                    FireBullet(spawnPosShotgunBack2);
+                    GameObject b1 = Instantiate(bullet, spawnPosShotgunBack1.position, spawnPosShotgunBack1.rotation);
+                    ApplyBulletUpgrades(b1);
+
+                    GameObject b2 = Instantiate(bullet, spawnPosShotgunBack2.position, spawnPosShotgunBack2.rotation);
+                    ApplyBulletUpgrades(b2);
                 }
             }
         }
     }
-
-
-    // ✅ Applies upgrades to bullets
-    void FireBullet(Transform t)
-    {
-        GameObject obj = Instantiate(bullet, t.position, t.rotation);
-
-        Bullet_Script bs = obj.GetComponent<Bullet_Script>();
-        if (bs != null)
-        {
-            bs.explosionEnabled = bulletExplosion;
-            bs.piercing = piercingUpgrade;
-        }
-    }
-
 
     void CheckTimer()
     {

@@ -5,49 +5,47 @@ using UnityEngine.Rendering;
 
 public class Playermovment : MonoBehaviour
 {
-    //  Writen by Nino unles specified otherwhise in anotation
     
-    [Header("Refrences")] //Refrenc player stats and attack scripts for future use 
+    [Header("Refrences")]
     public PlayerStats stats;
     public PlayerAttack attack;
 
-    [Header("General veriables")] 
-    public float speed = 10f; // how fast is the player 
-    private Rigidbody2D rb; // ridgid body 
-    private Vector2 input; //Vecotor to determin witch direction the player will move in.
-    Vector2 mousepos; // Vector to determin wher the cursor is.
+    [Header("General veriables")]
+    public float speed = 10f;
+    private Rigidbody2D rb;
+    private Vector2 input;
+    Vector2 mousepos;
 
-    [Header("Dash")]
-     public float dashtime; // how long have you bean dashing
-    public float totaldashtime = 1f; // for how long should the dash last
-    public float dashspeed = 20f; // how long is the dash
-    public float dashcooldown; // how long od you have left on your dashcharges cooldown 
-    public float totaldashcooldown = 5f; // how long the total coldown of the dash is 
-    public float DashCharges; // how many dash charges do you curently have
-    public float MaxDashCharges; // what is the maximum amount of dashcharges you kan have
-    public bool walking_sounds_playing; // is the walking sound playing?
-    public AudioSource[] walking_sounds; // walking sound
-    public AudioSource current_walking_sound; // curent walking sound so it kan sycal inbetwen them
-    public int current_walking_sound_val; // in for the sound loop
+     public float dashtime;
+    public float totaldashtime = 1f;
+    public float dashspeed = 20f;
+    public float dashcooldown;
+    public float totaldashcooldown = 5f;
+    public float DashCharges;
+    public float MaxDashCharges; 
+    public bool walking_sounds_playing;
+    public AudioSource[] walking_sounds;
+    public AudioSource current_walking_sound;
+    public int current_walking_sound_val;
 
-    [Header("Upgrade Stuff")] // variables for wether certain upgrades should be enabled or not 
-    public bool dashattack = false; 
+    [Header("Upgrade Stuff")]
+    public bool dashattack = false;
+    public bool dashtraile = false;
    
-   
-    // Animator stuff - Benjamin
+
     public Animator animator, bar_1,bar_2;
     public string[] animations;
     public bool is_walking;
     public audiocontroler audiocontroler;
     
 
-    
-    public void speedupdate() // Update variables to be in acordance with stat upgrades 
+    //stat upgrades
+    public void speedupdate()
     {
         speed = stats.speed;
         totaldashcooldown = 5f;
-        StartCoroutine(dash_charge_cooldown());//Benjamin
-        if (totaldashcooldown == 5f) // Some math for the dash cooldwon
+        StartCoroutine(dash_charge_cooldown());
+        if (totaldashcooldown == 5f)
         {
             totaldashcooldown /= dashcooldown;
 
@@ -61,8 +59,8 @@ public class Playermovment : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); // Get the RB2D
-        animator.Play(animations[0]); // Benjamin
+        rb = GetComponent<Rigidbody2D>();
+        animator.Play(animations[0]);
         
     }
 
@@ -71,27 +69,27 @@ public class Playermovment : MonoBehaviour
     {
         
 
-        input.x = Input.GetAxisRaw("Horizontal"); // Get horizontal imput
-        input.y = Input.GetAxisRaw("Vertical"); // Get vertical imput 
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
 
         input.Normalize();//Normalises the diagonal inputs so that they arent faster then normal 
 
-        lookattmous(); // call the function to make the player rotate towards the mouse 
+        lookattmous();
 
-        if (dashtime > 0) // Start dashtimer
+        if (dashtime > 0)
         {
             dashtime -= Time.deltaTime;
         }
 
 
         
-        if (input.y!=0 && !walking_sounds_playing|| input.x != 0 && !walking_sounds_playing) // walk soun - Benjamin
+        if (input.y!=0 && !walking_sounds_playing|| input.x != 0 && !walking_sounds_playing)
         {
             StartCoroutine(walking_sounds_play());
             walking_sounds_playing = true;
 
         }
-        else if (input.y == 0 && input.x == 0 && walking_sounds_playing) // Stops walking sound from playing when it shouldent - Benjamin
+        else if (input.y == 0 && input.x == 0 && walking_sounds_playing)
         {
 
             walking_sounds_playing = false;
@@ -100,7 +98,7 @@ public class Playermovment : MonoBehaviour
 
     }
 
-    public IEnumerator player_animations_reset() // Benjamin
+    public IEnumerator player_animations_reset()
     {
         AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
         float clipLength = clipInfo[0].clip.length;
@@ -145,7 +143,7 @@ public class Playermovment : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && DashCharges > 0 ) // checs so that you have dashcharges and the starts the dash scipt stuff if you do so and pres space 
+        if (Input.GetKeyDown(KeyCode.Space) && DashCharges > 0 )
         {
             DashCharges--;
             audiocontroler.audio_list[6].Play();
@@ -175,11 +173,11 @@ public class Playermovment : MonoBehaviour
             
 
 
-            dashtime = totaldashtime; // set dahstime to total dashtime 
-            rb.linearVelocity = input * dashspeed; // sets linear velocity to be = to dashspeed in the direction of your imput 
-            dashcooldown = totaldashcooldown; // sets dashcooldwon to total cooldown
+            dashtime = totaldashtime;
+            rb.linearVelocity = input * dashspeed;
+            dashcooldown = totaldashcooldown;
           
-            if(dashattack == true) // If you have unlocked dashattack, do the dash attack withc is in player attack script 
+            if(dashattack == true)
             {
 
                 attack.dashattack = true;
@@ -187,7 +185,7 @@ public class Playermovment : MonoBehaviour
             }
 
         }
-        else if (dashtime <= 0) // stops the dash if your dashtime runs out and starts the cooldwon.
+        else if (dashtime <= 0)
         {
             rb.linearVelocity = input * speed;
             dashtime = 0;

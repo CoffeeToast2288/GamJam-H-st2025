@@ -2,7 +2,6 @@
 
 public class Enemy_Bullet : MonoBehaviour
 {
-    // Isaks code!!!!
     [Header("Enemy Bullet Settings")]
     public float speed = 6.5f;
     public float lifetime = 7.5f;
