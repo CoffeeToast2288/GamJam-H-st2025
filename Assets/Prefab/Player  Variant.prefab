@@ -1316,6 +1316,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 953289553515815585, guid: 482f332ac1c8d8147bf8b8469ff68237, type: 3}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: Shotgun
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: AttackBack
       value: 
       objectReference: {fileID: 397038761253811520}
@@ -1360,6 +1364,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6188785557244761826}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: bulletExplosion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: player_animator
       value: 
       objectReference: {fileID: 8896741948791612900}
@@ -1379,6 +1387,26 @@ PrefabInstance:
       propertyPath: spawnPosShotgunFront2
       value: 
       objectReference: {fileID: 3994465131546092783}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: meleeFlashes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'meleeFlashes.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7757746280083070197}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'meleeFlashes.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5892716070785478749}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'meleeFlashes.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1510271012047640842}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'meleeFlashes.Array.data[3]'
+      value: 
+      objectReference: {fileID: 904134048828531915}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: play_animations.Array.size
       value: 5
@@ -1406,6 +1434,14 @@ PrefabInstance:
     - target: {fileID: 5709881833791122771, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5815116337329393923, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: safe_zone.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 5815116337329393923, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: safe_zone.y
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6533774160585832094, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_Color.b
