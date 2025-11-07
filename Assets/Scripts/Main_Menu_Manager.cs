@@ -15,7 +15,7 @@ public class Main_Menu_Manager : MonoBehaviour
     public void Starting()
     {
         Time.timeScale = 1;
-        SceneManager.LoadSceneAsync("Isak");
+        SceneManager.LoadSceneAsync("Maine Scean");
     }
 
     // FUCKING QUITS THE GAME DUH.

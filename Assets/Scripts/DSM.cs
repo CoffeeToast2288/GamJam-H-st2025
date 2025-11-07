@@ -42,7 +42,7 @@ public class DSM : MonoBehaviour
     }
     public void Restarting()
     {
-        SceneManager.LoadSceneAsync("Isak");
+        SceneManager.LoadSceneAsync("Maine Scean");
     }
     public void Quiter()
     {

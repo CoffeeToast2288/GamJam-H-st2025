@@ -251,17 +251,39 @@ public class PlayerHealth : MonoBehaviour
         if (Hp <= 0)
         {
             Hp = 0;
-           if(revive == true)
+
+            if (revive)
             {
                 revive = false;
                 Hp = Hp_max / 2;
+                return;
             }
-            else
-            {
-                dead = true;
-            }
+
+            dead = true;
+            Die();   // ✅ IMPORTANT
         }
+
     }
+
+    void Die()
+    {
+        Debug.Log("PLAYER DIED!");
+
+        // Stop movement
+        var move = FindFirstObjectByType<Playermovment>();
+        if (move) move.enabled = false;
+
+        // Disable hurtbox
+        playerHurtBox.SetActive(false);
+
+        // Stop i-frames if active
+        framed = false;
+
+        // Freeze animations except death
+        if (player_animator != null)
+            player_animator.CrossFade(play_animations[3], 0.2f);
+    }
+
 
     private System.Collections.IEnumerator IFrames()
     {
