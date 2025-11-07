@@ -2,6 +2,8 @@
 
 public class Enemy_Script : MonoBehaviour
 {
+    // Isak has only been here
+
     // ===== ENEMY SETTINGS =====
     [Header("Enemy Settings")]
     public float moveSpeed;               // Movement speed

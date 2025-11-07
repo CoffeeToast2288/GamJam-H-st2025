@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class Main_Menu_Manager : MonoBehaviour
 {
+
+    // It is Isak's code back off
     public void Start()
     {
         // just if you pause and go back

@@ -5,6 +5,8 @@ using TMPro;
 /// Handles all on-screen UI text for the wave system.
 /// Attach this to a Canvas and link the text fields in the inspector.
 /// </summary>
+/// 
+// Isak was only here
 public class WaveUIController : MonoBehaviour
 {
     [Header("UI References")]
