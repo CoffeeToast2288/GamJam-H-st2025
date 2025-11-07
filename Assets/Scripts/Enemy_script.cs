@@ -392,17 +392,18 @@ public class Enemy_Script : MonoBehaviour
     public void TakeDamage(float damage)
     {
         if (isDead) return;
-        ;
+
 
         health -= damage;
-        if (health <= 0) Die();
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
     void Die()
     {
-        animator.Play("death by gun");
         isDead = true;
-        rb.linearVelocity = Vector2.zero;
 
         TryDropHealthPack();   // Attempt health pack drop
 
@@ -421,6 +422,10 @@ public class Enemy_Script : MonoBehaviour
         if (roll <= healthPackDropChance)
         {
             Instantiate(healthPackPrefab, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            return;
         }
     }
 }
