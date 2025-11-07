@@ -1213,7 +1213,7 @@ PrefabInstance:
       objectReference: {fileID: 8896741948791612900}
     - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: DashCharges
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: MaxDashCharges
@@ -1521,6 +1521,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 623756351655905103, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7890580771749518606}
+    - targetCorrespondingSourceObject: {fileID: 623756351655905103, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1565819524101442077}
+    - targetCorrespondingSourceObject: {fileID: 623756351655905103, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4474033706658114814}
   m_SourcePrefab: {fileID: 100100000, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
 --- !u!1 &11254362290769813 stripped
 GameObject:
@@ -1541,6 +1547,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_animator: {fileID: 0}
   play_animations: []
+--- !u!114 &1565819524101442077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11254362290769813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a9aa5087b09f0a4fa0a7d1ff8a208e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashlight: {fileID: 4733131132642207150}
+  unlocked: 0
+  unlockable: 1
+--- !u!114 &4474033706658114814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11254362290769813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5d1a6d199e3464a92eab330b11804b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aoura: {fileID: 0}
+  enemy: {fileID: 0}
+  Cooldown: 0
+  Cooldownmax: 0
+  unlocked: 0
 --- !u!4 &2155056255946665376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1542395940406879610, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
@@ -1549,6 +1587,11 @@ Transform:
 --- !u!4 &4154451010076801061 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3542204243777171711, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+  m_PrefabInstance: {fileID: 616989647416576218}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4733131132642207150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5269362612119858548, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
   m_PrefabInstance: {fileID: 616989647416576218}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &5346444857427468490 stripped
