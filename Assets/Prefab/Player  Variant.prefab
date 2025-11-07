@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
+  kancrit: 0
 --- !u!1 &484446145487421218
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
+  kancrit: 0
 --- !u!1 &1587515144230980122
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,6 +868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
+  kancrit: 0
 --- !u!1 &3206371838692462472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1207,18 @@ PrefabInstance:
       propertyPath: attack
       value: 
       objectReference: {fileID: 5346444857427468490}
+    - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 8896741948791612900}
+    - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'animations.Array.data[0]'
+      value: player walk
+      objectReference: {fileID: 0}
     - target: {fileID: 623756351655905103, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_Name
       value: Player  Variant
@@ -1274,7 +1289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: sword
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: bullet
@@ -1325,6 +1340,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6188785557244761826}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: player_animator
+      value: 
+      objectReference: {fileID: 8896741948791612900}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: spawnPosShotgunBack1
       value: 
       objectReference: {fileID: 7923097526485087220}
@@ -1340,8 +1359,40 @@ PrefabInstance:
       propertyPath: spawnPosShotgunFront2
       value: 
       objectReference: {fileID: 3994465131546092783}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: play_animations.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'play_animations.Array.data[0]'
+      value: player walk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'play_animations.Array.data[1]'
+      value: hurt
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'play_animations.Array.data[2]'
+      value: melee attack player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'play_animations.Array.data[3]'
+      value: death
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: 'play_animations.Array.data[4]'
+      value: player_gun_attack
+      objectReference: {fileID: 0}
     - target: {fileID: 5709881833791122771, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533774160585832094, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533774160585832094, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: m_Color.g
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7218105634972355831, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
@@ -1394,8 +1445,30 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3542204243777171711, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4722590836937835491}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 623756351655905103, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7890580771749518606}
   m_SourcePrefab: {fileID: 100100000, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+--- !u!1 &11254362290769813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 623756351655905103, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+  m_PrefabInstance: {fileID: 616989647416576218}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7890580771749518606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11254362290769813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1310cd281b00b418b8d050942e365d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_animator: {fileID: 0}
+  play_animations: []
 --- !u!4 &2155056255946665376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1542395940406879610, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
@@ -1411,9 +1484,14 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
   m_PrefabInstance: {fileID: 616989647416576218}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 11254362290769813}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05d65655369849d4c84950dfdd8519f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &8896741948791612900 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8356551682126097726, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+  m_PrefabInstance: {fileID: 616989647416576218}
+  m_PrefabAsset: {fileID: 0}

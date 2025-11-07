@@ -30,11 +30,20 @@ public class PlayerHealth : MonoBehaviour
     public bool revive = false;
 
     public Animator animator;
-    public bool is_below_7, is_below_10;
+    public bool is_below_7, is_below_10, is_taking_damage, is_healing;
     public Sprite[] numbers;
     public string[] animtions_heal, animations_hurt;
     public SpriteRenderer card_1, card_2;
-    public int animation_charges;
+    public int damage_animation_charges, heal_animation_charges;
+
+    public Animator player_animator;
+    public string[] play_animations;
+
+    private void Start()
+    {
+        health_card_change();
+
+    }
 
     void Update()
     {
@@ -46,6 +55,19 @@ public class PlayerHealth : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.I))
         {
             TakeDamage(2);
+           
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Heal(2);
+            Debug.Log("did the thing");
+        }
+
+        if (damage_animation_charges > 0 && !is_taking_damage)
+        {
+            is_taking_damage = true;
+            Debug.Log($"⏩ Continuing animation chain. Charges left: {damage_animation_charges}" + " is looping");
+            StartCoroutine(health_charge_animation_damage());
         }
 
     }
@@ -54,12 +76,27 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Hp < Hp_max)
         {
+            check_health();
             Hp += healing;
 
             if (flashText != null)
                 StartCoroutine(ShowFlash($"+{healing} HP!"));
-            check_health();
 
+            
+            int val = Mathf.FloorToInt(healing);
+            heal_animation_charges += val;
+
+
+            if (is_below_7)
+            {
+
+                StartCoroutine(health_charge_animation_damage());
+                health_card_change();
+            }
+            else
+            {
+                health_card_change();
+            }
 
         }
     }
@@ -87,25 +124,70 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    public void health_charge_animation_heal()
+    public IEnumerator health_charge_animation_heal()
     {
-        int val = Mathf.FloorToInt(Hp);
-        animator.Play(animtions_heal[val]);
+        int val = Mathf.FloorToInt(Hp - heal_animation_charges);
+       
+      
 
+        Debug.Log(val);
+      
+        if (val < 7)
+        {
+            animator.Play(animtions_heal[val]);
+            AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
+            float clipLength = clipInfo[0].clip.length;
+            Debug.Log("clip length " + clipLength);
+            yield return new WaitForSeconds(clipLength);
+        }
+        else
+        {
+
+            yield return new WaitForSeconds(0.1f);
+        }
+        if (heal_animation_charges >= 0)
+        {
+            heal_animation_charges--;
+
+        }
+        
+        if (heal_animation_charges > 0)
+        {
+            Debug.Log($"⏩ Continuing animation chain. Charges left: {heal_animation_charges}" + " is looping");
+            StartCoroutine(health_charge_animation_damage());
+        }
     }
 
     public IEnumerator health_charge_animation_damage()
     {
-        int val = Mathf.FloorToInt(Hp +animation_charges-1);
-        animator.Play(animations_hurt[val]);
-        animation_charges -= 1;
-        AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
-        float clipLength = clipInfo[0].clip.length;
-        yield return new WaitForSeconds(clipLength);
-        if (animation_charges < 0)
+        
+        
+        int val = Mathf.FloorToInt(Hp + damage_animation_charges);
+
+        Debug.Log(val);
+      
+        
+       
+        if (val < 7)
         {
-            StartCoroutine(health_charge_animation_damage());
+            Debug.Log("animation");
+            animator.Play(animations_hurt[val]);
+            AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
+            float clipLength = clipInfo[0].clip.length;
+            Debug.Log("clip length " + clipLength);
+            yield return new WaitForSeconds(clipLength);
         }
+        else
+        {
+            Debug.Log("confusion");
+
+            yield return new WaitForSeconds(0.1f);
+        }
+       
+        is_taking_damage = false;
+        damage_animation_charges -= 1;
+
+
 
     }
 
@@ -129,6 +211,14 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    public IEnumerator player_animations_reset()
+    {
+        AnimatorClipInfo[] clipInfo = player_animator.GetCurrentAnimatorClipInfo(0);
+        float clipLength = clipInfo[0].clip.length;
+        Debug.Log("clip length " + clipLength);
+        yield return new WaitForSeconds(clipLength);
+        player_animator.CrossFade(play_animations[0],0.2f);
+    }
 
     public void TakeDamage(float damage)
     {
@@ -136,13 +226,20 @@ public class PlayerHealth : MonoBehaviour
         if (framed)
             return;
 
+        player_animator.CrossFade(play_animations[1], 0.2f);
+        StartCoroutine(player_animations_reset());
+
         Hp -= damage;
-        int val = Mathf.FloorToInt(Hp);
-        animation_charges = val;
+        check_health();
+        int val = Mathf.FloorToInt(damage);
+        damage_animation_charges += val;
+        
+       
         if (is_below_7)
         {
-
-
+            
+            StartCoroutine(health_charge_animation_damage());
+            health_card_change();
         }
         else
         {
