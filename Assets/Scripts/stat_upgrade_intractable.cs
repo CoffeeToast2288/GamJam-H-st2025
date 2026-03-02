@@ -22,7 +22,6 @@ public class stat_upgrade_intractable : MonoBehaviour
             is_open = true;
             if (round_bonus== true)
             {
-                upgrade_script.upgrade_points += 2;
 
             }
 

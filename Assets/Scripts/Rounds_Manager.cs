@@ -15,6 +15,9 @@ public class WaveSystem : MonoBehaviour
     [Tooltip("Enemy prefab with Enemy_Script component")]
     public GameObject enemyPrefab;
 
+    [Tooltip("Upgrade logic that makes the start of the process work")]
+    public GameObject upgradeParts;
+
     [Tooltip("Possible spawn positions for enemies")]
     public Transform[] spawnPoints;
 
@@ -129,11 +132,13 @@ public class WaveSystem : MonoBehaviour
         safeEventScript.EnterSafeZone();
 
         // --- Give the player a moment to settle ---
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         // --- Fade out the message smoothly over 1.5 seconds ---
         if (uiController != null)
             yield return uiController.StartCoroutine(uiController.FadeOutMessage(1.5f));
+
+        upgradeParts.SetActive(true);
 
         // --- Show Continue Prompt ---
         uiController?.ShowContinuePrompt(true);
