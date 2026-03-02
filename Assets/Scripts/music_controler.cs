@@ -22,8 +22,10 @@ public class music_controler : MonoBehaviour
 
         if (is_in_fighty) // this checks if the player is in the fighty arena 
         {
-            if (!current_audio.isPlaying && is_playing_fighty) // this checks if the audio is playing and if the correct music is playing 
+            Debug.Log("music_run");
+            if (current_audio.isPlaying == false && is_playing_fighty) // this checks if the audio is playing and if the correct music is playing 
             {
+                Debug.Log("music");
                 if (play_audio != 3)// this if and else statment runs through the audio cycle and resets at three
                 {
                     play_audio += 1;
@@ -33,13 +35,14 @@ public class music_controler : MonoBehaviour
                 {
                     play_audio = 0;
                 }
-
+                
                 current_audio = fighty_music[play_audio];// changes the current audio to match the one in the cycle 
                 current_audio.Play(); // plays the audio
                 is_playing_fighty = true; // shows that the music playing is for the fighty areana 
             }
             else if (current_audio.isPlaying && !is_playing_fighty) // this is identical to the one above but checks if the music playing is the correct one for the areana 
             {
+                Debug.Log("music_run");
                 if (play_audio != 3)
                 {
                     play_audio += 1;

@@ -70,17 +70,6 @@ public class PlayerHealth : MonoBehaviour
             Die();   // ✅ IMPORTANT
         }
 
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            TakeDamage(2);
-           
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            Heal(2);
-            Debug.Log("did the thing");
-        }
-
         if (damage_animation_charges > 0 && !is_taking_damage)
         {
             is_taking_damage = true;

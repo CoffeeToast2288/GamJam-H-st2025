@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 8416954405166769476, guid: 12996450ba75fca409724888a6f458d4, type: 3}
   m_Color: {r: 0.9748427, g: 0.9748427, b: 0.9748427, a: 1}
   m_FlipX: 0
@@ -282,13 +282,11 @@ MonoBehaviour:
   player: {fileID: 0}
   damage: 10
   targetTag: Enemy
-  piercing: 0
-  explosionUpgrade: 0
-  explosionPrefab: {fileID: 6932956013459667387, guid: 4ac286ed65894d14c937de9f3cb1cd4f, type: 3}
-  explosionRadius: 2
-  explosionDamageMultiplier: 1
   explosionEnabled: 0
   radius: 1
+  explosionPrefab: {fileID: 6932956013459667387, guid: 4ac286ed65894d14c937de9f3cb1cd4f, type: 3}
+  explosionDamageMultiplier: 1
+  piercing: 0
 --- !u!1 &6311107543238467110
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +366,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 8416954405166769476, guid: 12996450ba75fca409724888a6f458d4, type: 3}
   m_Color: {r: 0.9748427, g: 0.9748427, b: 0.9748427, a: 1}
   m_FlipX: 0
@@ -571,13 +569,11 @@ MonoBehaviour:
   player: {fileID: 0}
   damage: 10
   targetTag: Enemy
-  piercing: 0
-  explosionUpgrade: 0
-  explosionPrefab: {fileID: 6932956013459667387, guid: 4ac286ed65894d14c937de9f3cb1cd4f, type: 3}
-  explosionRadius: 2
-  explosionDamageMultiplier: 1
   explosionEnabled: 0
   radius: 1
+  explosionPrefab: {fileID: 6932956013459667387, guid: 4ac286ed65894d14c937de9f3cb1cd4f, type: 3}
+  explosionDamageMultiplier: 1
+  piercing: 0
 --- !u!1 &6381952166112228081
 GameObject:
   m_ObjectHideFlags: 0
