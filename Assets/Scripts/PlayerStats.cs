@@ -21,7 +21,7 @@ public class PlayerStats : MonoBehaviour
     public float baseDamage = 1;
     public float baseHP = 4;
     public float baseSpeed = 5;
-    public float baseAttackSpeed = 1;
+    public float baseAttackSpeed = 5;
 
     // Runtime stats
     public float damage;
@@ -37,13 +37,10 @@ public class PlayerStats : MonoBehaviour
         attack_speed = baseAttackSpeed;
     }
 
-
-
     public void Start()
     {
         ApplyStats();
     }
-
 
     public void ApplyStats()
     {
@@ -58,7 +55,5 @@ public class PlayerStats : MonoBehaviour
         MeleeScript?.damageupdate();
         AttacScript?.UpdateAtackSpeed();
         Bullet?.damageupdate();
-
     }
-
 }

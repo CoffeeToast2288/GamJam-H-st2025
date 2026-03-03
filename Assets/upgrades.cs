@@ -25,6 +25,8 @@ public class upgrades : MonoBehaviour
         Health,
         Speed,
         AttackSpeed,
+        DashCooldown,
+        DashChargers
     }
     public enum Rarity
     {
@@ -101,6 +103,10 @@ public class upgrades : MonoBehaviour
                     stats.speed += value; break;
                 case UpgradeType.AttackSpeed:
                     stats.attack_speed += value; break;
+                case UpgradeType.DashChargers:
+                    stats.dash_chargers += value; break;
+                case UpgradeType.DashCooldown:
+                    stats.dash_coldown_reduction += value; break;
             }
         }
 
@@ -110,6 +116,7 @@ public class upgrades : MonoBehaviour
 
     public void DoneTimeToStart()
     {
+        rolled = false;
         if (upgradebase != null)
             upgradebase.SetActive(false);
     }

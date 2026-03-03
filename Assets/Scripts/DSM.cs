@@ -22,14 +22,12 @@ public class DSM : MonoBehaviour
     {
         // Check the PlayerHealth's dead bool directly
         if (playerHealth != null && playerHealth.dead)
-        {
-            
-
-           
+        {                    
             // Activate death screen only once
             if (!deathScreen.activeSelf)
 
                 deathScreen.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
     

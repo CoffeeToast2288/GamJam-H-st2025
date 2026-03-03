@@ -1537,9 +1537,6 @@ PrefabInstance:
       addedObject: {fileID: 7890580771749518606}
     - targetCorrespondingSourceObject: {fileID: 623756351655905103, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1565819524101442077}
-    - targetCorrespondingSourceObject: {fileID: 623756351655905103, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4474033706658114814}
   m_SourcePrefab: {fileID: 100100000, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
 --- !u!1 &11254362290769813 stripped
@@ -1561,21 +1558,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_animator: {fileID: 0}
   play_animations: []
---- !u!114 &1565819524101442077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11254362290769813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a9aa5087b09f0a4fa0a7d1ff8a208e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashlight: {fileID: 0}
-  unlocked: 0
-  unlockable: 1
 --- !u!114 &4474033706658114814
 MonoBehaviour:
   m_ObjectHideFlags: 0
