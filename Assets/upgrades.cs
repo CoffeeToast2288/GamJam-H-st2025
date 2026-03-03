@@ -12,10 +12,11 @@ using Random = System.Random;
 public class upgrades : MonoBehaviour
 {
     public GameObject upgradebase;
-    PlayerStats stats;
+    [SerializeField] PlayerStats stats;
     public Transform spawn1, spawn2, spawn3;
 
     public Upgrade[] upgradesLogics;
+    public bool rolled;
 
 
     float baseDamage = 1;
@@ -114,17 +115,22 @@ public class upgrades : MonoBehaviour
 
     public void StartRoll()
     {
-        StartCoroutine(Roll());
+        if (!rolled)
+        {
+            StartCoroutine(Roll());
+        }
+        
     }
 
     IEnumerator Roll()
     {
+        rolled = true;
         int num1 = rnd.Next(upgradesLogics.Length);
         int num2 = rnd.Next(upgradesLogics.Length);
         int num3 = rnd.Next(upgradesLogics.Length);
         Debug.Log("the first number is " + num1 + " the secound number is " + num2 + " the third number is " + num3);
         Debug.Log("It should work because the " + upgradesLogics[num1].name + " is num1 and " + upgradesLogics[num2].name + " is num2 and finally " + upgradesLogics[num3].name + " is num3");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         GameObject upgrade1 = Instantiate(upgradesLogics[num1].Button, upgradebase.transform);
         upgrade1.transform.position = spawn1.position;
         GameObject upgrade2 = Instantiate(upgradesLogics[num2].Button, upgradebase.transform);

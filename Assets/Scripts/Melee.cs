@@ -26,14 +26,11 @@ public class Melee : MonoBehaviour
             crit = Random.Range(1, 101); // randomiser for crit
             if (kancrit && crit <= critchanse)
             {
-
                 enemy.TakeDamage(critdamage);
-
             }
             else 
             {
                 enemy.TakeDamage(damage);
-
             }
 
             

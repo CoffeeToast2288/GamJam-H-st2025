@@ -1325,7 +1325,7 @@ PrefabInstance:
       objectReference: {fileID: 953289553515815585, guid: 482f332ac1c8d8147bf8b8469ff68237, type: 3}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: Shotgun
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: AttackBack
@@ -1337,7 +1337,7 @@ PrefabInstance:
       objectReference: {fileID: 1458822079758798067}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: BackAttack
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: AttackRight
@@ -1345,7 +1345,7 @@ PrefabInstance:
       objectReference: {fileID: 2411034074328729736}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: SideAttacks
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: burstbullet
@@ -1373,7 +1373,7 @@ PrefabInstance:
       objectReference: {fileID: 6188785557244761826}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: bulletExplosion
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: player_animator
@@ -1476,7 +1476,9 @@ PrefabInstance:
       value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5269362612119858548, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+    - {fileID: 5405316902036748563, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1542395940406879610, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       insertIndex: 1
@@ -1559,7 +1561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9aa5087b09f0a4fa0a7d1ff8a208e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashlight: {fileID: 4733131132642207150}
+  flashlight: {fileID: 0}
   unlocked: 0
   unlockable: 1
 --- !u!114 &4474033706658114814
@@ -1587,11 +1589,6 @@ Transform:
 --- !u!4 &4154451010076801061 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3542204243777171711, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
-  m_PrefabInstance: {fileID: 616989647416576218}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4733131132642207150 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5269362612119858548, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
   m_PrefabInstance: {fileID: 616989647416576218}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &5346444857427468490 stripped
