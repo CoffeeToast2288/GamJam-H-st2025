@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -24,17 +25,27 @@ public class PlayerStats : MonoBehaviour
 
     public bool upgraded = false;
 
-
-    public void Update() // Refrences funktions to update the stats in verius scripts - Nino
+    public void Start()
     {
-        if (upgraded)
-        {
-            HealthScript.updatehealth();
-            PlayermovmentScript.speedupdate();
-            MeleeScript.damageupdate();
-            AttacScript.UpdateAtackSpeed();
-            Bullet.damageupdate();
-        }
+        ApplyStats();
+    }
+
+
+    public void ApplyStats()
+    {
+        Debug.Log("Health: " + HealthScript);
+        Debug.Log("Movement: " + PlayermovmentScript);
+        Debug.Log("Melee: " + MeleeScript);
+        Debug.Log("Attack: " + AttacScript);
+        Debug.Log("Bullet: " + Bullet);
+
+        HealthScript?.updatehealth();
+        PlayermovmentScript?.speedupdate();
+        MeleeScript?.damageupdate();
+        AttacScript?.UpdateAtackSpeed();
+        Bullet?.damageupdate();
+
+        upgraded = false;
     }
 
 }

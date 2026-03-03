@@ -18,7 +18,6 @@ public class upgrades : MonoBehaviour
     public Upgrade[] upgradesLogics;
     public bool rolled;
 
-
     float baseDamage = 1;
     float baseHealth = 4;
     float baseSpeed = 5;
@@ -39,7 +38,6 @@ public class upgrades : MonoBehaviour
         Epic,
         Legendary
     }
-
     [System.Serializable]
     public class Upgrade
     {
@@ -51,7 +49,6 @@ public class upgrades : MonoBehaviour
 
         [HideInInspector] public int level;        
     }
-
     public void Test()
     {
         Debug.Log(upgradesLogics[2].name);
@@ -60,11 +57,9 @@ public class upgrades : MonoBehaviour
     {
         var u = upgradesLogics[i];
         u.level++;
-        stats.upgraded = true;
         CalculateStats();
         DoneTimeToStart();
     }
-
     float GetRarityMultiplier(Rarity rarity)
     {
         switch (rarity)
@@ -96,23 +91,27 @@ public class upgrades : MonoBehaviour
             {
                 case UpgradeType.Damage:
                     stats.damage += value;
+                    stats.upgraded = true;
                     break;
 
                 case UpgradeType.Health:
                     stats.hp += value;
+                    stats.upgraded = true;
                     break;
 
                 case UpgradeType.Speed:
                     stats.speed += value;
+                    stats.upgraded = true;
                     break;
 
                 case UpgradeType.AttackSpeed:
-                    stats.attack_speed += value;
+                    stats.attack_speed -= value/2;
+                    stats.upgraded = true;
                     break;
             }
         }
+        stats.ApplyStats();
     }
-
     public void StartRoll()
     {
         if (!rolled)
@@ -121,7 +120,6 @@ public class upgrades : MonoBehaviour
         }
         
     }
-
     IEnumerator Roll()
     {
         rolled = true;
@@ -139,16 +137,10 @@ public class upgrades : MonoBehaviour
         upgrade3.transform.position = spawn3.position;
 
     }
-
-
-
     public void DoneTimeToStart()
     {
         upgradebase.SetActive(false);        
         Time.timeScale = 1f;
-        stats.upgraded = false;
     }
-
-
 }
 
