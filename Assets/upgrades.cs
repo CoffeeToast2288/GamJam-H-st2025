@@ -1,9 +1,13 @@
+using NUnit.Framework.Internal;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using Unity.Burst;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Random = System.Random;
 
 public class upgrades : MonoBehaviour
 {
@@ -13,20 +17,18 @@ public class upgrades : MonoBehaviour
 
     public Upgrade[] upgradesLogics;
 
+
     float baseDamage = 1;
     float baseHealth = 4;
     float baseSpeed = 5;
     float baseAttackSpeed = 1;
-
+    Random rnd = new Random();
     public enum UpgradeType
     {
         Damage,
         Health,
         Speed,
         AttackSpeed,
-        Light,
-        DashCharge,
-        DashCooldown
     }
     public enum Rarity
     {
@@ -51,12 +53,17 @@ public class upgrades : MonoBehaviour
         
     }
 
+    public void Test()
+    {
+        Debug.Log(upgradesLogics[2].name);
+    }
     public void GainUpgrade(int i)
     {
         var u = upgradesLogics[i];
         u.level++;
         CalculateStats();
     }
+
     float GetRarityMultiplier(Rarity rarity)
     {
         switch (rarity)
@@ -104,6 +111,26 @@ public class upgrades : MonoBehaviour
             }
         }
     }
+
+    public void StartRoll()
+    {
+        StartCoroutine(Roll());
+    }
+
+    IEnumerator Roll()
+    {
+        int num1 = rnd.Next(upgradesLogics.Length);
+        int num2 = rnd.Next(upgradesLogics.Length);
+        int num3 = rnd.Next(upgradesLogics.Length);
+        Debug.Log("the first number is " + num1 + " the secound number is " + num2 + " the third number is " + num3);
+        Debug.Log("It should work because the " + upgradesLogics[num1].name + " is num1 and " + upgradesLogics[num2].name + " is num2 and finally " + upgradesLogics[num3].name + " is num3");
+        Instantiate(upgradesLogics[num1].Button, spawn1.position, quaternion.identity);
+        Instantiate(upgradesLogics[num2].Button, spawn2.position, quaternion.identity);
+        Instantiate(upgradesLogics[num3].Button, spawn3.position, quaternion.identity);
+
+        yield return new WaitForSeconds(2f);
+    }
+
 
 
     public void DoneTimeToStart()

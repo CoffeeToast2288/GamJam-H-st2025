@@ -6,9 +6,9 @@ public class Melee : MonoBehaviour
     public PlayerStats stats;
     float damage;
     float critdamage;
-    int crit;
+    float crit;
    public bool kancrit = false;
-    int critchanse; // chans to crit 1-100%
+    float critchanse; // chans to crit 1-100%
     private void Start()
     {
         damageupdate();

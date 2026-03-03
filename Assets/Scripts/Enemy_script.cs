@@ -74,7 +74,7 @@ public class Enemy_Script : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Enemy_Script could not find player in scene!");
+            Debug.LogWarning("Enemy_Script could not find Audiocontrol in scene!");
         }
 
         rb = GetComponent<Rigidbody2D>();
