@@ -48,9 +48,7 @@ public class upgrades : MonoBehaviour
         public UpgradeType type;
         public Rarity rarityType;
 
-        [HideInInspector] public int level;
-
-        
+        [HideInInspector] public int level;        
     }
 
     public void Test()
@@ -61,7 +59,9 @@ public class upgrades : MonoBehaviour
     {
         var u = upgradesLogics[i];
         u.level++;
+        stats.upgraded = true;
         CalculateStats();
+        DoneTimeToStart();
     }
 
     float GetRarityMultiplier(Rarity rarity)
@@ -124,19 +124,23 @@ public class upgrades : MonoBehaviour
         int num3 = rnd.Next(upgradesLogics.Length);
         Debug.Log("the first number is " + num1 + " the secound number is " + num2 + " the third number is " + num3);
         Debug.Log("It should work because the " + upgradesLogics[num1].name + " is num1 and " + upgradesLogics[num2].name + " is num2 and finally " + upgradesLogics[num3].name + " is num3");
-        Instantiate(upgradesLogics[num1].Button, spawn1.position, quaternion.identity);
-        Instantiate(upgradesLogics[num2].Button, spawn2.position, quaternion.identity);
-        Instantiate(upgradesLogics[num3].Button, spawn3.position, quaternion.identity);
+        yield return new WaitForSeconds(4f);
+        GameObject upgrade1 = Instantiate(upgradesLogics[num1].Button, upgradebase.transform);
+        upgrade1.transform.position = spawn1.position;
+        GameObject upgrade2 = Instantiate(upgradesLogics[num2].Button, upgradebase.transform);
+        upgrade2.transform.position = spawn2.position;
+        GameObject upgrade3 = Instantiate(upgradesLogics[num3].Button, upgradebase.transform);
+        upgrade3.transform.position = spawn3.position;
 
-        yield return new WaitForSeconds(2f);
     }
 
 
 
     public void DoneTimeToStart()
     {
-        upgradebase.SetActive(false);
+        upgradebase.SetActive(false);        
         Time.timeScale = 1f;
+        stats.upgraded = false;
     }
 
 

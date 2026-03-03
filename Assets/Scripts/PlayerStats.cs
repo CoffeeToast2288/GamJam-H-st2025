@@ -27,13 +27,13 @@ public class PlayerStats : MonoBehaviour
 
     public void Update() // Refrences funktions to update the stats in verius scripts - Nino
     {
-        if(upgraded == true)
+        if (upgraded)
         {
             HealthScript.updatehealth();
             PlayermovmentScript.speedupdate();
             MeleeScript.damageupdate();
             AttacScript.UpdateAtackSpeed();
-
+            Bullet.damageupdate();
         }
     }
 
