@@ -258,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   lifetime: 5
-  player: {fileID: 0}
+  player: {fileID: 7513998786404539937, guid: 717b42488177a574988e7bf906fbb275, type: 3}
   damage: 1
   targetTag: Enemy
   explosionEnabled: 0

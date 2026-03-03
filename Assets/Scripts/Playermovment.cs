@@ -18,16 +18,22 @@ public class Playermovment : MonoBehaviour
     Vector2 mousepos; // Vector to determin wher the cursor is.
 
     [Header("Dash")]
-     public float dashtime; // how long have you bean dashing
-    public float totaldashtime = 1f; // for how long should the dash last
-    public float dashspeed = 20f; // how long is the dash
-    public float dashcooldown; // how long od you have left on your dashcharges cooldown 
-    public float totaldashcooldown = 5f; // how long the total coldown of the dash is 
-    public float DashCharges; // how many dash charges do you curently have
-    public float MaxDashCharges; // what is the maximum amount of dashcharges you kan have
-    public bool walking_sounds_playing; // is the walking sound playing?
+    public float dashDuration = 0.2f;
+    public float dashSpeed = 20f;
+
+    private float dashTimeRemaining;
+    private float dashCooldownTimer;
+
+    public float baseDashCooldown = 5f;
+    private float totalDashCooldown;
+
+    public int currentDashCharges;
+    public int maxDashCharges;
+
+    private bool isDashing;
     public AudioSource current_walking_sound; // curent walking sound so it kan sycal inbetwen them
     public int current_walking_sound_val; // in for the sound loop
+    public bool walkingSoundsPlaying; // is the walking sound playing?
 
     [Header("Upgrade Stuff")] // variables for wether certain upgrades should be enabled or not 
     public bool dashattack = false; 
@@ -39,24 +45,21 @@ public class Playermovment : MonoBehaviour
     public bool is_walking;
     public audiocontroler audiocontroler;
 
-    
 
-    
-    public void speedupdate() // Update variables to be in acordance with stat upgrades 
+
+
+    public void speedupdate()
     {
         speed = stats.speed;
-        totaldashcooldown = 5f;
-        StartCoroutine(dash_charge_cooldown());//Benjamin
-        if (totaldashcooldown == 5f) // Some math for the dash cooldwon
-        {
-            totaldashcooldown /= dashcooldown;
 
-        }
-        MaxDashCharges = stats.dash_chargers;
+        totalDashCooldown = baseDashCooldown / stats.dash_coldown_reduction;
 
+        maxDashCharges = Mathf.RoundToInt(stats.dash_chargers);
+
+        currentDashCharges = Mathf.Clamp(currentDashCharges, 0, maxDashCharges);
     }
-   
-   
+
+
     //
 
     void Start()
@@ -69,35 +72,41 @@ public class Playermovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        HandleMovementInput();
+        HandleDashInput();
+        HandleDashRecharge();
+    }
+    void HandleMovementInput()
+    {
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
 
-        input.x = Input.GetAxisRaw("Horizontal"); // Get horizontal imput
-        input.y = Input.GetAxisRaw("Vertical"); // Get vertical imput 
+        input.Normalize();
 
-        input.Normalize();//Normalises the diagonal inputs so that they arent faster then normal 
+        lookattmous();
 
-        lookattmous(); // call the function to make the player rotate towards the mouse 
-
-        if (dashtime > 0) // Start dashtimer
+        // Start walking sound if moving and not already playing
+        if ((input.x != 0 || input.y != 0) && !walkingSoundsPlaying)
         {
-            dashtime -= Time.deltaTime;
+            walkingSoundsPlaying = true;
+            StartCoroutine(WalkingSoundsPlay());
         }
-
-
-        
-        if (input.y!=0 && !walking_sounds_playing|| input.x != 0 && !walking_sounds_playing) // walk soun - Benjamin
+    }
+    void HandleDashInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && currentDashCharges > 0 && !isDashing)
         {
-            StartCoroutine(walking_sounds_play());
-            walking_sounds_playing = true;
-
+            StartDash();
         }
-        else if (input.y == 0 && input.x == 0 && walking_sounds_playing) // Stops walking sound from playing when it shouldent - Benjamin
-        {
+    }
+    void StartDash()
+    {
+        isDashing = true;
+        dashTimeRemaining = dashDuration;
 
-            walking_sounds_playing = false;
-        }
-        
+        currentDashCharges--;
 
+        rb.linearVelocity = input * dashSpeed;
     }
 
     public IEnumerator player_animations_reset() // Benjamin
@@ -109,129 +118,62 @@ public class Playermovment : MonoBehaviour
         animator.CrossFade(animations[0], 0.2f);
     }
 
-    public IEnumerator dash_charge_cooldown()
+    void HandleDashRecharge()
     {
-
-        yield return new WaitForSeconds(dashcooldown);
-        if (DashCharges< MaxDashCharges)
+        if (currentDashCharges < maxDashCharges)
         {
-            DashCharges++;
-            switch (DashCharges)
+            dashCooldownTimer += Time.deltaTime;
+
+            if (dashCooldownTimer >= totalDashCooldown)
             {
-                case 1:
-                    bar_1.Play("dash charge 0-1");
-
-                    break;
-                case 2:
-                    bar_1.Play("1-2");
-
-                    break;
-                case 3:
-                    bar_2.Play("dash charge 2-3");
-
-                    break;
-                case 4:
-                    bar_2.Play("dash charge 3-4");
-
-                    break;
-
+                currentDashCharges++;
+                dashCooldownTimer = 0f;
             }
-            StartCoroutine(dash_charge_cooldown());
         }
-        
     }
 
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space) && DashCharges > 0 ) // checs so that you have dashcharges and the starts the dash scipt stuff if you do so and pres space 
+        if (isDashing)
         {
-            DashCharges--;
-            audiocontroler.audio_list[6].Play();
-            animator.CrossFade(animations[4], 0.2f);
-            StartCoroutine(player_animations_reset());
-            StartCoroutine(dash_charge_cooldown());
-            switch (DashCharges)
+            dashTimeRemaining -= Time.fixedDeltaTime;
+
+            if (dashTimeRemaining <= 0f)
             {
-                case 0:
-                    bar_1.Play("1-0 dash charges");
-
-                    break;
-                case 1:
-                    bar_1.Play("2-1 dash charges");
-
-                    break;
-                case 2:
-                    bar_2.Play("3-2");
-
-                    break;
-                case 3:
-                    bar_2.Play("4-3");
-
-                    break;
-                
+                isDashing = false;
             }
-            
-
-
-            dashtime = totaldashtime; // set dahstime to total dashtime 
-            rb.linearVelocity = input * dashspeed; // sets linear velocity to be = to dashspeed in the direction of your imput 
-            dashcooldown = totaldashcooldown; // sets dashcooldwon to total cooldown
-          
-            if(dashattack == true) // If you have unlocked dashattack, do the dash attack withc is in player attack script 
-            {
-
-                attack.dashattack = true;
-
-            }
-
         }
-        else if (dashtime <= 0) // stops the dash if your dashtime runs out and starts the cooldwon.
+        else
         {
             rb.linearVelocity = input * speed;
-            dashtime = 0;
-           
-            if (dashcooldown > 0)
-            {
-                dashcooldown -= Time.deltaTime;
-
-            }
-            if (dashcooldown < 0)
-            {
-                dashcooldown = 0;
-            }
         }
-        
     }
-    
+
     private void lookattmous()// Determins the postion of the mouse in World point and uses the transforms of wher the player is facting to rotate it to face the camera 
     {
         mousepos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.up = (Vector2)mousepos - new Vector2(transform.position.x, transform.position.y);
     }
-     
-     IEnumerator walking_sounds_play()
+
+    IEnumerator WalkingSoundsPlay()
     {
-        current_walking_sound = audiocontroler.audio_list[current_walking_sound_val];
-        current_walking_sound.Play();
-        if (current_walking_sound_val != 5)
+        while (input.x != 0 || input.y != 0)  // Loopar så länge spelaren rör sig
         {
-            current_walking_sound_val += 1;
-        }
-        else
-        {
-            current_walking_sound_val = 3;
-        }
-        yield return new WaitForSeconds(1f);
+            current_walking_sound = audiocontroler.audio_list[current_walking_sound_val];
+            current_walking_sound.Play();
 
-        if (walking_sounds_playing)
-        {
-            StartCoroutine(walking_sounds_play());
+            if (current_walking_sound_val != 5)
+                current_walking_sound_val += 1;
+            else
+                current_walking_sound_val = 3;
 
+            yield return new WaitForSeconds(1f);
         }
 
-
+        // Stop loop när spelaren slutar gå
+        walkingSoundsPlaying = false;
     }
+
 
 }

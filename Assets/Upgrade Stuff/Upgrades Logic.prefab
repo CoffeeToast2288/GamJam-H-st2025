@@ -188,7 +188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3093519760559424565
 RectTransform:
   m_ObjectHideFlags: 0
@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradebase: {fileID: 3219567692875595938}
+  stats: {fileID: 4615771161727363192, guid: c44a563a52fd5f04b8e07c29e1c55707, type: 3}
   spawn1: {fileID: 7184194056167393008}
   spawn2: {fileID: 5203416602859164452}
   spawn3: {fileID: 5596164251988244574}
@@ -234,19 +235,20 @@ MonoBehaviour:
     effect: 2
     type: 3
     rarityType: 0
-    level: 0
+    level: 25
   - Button: {fileID: 5814265805790330746, guid: d220766c055bc534291a5aaa9a879bd2, type: 3}
     name: Damage Up
     effect: 2
     type: 0
     rarityType: 0
-    level: 0
+    level: 49
   - Button: {fileID: 1202241586887684462, guid: fea479a045e348542b502bbc4a5ebbaf, type: 3}
     name: Health Up
     effect: 1
     type: 1
     rarityType: 0
-    level: 0
+    level: 33
+  rolled: 0
 --- !u!223 &6447569510043996985
 Canvas:
   m_ObjectHideFlags: 0
