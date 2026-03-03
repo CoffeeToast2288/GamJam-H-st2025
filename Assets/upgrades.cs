@@ -18,10 +18,6 @@ public class upgrades : MonoBehaviour
     public Upgrade[] upgradesLogics;
     public bool rolled;
 
-    float baseDamage = 1;
-    float baseHealth = 4;
-    float baseSpeed = 5;
-    float baseAttackSpeed = 1;
     Random rnd = new Random();
     public enum UpgradeType
     {
@@ -55,10 +51,10 @@ public class upgrades : MonoBehaviour
     }
     public void GainUpgrade(int i)
     {
-        var u = upgradesLogics[i];
-        u.level++;
+        if (i < 0 || i >= upgradesLogics.Length) return;
+
+        upgradesLogics[i].level++;
         CalculateStats();
-        DoneTimeToStart();
     }
     float GetRarityMultiplier(Rarity rarity)
     {
@@ -72,46 +68,52 @@ public class upgrades : MonoBehaviour
             default: return 1.0f;
         }
     }
+    private void Start()
+    {
+        foreach (var u in upgradesLogics)
+        {
+            u.level = 0;
+        }
+    }
     public void CalculateStats()
     {
-        // Reset stats first
-        stats.damage = baseDamage;
-        stats.hp = baseHealth;
-        stats.speed = baseSpeed;
-        stats.attack_speed = baseAttackSpeed;
+        if (stats == null)
+        {
+            Debug.LogError("Stats är null! Dra in PlayerStats i Inspector.");
+            return;
+        }
+
+        stats.ResetStats();
 
         foreach (var u in upgradesLogics)
         {
             if (u.level <= 0) continue;
 
-            float rarityMultiplier = GetRarityMultiplier(u.rarityType);
-            float value = u.level * u.effect * rarityMultiplier;
+            float value = u.level * u.effect * GetRarityMultiplier(u.rarityType);
 
             switch (u.type)
             {
                 case UpgradeType.Damage:
-                    stats.damage += value;
-                    stats.upgraded = true;
-                    break;
-
+                    stats.damage += value; break;
                 case UpgradeType.Health:
-                    stats.hp += value;
-                    stats.upgraded = true;
-                    break;
-
+                    stats.hp += value; break;
                 case UpgradeType.Speed:
-                    stats.speed += value;
-                    stats.upgraded = true;
-                    break;
-
+                    stats.speed += value; break;
                 case UpgradeType.AttackSpeed:
-                    stats.attack_speed -= value/2;
-                    stats.upgraded = true;
-                    break;
+                    stats.attack_speed += value; break;
             }
         }
+
         stats.ApplyStats();
+        DoneTimeToStart(); // Stänger UI direkt efter uppdatering
     }
+
+    public void DoneTimeToStart()
+    {
+        if (upgradebase != null)
+            upgradebase.SetActive(false);
+    }
+
     public void StartRoll()
     {
         if (!rolled)
@@ -120,6 +122,7 @@ public class upgrades : MonoBehaviour
         }
         
     }
+
     IEnumerator Roll()
     {
         rolled = true;
@@ -128,19 +131,18 @@ public class upgrades : MonoBehaviour
         int num3 = rnd.Next(upgradesLogics.Length);
         Debug.Log("the first number is " + num1 + " the secound number is " + num2 + " the third number is " + num3);
         Debug.Log("It should work because the " + upgradesLogics[num1].name + " is num1 and " + upgradesLogics[num2].name + " is num2 and finally " + upgradesLogics[num3].name + " is num3");
+        Time.timeScale = 1f;
         yield return new WaitForSeconds(2f);
         GameObject upgrade1 = Instantiate(upgradesLogics[num1].Button, upgradebase.transform);
         upgrade1.transform.position = spawn1.position;
+        upgrade1.GetComponent<Button>().onClick.AddListener(delegate { GainUpgrade(num1); });
         GameObject upgrade2 = Instantiate(upgradesLogics[num2].Button, upgradebase.transform);
         upgrade2.transform.position = spawn2.position;
+        upgrade2.GetComponent<Button>().onClick.AddListener(delegate { GainUpgrade(num2); });
         GameObject upgrade3 = Instantiate(upgradesLogics[num3].Button, upgradebase.transform);
         upgrade3.transform.position = spawn3.position;
+        upgrade3.GetComponent<Button>().onClick.AddListener(delegate { GainUpgrade(num3); });
+    }
 
-    }
-    public void DoneTimeToStart()
-    {
-        upgradebase.SetActive(false);        
-        Time.timeScale = 1f;
-    }
 }
 
