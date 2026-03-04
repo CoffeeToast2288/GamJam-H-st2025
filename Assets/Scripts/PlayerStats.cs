@@ -23,7 +23,7 @@ public class PlayerStats : MonoBehaviour
     public float baseSpeed = 5;
     public float baseAttackSpeed = 5;
 
-    // Runtime stats
+    [Header("Runtime Stats")]
     public float damage;
     public float hp;
     public float speed;
