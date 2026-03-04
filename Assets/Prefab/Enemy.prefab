@@ -130,6 +130,7 @@ Transform:
   - {fileID: 405734262859075536}
   - {fileID: 3614229405472801725}
   - {fileID: 8449823108442139120}
+  - {fileID: 5052639865232445564}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &175909166100222787
@@ -204,15 +205,15 @@ MonoBehaviour:
   damage: 0
   stopDistance: 1.1
   attackCooldown: 1
-  shootCooldown: 1.75
   attackRange: 1.2
+  shootCooldown: 1.75
+  healthPackDropChance: 0.05
   shootrange: 6
   lungeSpeed: 15
   lungeDuration: 1.25
   lungeCooldown: 1.5
   chargeTime: 0.5
   lungeRange: 8
-  healthPackDropChance: 0.05
   hitboxObject: {fileID: 5380182243040380876}
   player: {fileID: 0}
   tankita: {fileID: 5354378433924161553}
@@ -564,3 +565,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7898399363911000381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &9125397691412130761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5052639865232445564}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5052639865232445564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9125397691412130761}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7898399363911000381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

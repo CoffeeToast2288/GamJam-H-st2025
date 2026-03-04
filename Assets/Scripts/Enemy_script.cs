@@ -11,15 +11,18 @@ public class Enemy_Script : MonoBehaviour
     public float damage;                  // Base damage dealt to player
     public float stopDistance;            // Distance to stop before reaching the player
     public float attackCooldown = 0.5f;   // Delay between melee attacks
-    public float shootCooldown = 1f;      // Delay between ranged shots
     public float attackRange = 1.2f;      // Range for melee attacks
+    public float shootCooldown = 1f;      // Delay between ranged shots
+    public float healthPackDropChance = 0.1f;  // 10% chance
+    [Header("Shooty")]
     public float shootrange = 6f;         // Range for shooting
+    [Header("Lungie stats")]
     public float lungeSpeed = 10f;        // Speed when lunging
     public float lungeDuration = 0.3f;    // How long the lunge lasts
     public float lungeCooldown = 1.5f;    // Time before the next lunge
     public float chargeTime = 0.5f;       // Charging time before lunging
     public float lungeRange = 8f;         // Distance within which the enemy can lunge
-    public float healthPackDropChance = 0.1f;  // 10% chance
+
     public GameObject hitboxObject;       // Object used to apply melee hit detection
 
     // ===== REFERENCES =====
@@ -67,7 +70,7 @@ public class Enemy_Script : MonoBehaviour
     public void Start()
     {
         GameObject audioObj = GameObject.FindGameObjectWithTag("Audiocontrol");
-        if (audiocontrol != null)
+        if (audiocontrol == null)
         {
             audiocontrol = audioObj.GetComponent<audiocontroler>();
            
@@ -161,7 +164,7 @@ public class Enemy_Script : MonoBehaviour
         float distance = Vector2.Distance(transform.position, player.position);
 
         // If in range and allowed, perform a lunge attack
-        if (distance <= lungeRange && canLunge && isLungie)
+        if (distance <= lungeRange && canLunge && isLungie && !isLunging)
         {
             StartCoroutine(LungeAttack());
         }
@@ -182,10 +185,7 @@ public class Enemy_Script : MonoBehaviour
         {
             TryFire();
             RotateTowardsPlayer();
-        }
-
-       
-
+        }         
     }
 
     // ===== ENEMY TYPE SETUPS =====
@@ -209,7 +209,7 @@ public class Enemy_Script : MonoBehaviour
         damage += 1f;
         health += 2f;
         stopDistance = 6f;
-        shootrange += 10f;
+        shootrange += 7f;
         attackRange = 1.2f;
         isShooty = true;
     }
@@ -239,6 +239,7 @@ public class Enemy_Script : MonoBehaviour
         attackRange = 1.2f;
         isLungie = true;
     }
+
 
     // ===== ELITE HANDLING =====
     public void SetElite(bool eliteStatus)
@@ -361,20 +362,25 @@ public class Enemy_Script : MonoBehaviour
         // Reset position after charge
         transform.position = originalPosition;
 
-        // Lock target position and face it
-        Vector2 lockedDirection = player.position;
+        // Lock target position at moment of lunge
+        Vector2 lockedTarget = player.position;
+
+        // Calculate REAL direction
+        Vector2 lockedDirection = (lockedTarget - (Vector2)transform.position).normalized;
+
+        // Face the correct direction
         float lockedAngle = Mathf.Atan2(lockedDirection.y, lockedDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, lockedAngle - 90f);
 
-        // Enable trail effect during lunge
+        // Enable trail
         if (trailRenderer != null)
             trailRenderer.emitting = true;
 
-        // Move rapidly toward player
+        // Actually lunge forward in that direction
         float lungeTimer = 0f;
         while (lungeTimer < lungeDuration)
         {
-            transform.position = Vector2.MoveTowards(transform.position, lockedDirection, lungeSpeed * Time.deltaTime);
+            transform.position += (Vector3)(lockedDirection * lungeSpeed * Time.deltaTime);
             lungeTimer += Time.deltaTime;
             yield return null;
         }
@@ -384,6 +390,7 @@ public class Enemy_Script : MonoBehaviour
             trailRenderer.emitting = false;
 
         isLunging = false;
+        animator.CrossFade("fast", 0.15f);
         yield return new WaitForSeconds(lungeCooldown);
         canLunge = true;
     }

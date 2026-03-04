@@ -43,11 +43,14 @@ public class WaveSystem : MonoBehaviour
 
 
     [Header("Enemy Scaling")]
-    [Tooltip("Multiplier applied to enemy health every 5th wave")]
-    public float healthIncrease = 1.2f;
+    [Tooltip("Multiplier applied to enemy health every increase")]
+    public float healthIncrease = 1f;
 
-    [Tooltip("Multiplier applied to enemy damage every 5th wave")]
-    public float damageIncrease = 1.15f;
+    [Tooltip("Multiplier applied to enemy damage every increase")]
+    public float damageIncrease = 1f;
+
+    [Tooltip("Multiplier applied to enemy speed every increase")]
+    public float speedIncrease = 0.5f;
 
 
 
@@ -83,13 +86,11 @@ public class WaveSystem : MonoBehaviour
             if (uiController != null)
                 yield return uiController.StartCoroutine(uiController.FadeOutMessage(0.5f));
 
-            // --- Difficulty Scaling ---
-            if (currentWave % 5 == 0)
+            if (currentWave >= 2)
             {
-                // Every 5th wave, make enemies stronger
-                healthIncrease *= 1.2f;
-                damageIncrease *= 1.1f;
-                Debug.Log("Enemies got stronger!");
+                healthIncrease += 2 * (currentWave / 3);
+                damageIncrease += 2 * (currentWave / 5);
+                speedIncrease += 1 * (currentWave / 10);
             }
 
             // --- Increase Special Enemy Chance ---
@@ -149,6 +150,7 @@ public class WaveSystem : MonoBehaviour
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter));
 
         // --- Exit Safe Zone ---
+        upgradeParts.SetActive(false);
         uiController?.ShowContinuePrompt(false);
         uiController?.ShowMessage("Next Wave Starting...");
         safeEventScript.ExitSafeZone();
@@ -187,8 +189,9 @@ public class WaveSystem : MonoBehaviour
             enemyScript.SetElite(isElite);
 
             // Scale stats based on wave difficulty
-            enemyScript.health *= healthIncrease;
-            enemyScript.damage *= damageIncrease;
+            enemyScript.health += healthIncrease;
+            enemyScript.damage += damageIncrease;
+            enemyScript.moveSpeed += speedIncrease;
 
             // Track active enemies
             activeEnemies.Add(enemy);

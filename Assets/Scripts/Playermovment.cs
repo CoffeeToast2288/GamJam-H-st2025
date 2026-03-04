@@ -25,7 +25,7 @@ public class Playermovment : MonoBehaviour
     private float dashTimeRemaining;
     private float dashCooldownTimer;
 
-    public float baseDashCooldown = 5f;
+    public float baseDashCooldown = 15f;
     private float totalDashCooldown;
 
     public int currentDashCharges;

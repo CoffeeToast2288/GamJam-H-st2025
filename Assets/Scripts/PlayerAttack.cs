@@ -70,7 +70,14 @@ public class PlayerAttack : MonoBehaviour
             if (sword)
                 Attacking();
             else
+            {
                 Shoot();
+                animator.SetBool("isShooting", true);
+            }               
+        }
+        else
+        {
+            animator.SetBool("isShooting", false);
         }
 
         if (colldown_active)
@@ -208,7 +215,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!Isattacking)
         {
-            animator.SetBool("isShooting", true);
+            
 
             FireBullet(spawnPos);
 
@@ -236,9 +243,10 @@ public class PlayerAttack : MonoBehaviour
                     FireBullet(spawnPosShotgunBack2);
                 }
             }
-            animator.SetBool("isRunning", false);
+            
         }
     }
+
 
 
     // ✅ Applies upgrades to bullets
