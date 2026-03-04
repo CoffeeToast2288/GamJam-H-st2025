@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tinyslug_0: 1100197485609473124
+      tinyslug_1: 817287374739227162
+      tinyslug_2: -7266274766102209493
+      tinyslug_3: 3158758865739828244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

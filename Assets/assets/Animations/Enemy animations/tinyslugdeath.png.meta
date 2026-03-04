@@ -534,7 +534,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tinyslugdeath_0: -1316860211380724081
+      tinyslugdeath_1: -3029559920412062207
+      tinyslugdeath_10: 3157893434889565144
+      tinyslugdeath_11: -1735150712476712419
+      tinyslugdeath_12: 5537850091610262211
+      tinyslugdeath_13: 5980999221615306265
+      tinyslugdeath_14: -4333669099173298848
+      tinyslugdeath_15: 8021690815243915238
+      tinyslugdeath_16: 3603930217311336536
+      tinyslugdeath_2: -5427002836135258167
+      tinyslugdeath_3: 4105719006826894788
+      tinyslugdeath_4: 2465684182583464327
+      tinyslugdeath_5: 5526553257553871505
+      tinyslugdeath_6: -1469440752366926825
+      tinyslugdeath_7: 1106410961119211005
+      tinyslugdeath_8: 383660272900827905
+      tinyslugdeath_9: -8662124896693797514
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
