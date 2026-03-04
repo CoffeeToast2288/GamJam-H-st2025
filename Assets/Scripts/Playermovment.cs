@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -36,11 +37,11 @@ public class Playermovment : MonoBehaviour
     public bool walkingSoundsPlaying; // is the walking sound playing?
 
     [Header("Upgrade Stuff")] // variables for wether certain upgrades should be enabled or not 
-    public bool dashattack = false; 
-   
-   
+    public bool dashattack = false;
+
+
     // Animator stuff - Benjamin
-    public Animator animator, bar_1,bar_2;
+    public Animator animator;
     public string[] animations;
     public bool is_walking;
     public audiocontroler audiocontroler;
@@ -80,6 +81,15 @@ public class Playermovment : MonoBehaviour
     {
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
+        if (input.y != 0 && input.x != 0 || input.x != 0 || input.y != 0) 
+        {
+            animator.SetBool("isRunning", true);
+            
+        }
+        else
+            {
+                animator.SetBool("isRunning", false); 
+            }     
 
         input.Normalize();
 
