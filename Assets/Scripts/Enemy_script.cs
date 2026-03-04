@@ -120,37 +120,7 @@ public class Enemy_Script : MonoBehaviour
         {
             
             Lungie();
-        }
-
-        if (canAttack && rb.linearVelocity.magnitude > 0.01f && !animator.GetCurrentAnimatorStateInfo(0).IsTag("move"))
-        {
-            if (hitty)
-            {
-                Debug.Log("tanky ");
-                animator.Play("tanky");
-            }
-            else if (shooty)
-            {
-                Debug.Log("shooty ");
-                animator.Play("shooty movy", 0, 0f);
-            }
-            else if (tanky)
-            {
-                Debug.Log("tanky ");
-                animator.Play("tanky");
-            }
-            else if (shooty)
-            {
-                Debug.Log("shooty ");
-                animator.Play("shooty movy", 0, 0f);
-            }
-            else if (lungie)
-            {
-                Debug.Log("fast ");
-                animator.Play("fast");
-            }
-        }
-       
+        }     
 
     }
 
@@ -192,19 +162,16 @@ public class Enemy_Script : MonoBehaviour
     // Adjust stats depending on enemy type and sets thier animations
     public void Hitty()
     {
-        Debug.Log("hitty ");
-        animator.Play("hitty walk");
         moveSpeed += 3f;
         damage += 1f;
         health += 3f;
         stopDistance = 1.1f;
         attackRange = 1.2f;
+        animator.SetBool("IsHitty", true);
     }
 
     public void Shooty()
     {
-        Debug.Log("shooty ");
-        animator.Play("shooty movy", 0, 0f);
         moveSpeed = 3f;
         damage += 1f;
         health += 2f;
@@ -212,13 +179,11 @@ public class Enemy_Script : MonoBehaviour
         shootrange += 7f;
         attackRange = 1.2f;
         isShooty = true;
+        animator.SetBool("IsShooty", true);
     }
 
     public void Tanky()
     {
-        Debug.Log("tanky ");
-        animator.Play("tanky");
-
         // Make it visually bigger
         tankita.transform.localScale += new Vector3(1.2f, 1.2f, 1.2f);
         moveSpeed += 1.5f;
@@ -226,18 +191,18 @@ public class Enemy_Script : MonoBehaviour
         health += 6f;
         stopDistance = 1.8f;
         attackRange = 1.9f;
+        animator.SetBool("IsTanky", true);
     }
 
     public void Lungie()
     {
-        Debug.Log("fast ");
-        animator.Play("fast");
         moveSpeed = 4f;
         damage += 1f;
         health += 2f;
         stopDistance = 1.1f;
         attackRange = 1.2f;
         isLungie = true;
+        animator.SetBool("IsFast", true);
     }
 
 
@@ -279,20 +244,6 @@ public class Enemy_Script : MonoBehaviour
     {
         if (!canAttack) return; 
         
-        if (hitty)
-        {
-            animator.CrossFade("hitty hit", 0.2f);
-        }
-        else if (tanky)
-        {
-            animator.CrossFade("tanky hit", 0.2f);
-
-        }
-        else if (lungie)
-        {
-            animator.CrossFade("fast hit", 0.2f);
-
-        }
         StartCoroutine(AttackRoutine());
 
     }
@@ -300,10 +251,11 @@ public class Enemy_Script : MonoBehaviour
     System.Collections.IEnumerator AttackRoutine()
     {
         canAttack = false;
-
+        animator.SetBool("Hitting", true);
         // Enable hitbox briefly for attack
         hitboxObject.SetActive(true);
         yield return new WaitForSeconds(0.4f);
+        animator.SetBool("Hitting", false);
         hitboxObject.SetActive(false);
 
         // Wait before next attack
@@ -315,14 +267,14 @@ public class Enemy_Script : MonoBehaviour
     void TryFire()
     {
         if (!canshoot) return;
-
-        animator.CrossFade("shooty shoot", 0.2f);
         StartCoroutine(ShootRoutine());
     }
 
     System.Collections.IEnumerator ShootRoutine()
     {
         canshoot = false;
+
+        animator.SetTrigger("shooty shoot");
 
         GameObject bulletObj = Instantiate(enemyBullet, spawnPos.position, spawnPos.rotation);
 
@@ -332,6 +284,7 @@ public class Enemy_Script : MonoBehaviour
         {
             bullet.SetDamage(damage);
         }
+
 
         yield return new WaitForSeconds(shootCooldown);
         canshoot = true;
@@ -411,7 +364,7 @@ public class Enemy_Script : MonoBehaviour
     void Die()
     {
         isDead = true;
-
+        animator.SetBool("Dead", true);
         TryDropHealthPack();   // Attempt health pack drop
 
         Destroy(gameObject);         // Remove from scene

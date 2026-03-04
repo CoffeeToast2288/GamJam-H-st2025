@@ -39,7 +39,7 @@ public class DSM : MonoBehaviour
     }
     public void Restarting()
     {
-        SceneManager.LoadSceneAsync("Maine Scean");
+        SceneManager.LoadSceneAsync("Main scene");
     }
     public void Quiter()
     {

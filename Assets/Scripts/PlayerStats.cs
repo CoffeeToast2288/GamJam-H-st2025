@@ -59,6 +59,5 @@ public class PlayerStats : MonoBehaviour
         PlayermovmentScript?.speedupdate();
         MeleeScript?.damageupdate();
         AttacScript?.UpdateAtackSpeed();
-        Bullet?.damageupdate();
     }
 }
