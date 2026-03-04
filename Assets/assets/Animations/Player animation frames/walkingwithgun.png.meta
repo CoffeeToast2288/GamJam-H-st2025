@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      walkingwithgun_0: 4889677314016862417
+      walkingwithgun_1: -3817330799613998277
+      walkingwithgun_2: -7539869348512975571
+      walkingwithgun_3: 5782307560820883659
+      walkingwithgun_4: 3574130164950101212
+      walkingwithgun_5: 5570165453838968751
+      walkingwithgun_6: 451992148926641846
+      walkingwithgun_7: 8018161973851965174
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
