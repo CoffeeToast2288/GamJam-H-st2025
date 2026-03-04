@@ -158,8 +158,10 @@ public class upgrades : MonoBehaviour
 
     IEnumerator Roll()
     {
-
-
+        foreach (Transform child in ButtonContainer.transform)
+        {
+            Destroy(child.gameObject);
+        }
         rolled = true;
         num1 = UnityEngine.Random.Range(0, upgradesLogics.Length);
         num2 = UnityEngine.Random.Range(0, upgradesLogics.Length);
