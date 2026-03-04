@@ -205,6 +205,7 @@ RectTransform:
   - {fileID: 7184194056167393008}
   - {fileID: 5203416602859164452}
   - {fileID: 5596164251988244574}
+  - {fileID: 8683971443983540443}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -225,29 +226,598 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradebase: {fileID: 3219567692875595938}
-  stats: {fileID: 4615771161727363192, guid: c44a563a52fd5f04b8e07c29e1c55707, type: 3}
+  ButtonContainer: {fileID: 3831854439389331632}
+  stats: {fileID: 0}
+  gunlogic: {fileID: 0}
   spawn1: {fileID: 7184194056167393008}
   spawn2: {fileID: 5203416602859164452}
   spawn3: {fileID: 5596164251988244574}
+  num1: 0
+  num2: 0
+  num3: 0
   upgradesLogics:
-  - Button: {fileID: 8621340967149553821, guid: bd599f1c1507bf7459258297a2ab3fca, type: 3}
-    name: Attack Speed
-    effect: 2
-    type: 3
-    rarityType: 0
-    level: 25
-  - Button: {fileID: 5814265805790330746, guid: d220766c055bc534291a5aaa9a879bd2, type: 3}
-    name: Damage Up
-    effect: 2
-    type: 0
-    rarityType: 0
-    level: 49
   - Button: {fileID: 1202241586887684462, guid: fea479a045e348542b502bbc4a5ebbaf, type: 3}
-    name: Health Up
+    name: Health Up 1
     effect: 1
     type: 1
     rarityType: 0
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: fea479a045e348542b502bbc4a5ebbaf, type: 3}
+    name: Health Up 1
+    effect: 1
+    type: 1
+    rarityType: 0
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: fea479a045e348542b502bbc4a5ebbaf, type: 3}
+    name: Health Up 1
+    effect: 1
+    type: 1
+    rarityType: 0
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: fea479a045e348542b502bbc4a5ebbaf, type: 3}
+    name: Health Up 1
+    effect: 1
+    type: 1
+    rarityType: 0
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: fea479a045e348542b502bbc4a5ebbaf, type: 3}
+    name: Health Up 1
+    effect: 1
+    type: 1
+    rarityType: 0
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: fea479a045e348542b502bbc4a5ebbaf, type: 3}
+    name: Health Up 1
+    effect: 1
+    type: 1
+    rarityType: 0
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: fea479a045e348542b502bbc4a5ebbaf, type: 3}
+    name: Health Up 1
+    effect: 1
+    type: 1
+    rarityType: 0
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: fea479a045e348542b502bbc4a5ebbaf, type: 3}
+    name: Health Up 1
+    effect: 1
+    type: 1
+    rarityType: 0
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: fea479a045e348542b502bbc4a5ebbaf, type: 3}
+    name: Health Up 1
+    effect: 1
+    type: 1
+    rarityType: 0
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: fea479a045e348542b502bbc4a5ebbaf, type: 3}
+    name: Health Up 1
+    effect: 1
+    type: 1
+    rarityType: 0
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: 1863463c460cc1d4492e9d8158bce7be, type: 3}
+    name: Health Up 2
+    effect: 2
+    type: 1
+    rarityType: 1
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: 1863463c460cc1d4492e9d8158bce7be, type: 3}
+    name: Health Up 2
+    effect: 2
+    type: 1
+    rarityType: 1
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: 1863463c460cc1d4492e9d8158bce7be, type: 3}
+    name: Health Up 2
+    effect: 2
+    type: 1
+    rarityType: 1
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: 1863463c460cc1d4492e9d8158bce7be, type: 3}
+    name: Health Up 2
+    effect: 2
+    type: 1
+    rarityType: 1
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: 1863463c460cc1d4492e9d8158bce7be, type: 3}
+    name: Health Up 2
+    effect: 2
+    type: 1
+    rarityType: 1
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: b192f0c7fcb9e73489095776b79e081c, type: 3}
+    name: Health Up 3
+    effect: 3
+    type: 1
+    rarityType: 2
     level: 33
+  - Button: {fileID: 1202241586887684462, guid: b192f0c7fcb9e73489095776b79e081c, type: 3}
+    name: Health Up 3
+    effect: 3
+    type: 1
+    rarityType: 2
+    level: 33
+  - Button: {fileID: 1202241586887684462, guid: b192f0c7fcb9e73489095776b79e081c, type: 3}
+    name: Health Up 3
+    effect: 3
+    type: 1
+    rarityType: 2
+    level: 33
+  - Button: {fileID: 1202241586887684462, guid: 2a0d8cc93cf44434cae017014912f938, type: 3}
+    name: Health Up 4
+    effect: 3
+    type: 1
+    rarityType: 3
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: 2a0d8cc93cf44434cae017014912f938, type: 3}
+    name: Health Up 4
+    effect: 3
+    type: 1
+    rarityType: 3
+    level: 46
+  - Button: {fileID: 1202241586887684462, guid: 4a255e7d85a5e6a45b02edc2c91fa4a8, type: 3}
+    name: Health Up 5
+    effect: 3
+    type: 1
+    rarityType: 4
+    level: 46
+  - Button: {fileID: 8621340967149553821, guid: bd599f1c1507bf7459258297a2ab3fca, type: 3}
+    name: Attack Speed 1
+    effect: 1
+    type: 3
+    rarityType: 0
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: bd599f1c1507bf7459258297a2ab3fca, type: 3}
+    name: Attack Speed 1
+    effect: 1
+    type: 3
+    rarityType: 0
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: bd599f1c1507bf7459258297a2ab3fca, type: 3}
+    name: Attack Speed 1
+    effect: 1
+    type: 3
+    rarityType: 0
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: bd599f1c1507bf7459258297a2ab3fca, type: 3}
+    name: Attack Speed 1
+    effect: 1
+    type: 3
+    rarityType: 0
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: bd599f1c1507bf7459258297a2ab3fca, type: 3}
+    name: Attack Speed 1
+    effect: 1
+    type: 3
+    rarityType: 0
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: bd599f1c1507bf7459258297a2ab3fca, type: 3}
+    name: Attack Speed 1
+    effect: 1
+    type: 3
+    rarityType: 0
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: bd599f1c1507bf7459258297a2ab3fca, type: 3}
+    name: Attack Speed 1
+    effect: 1
+    type: 3
+    rarityType: 0
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: bd599f1c1507bf7459258297a2ab3fca, type: 3}
+    name: Attack Speed 1
+    effect: 1
+    type: 3
+    rarityType: 0
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: bd599f1c1507bf7459258297a2ab3fca, type: 3}
+    name: Attack Speed 1
+    effect: 1
+    type: 3
+    rarityType: 0
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: bd599f1c1507bf7459258297a2ab3fca, type: 3}
+    name: Attack Speed 1
+    effect: 1
+    type: 3
+    rarityType: 0
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: 3d20410ca4728884c8ef04cbafc6037f, type: 3}
+    name: Attack Speed 2
+    effect: 2
+    type: 3
+    rarityType: 1
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: 3d20410ca4728884c8ef04cbafc6037f, type: 3}
+    name: Attack Speed 2
+    effect: 2
+    type: 3
+    rarityType: 1
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: 3d20410ca4728884c8ef04cbafc6037f, type: 3}
+    name: Attack Speed 2
+    effect: 2
+    type: 3
+    rarityType: 1
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: 3d20410ca4728884c8ef04cbafc6037f, type: 3}
+    name: Attack Speed 2
+    effect: 2
+    type: 3
+    rarityType: 1
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: 3d20410ca4728884c8ef04cbafc6037f, type: 3}
+    name: Attack Speed 2
+    effect: 2
+    type: 3
+    rarityType: 1
+    level: 50
+  - Button: {fileID: 8621340967149553821, guid: cabca6cfd262f73488595b59b0a8afe2, type: 3}
+    name: Attack Speed 3
+    effect: 3
+    type: 3
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 8621340967149553821, guid: cabca6cfd262f73488595b59b0a8afe2, type: 3}
+    name: Attack Speed 3
+    effect: 3
+    type: 3
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 8621340967149553821, guid: cabca6cfd262f73488595b59b0a8afe2, type: 3}
+    name: Attack Speed 3
+    effect: 3
+    type: 3
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 8621340967149553821, guid: 54617c127cc152a43bc7306fa815c8af, type: 3}
+    name: Attack Speed 4
+    effect: 3
+    type: 3
+    rarityType: 3
+    level: 89
+  - Button: {fileID: 8621340967149553821, guid: 54617c127cc152a43bc7306fa815c8af, type: 3}
+    name: Attack Speed 4
+    effect: 3
+    type: 3
+    rarityType: 3
+    level: 89
+  - Button: {fileID: 8621340967149553821, guid: 38c28142c4fe946488e1984fc1ebd73f, type: 3}
+    name: Attack Speed 5
+    effect: 3
+    type: 3
+    rarityType: 4
+    level: 50
+  - Button: {fileID: 5814265805790330746, guid: d220766c055bc534291a5aaa9a879bd2, type: 3}
+    name: Damage Up 1
+    effect: 1
+    type: 0
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: d220766c055bc534291a5aaa9a879bd2, type: 3}
+    name: Damage Up 1
+    effect: 1
+    type: 0
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: d220766c055bc534291a5aaa9a879bd2, type: 3}
+    name: Damage Up 1
+    effect: 1
+    type: 0
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: d220766c055bc534291a5aaa9a879bd2, type: 3}
+    name: Damage Up 1
+    effect: 1
+    type: 0
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: d220766c055bc534291a5aaa9a879bd2, type: 3}
+    name: Damage Up 1
+    effect: 1
+    type: 0
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: d220766c055bc534291a5aaa9a879bd2, type: 3}
+    name: Damage Up 1
+    effect: 1
+    type: 0
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: d220766c055bc534291a5aaa9a879bd2, type: 3}
+    name: Damage Up 1
+    effect: 1
+    type: 0
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: d220766c055bc534291a5aaa9a879bd2, type: 3}
+    name: Damage Up 1
+    effect: 1
+    type: 0
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: d220766c055bc534291a5aaa9a879bd2, type: 3}
+    name: Damage Up 1
+    effect: 1
+    type: 0
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: d220766c055bc534291a5aaa9a879bd2, type: 3}
+    name: Damage Up 1
+    effect: 1
+    type: 0
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: 475c0e59fa34e9c409f8fe6d69d0fc4d, type: 3}
+    name: Damage Up 2
+    effect: 2
+    type: 0
+    rarityType: 1
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: 475c0e59fa34e9c409f8fe6d69d0fc4d, type: 3}
+    name: Damage Up 2
+    effect: 2
+    type: 0
+    rarityType: 1
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: 475c0e59fa34e9c409f8fe6d69d0fc4d, type: 3}
+    name: Damage Up 2
+    effect: 2
+    type: 0
+    rarityType: 1
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: 475c0e59fa34e9c409f8fe6d69d0fc4d, type: 3}
+    name: Damage Up 2
+    effect: 2
+    type: 0
+    rarityType: 1
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: 475c0e59fa34e9c409f8fe6d69d0fc4d, type: 3}
+    name: Damage Up 2
+    effect: 2
+    type: 0
+    rarityType: 1
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: 4cbcbf01f23f4914a9a7d8ccaac18448, type: 3}
+    name: Damage Up 3
+    effect: 3
+    type: 0
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: 4cbcbf01f23f4914a9a7d8ccaac18448, type: 3}
+    name: Damage Up 3
+    effect: 3
+    type: 0
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: 4cbcbf01f23f4914a9a7d8ccaac18448, type: 3}
+    name: Damage Up 3
+    effect: 3
+    type: 0
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: d21fc9ac22ab9454bbe40238b58054cd, type: 3}
+    name: Damage Up 4
+    effect: 3
+    type: 0
+    rarityType: 3
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: d21fc9ac22ab9454bbe40238b58054cd, type: 3}
+    name: Damage Up 4
+    effect: 3
+    type: 0
+    rarityType: 3
+    level: 89
+  - Button: {fileID: 5814265805790330746, guid: bde08e550edb86d4c90711e4407ddbab, type: 3}
+    name: Damage Up 5
+    effect: 3
+    type: 0
+    rarityType: 4
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: b50f5d5c01d8f3b47ad4def60825131d, type: 3}
+    name: Speed Up 1
+    effect: 1
+    type: 2
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: b50f5d5c01d8f3b47ad4def60825131d, type: 3}
+    name: Speed Up 1
+    effect: 1
+    type: 2
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: b50f5d5c01d8f3b47ad4def60825131d, type: 3}
+    name: Speed Up 1
+    effect: 1
+    type: 2
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: b50f5d5c01d8f3b47ad4def60825131d, type: 3}
+    name: Speed Up 1
+    effect: 1
+    type: 2
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: b50f5d5c01d8f3b47ad4def60825131d, type: 3}
+    name: Speed Up 1
+    effect: 1
+    type: 2
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: b50f5d5c01d8f3b47ad4def60825131d, type: 3}
+    name: Speed Up 1
+    effect: 1
+    type: 2
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: b50f5d5c01d8f3b47ad4def60825131d, type: 3}
+    name: Speed Up 1
+    effect: 1
+    type: 2
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: b50f5d5c01d8f3b47ad4def60825131d, type: 3}
+    name: Speed Up 1
+    effect: 1
+    type: 2
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: b50f5d5c01d8f3b47ad4def60825131d, type: 3}
+    name: Speed Up 1
+    effect: 1
+    type: 2
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: b50f5d5c01d8f3b47ad4def60825131d, type: 3}
+    name: Speed Up 1
+    effect: 1
+    type: 2
+    rarityType: 0
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: 70e493c2b48cb9849bf858cc9d3eba79, type: 3}
+    name: Speed Up 2
+    effect: 2
+    type: 2
+    rarityType: 1
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: 70e493c2b48cb9849bf858cc9d3eba79, type: 3}
+    name: Speed Up 2
+    effect: 2
+    type: 2
+    rarityType: 1
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: 70e493c2b48cb9849bf858cc9d3eba79, type: 3}
+    name: Speed Up 2
+    effect: 2
+    type: 2
+    rarityType: 1
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: 70e493c2b48cb9849bf858cc9d3eba79, type: 3}
+    name: Speed Up 2
+    effect: 2
+    type: 2
+    rarityType: 1
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: 70e493c2b48cb9849bf858cc9d3eba79, type: 3}
+    name: Speed Up 2
+    effect: 2
+    type: 2
+    rarityType: 1
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: 70e493c2b48cb9849bf858cc9d3eba79, type: 3}
+    name: Speed Up 2
+    effect: 2
+    type: 2
+    rarityType: 1
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: 08bc9d67b9bc04a4c942191a6a0358b7, type: 3}
+    name: Speed Up 3
+    effect: 3
+    type: 2
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: 08bc9d67b9bc04a4c942191a6a0358b7, type: 3}
+    name: Speed Up 3
+    effect: 3
+    type: 2
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: 08bc9d67b9bc04a4c942191a6a0358b7, type: 3}
+    name: Speed Up 3
+    effect: 3
+    type: 2
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: ffc84c5f964a6ab4ea70596557e4b134, type: 3}
+    name: Speed Up 4
+    effect: 3
+    type: 2
+    rarityType: 3
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: ffc84c5f964a6ab4ea70596557e4b134, type: 3}
+    name: Speed Up 4
+    effect: 3
+    type: 2
+    rarityType: 3
+    level: 89
+  - Button: {fileID: 5669735777935620695, guid: cced86e4695437442a57299dc4187869, type: 3}
+    name: Speed Up 5
+    effect: 3
+    type: 2
+    rarityType: 4
+    level: 89
+  - Button: {fileID: 4986959918579022747, guid: 8ac8c24fd2a580a499b93a0c51f05281, type: 3}
+    name: Dash Up 1
+    effect: 1
+    type: 5
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 4986959918579022747, guid: 8ac8c24fd2a580a499b93a0c51f05281, type: 3}
+    name: Dash Up 1
+    effect: 1
+    type: 5
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 4986959918579022747, guid: 8ac8c24fd2a580a499b93a0c51f05281, type: 3}
+    name: Dash Up 1
+    effect: 1
+    type: 5
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 4986959918579022747, guid: 2483df4f5105bf14f89f4f604d7bb02e, type: 3}
+    name: Dash Up 2
+    effect: 1
+    type: 5
+    rarityType: 3
+    level: 89
+  - Button: {fileID: 4986959918579022747, guid: 2483df4f5105bf14f89f4f604d7bb02e, type: 3}
+    name: Dash Up 2
+    effect: 1
+    type: 5
+    rarityType: 3
+    level: 89
+  - Button: {fileID: 4986959918579022747, guid: f3132254d78ee45428c8949d739ad742, type: 3}
+    name: Dash Up 3
+    effect: 1
+    type: 5
+    rarityType: 4
+    level: 89
+  - Button: {fileID: 4103104119787263246, guid: 5888b26458767614f82e922e23a9d716, type: 3}
+    name: Dash Cooldown
+    effect: 1
+    type: 4
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 4103104119787263246, guid: 5888b26458767614f82e922e23a9d716, type: 3}
+    name: Dash Cooldown
+    effect: 1
+    type: 4
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 4103104119787263246, guid: 5888b26458767614f82e922e23a9d716, type: 3}
+    name: Dash Cooldown
+    effect: 1
+    type: 4
+    rarityType: 2
+    level: 89
+  - Button: {fileID: 4103104119787263246, guid: 423a70d8fadca584ba18ff79c5bc38df, type: 3}
+    name: Dash Cooldown 2
+    effect: 2
+    type: 4
+    rarityType: 3
+    level: 89
+  - Button: {fileID: 4103104119787263246, guid: 423a70d8fadca584ba18ff79c5bc38df, type: 3}
+    name: Dash Cooldown 2
+    effect: 2
+    type: 4
+    rarityType: 3
+    level: 89
+  - Button: {fileID: 4103104119787263246, guid: ea7e1a4c06b6ec4438a6695e314cb362, type: 3}
+    name: Dash Cooldown 2
+    effect: 2
+    type: 4
+    rarityType: 4
+    level: 89
   rolled: 0
 --- !u!223 &6447569510043996985
 Canvas:
@@ -325,6 +895,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: {fileID: 3219567692875595938}
+--- !u!1 &3831854439389331632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8683971443983540443}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8683971443983540443
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3831854439389331632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3093519760559424565}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5322855415540494205
 GameObject:
   m_ObjectHideFlags: 0

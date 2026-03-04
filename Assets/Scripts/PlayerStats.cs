@@ -29,6 +29,11 @@ public class PlayerStats : MonoBehaviour
     public float speed;
     public float attack_speed;
 
+    [Header("Upgrades")]
+    public bool pierce;
+    public float pierceAmount;
+
+
     public void ResetStats()
     {
         damage = baseDamage;

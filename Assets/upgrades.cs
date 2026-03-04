@@ -1,4 +1,4 @@
-using NUnit.Framework.Internal;
+﻿using NUnit.Framework.Internal;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,22 +12,33 @@ using Random = System.Random;
 public class upgrades : MonoBehaviour
 {
     public GameObject upgradebase;
+    public GameObject ButtonContainer;
     [SerializeField] PlayerStats stats;
+    [SerializeField] PlayerAttack gunlogic;
     public Transform spawn1, spawn2, spawn3;
 
+    public int num1;
+    public int num2;
+    public int num3;
     public Upgrade[] upgradesLogics;
     public bool rolled;
 
-    Random rnd = new Random();
     public enum UpgradeType
     {
-        Damage,
-        Health,
-        Speed,
-        AttackSpeed,
-        DashCooldown,
-        DashChargers
-    }
+        Damage, //✅
+        Health, //✅
+        Speed, //✅
+        AttackSpeed, //✅
+        DashCooldown, //✅
+        DashChargers, //✅
+        SideAttacks, //✅
+        Shotgun, //✅
+        BackAttack, //✅
+        Pierce, //✅
+        PierceAmount, //✅
+        BulletExplosion, //✅
+        Doubleshot //✅
+    } 
     public enum Rarity
     {
         Common,
@@ -81,7 +92,7 @@ public class upgrades : MonoBehaviour
     {
         if (stats == null)
         {
-            Debug.LogError("Stats �r null! Dra in PlayerStats i Inspector.");
+            Debug.LogError("Stats är null! Dra in PlayerStats i Inspector.");
             return;
         }
 
@@ -107,11 +118,26 @@ public class upgrades : MonoBehaviour
                     stats.dash_chargers += value; break;
                 case UpgradeType.DashCooldown:
                     stats.dash_coldown_reduction += value; break;
+                case UpgradeType.BackAttack:
+                    gunlogic.BackAttack = true; break;
+                case UpgradeType.SideAttacks:
+                    gunlogic.SideAttacks = true; break;
+                case UpgradeType.Shotgun:
+                    gunlogic.Shotgun = true; break;
+                case UpgradeType.Pierce:
+                    stats.pierce = true; break;
+                case UpgradeType.PierceAmount:
+                    stats.pierceAmount += value; break;
+                case UpgradeType.Doubleshot:
+                    gunlogic.doubleshoot = true; break;
+                case UpgradeType.BulletExplosion:
+                    gunlogic.bulletExplosion = true; break;
             }
         }
 
+
         stats.ApplyStats();
-        DoneTimeToStart(); // St�nger UI direkt efter uppdatering
+        DoneTimeToStart(); // Stänger UI direkt efter uppdatering
     }
 
     public void DoneTimeToStart()
@@ -132,24 +158,31 @@ public class upgrades : MonoBehaviour
 
     IEnumerator Roll()
     {
+
+
         rolled = true;
-        int num1 = rnd.Next(upgradesLogics.Length);
-        int num2 = rnd.Next(upgradesLogics.Length);
-        int num3 = rnd.Next(upgradesLogics.Length);
+        num1 = UnityEngine.Random.Range(0, upgradesLogics.Length);
+        num2 = UnityEngine.Random.Range(0, upgradesLogics.Length);
+        num3 = UnityEngine.Random.Range(0, upgradesLogics.Length);
+        int index1 = num1;
+        int index2 = num2;
+        int index3 = num3;
         Debug.Log("the first number is " + num1 + " the secound number is " + num2 + " the third number is " + num3);
         Debug.Log("It should work because the " + upgradesLogics[num1].name + " is num1 and " + upgradesLogics[num2].name + " is num2 and finally " + upgradesLogics[num3].name + " is num3");
         Time.timeScale = 1f;
         yield return new WaitForSeconds(2f);
-        GameObject upgrade1 = Instantiate(upgradesLogics[num1].Button, upgradebase.transform);
+        GameObject upgrade1 = Instantiate(upgradesLogics[num1].Button, ButtonContainer.transform);
         upgrade1.transform.position = spawn1.position;
-        upgrade1.GetComponent<Button>().onClick.AddListener(delegate { GainUpgrade(num1); });
-        GameObject upgrade2 = Instantiate(upgradesLogics[num2].Button, upgradebase.transform);
+        upgrade1.GetComponent<Button>().onClick.AddListener(delegate { GainUpgrade(index1); });
+        GameObject upgrade2 = Instantiate(upgradesLogics[num2].Button, ButtonContainer.transform);
         upgrade2.transform.position = spawn2.position;
-        upgrade2.GetComponent<Button>().onClick.AddListener(delegate { GainUpgrade(num2); });
-        GameObject upgrade3 = Instantiate(upgradesLogics[num3].Button, upgradebase.transform);
+        upgrade2.GetComponent<Button>().onClick.AddListener(delegate { GainUpgrade(index2); });
+        GameObject upgrade3 = Instantiate(upgradesLogics[num3].Button, ButtonContainer.transform);
         upgrade3.transform.position = spawn3.position;
-        upgrade3.GetComponent<Button>().onClick.AddListener(delegate { GainUpgrade(num3); });
+        upgrade3.GetComponent<Button>().onClick.AddListener(delegate { GainUpgrade(index3); });
     }
+
+
 
 }
 

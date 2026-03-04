@@ -18,6 +18,7 @@ public class Bullet_Script : MonoBehaviour
 
     [Header("Piercing")]
     public bool piercing = false;
+    public float pierceAmount;
 
     void Start()
     {
@@ -25,6 +26,9 @@ public class Bullet_Script : MonoBehaviour
             player = FindFirstObjectByType<PlayerStats>(); // Finds player - Isac
 
         damage = player.damage; // Gets the damage stat from player stats - Isac
+
+        piercing = player.pierce;
+        pierceAmount = player.pierceAmount;
 
         Destroy(gameObject, lifetime); //Destroyes bullet once liftime is up - Isac 
     } 
@@ -51,6 +55,12 @@ public class Bullet_Script : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (piercing && pierceAmount >= 1)
+        {
+            pierceAmount--;
+            if (pierceAmount == 0|| pierceAmount<=1) Destroy(gameObject);
+        }
+        
     }
 
     void DoExplosion()
