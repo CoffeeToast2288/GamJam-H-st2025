@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: fencetiles_5
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -3622384582901317076, guid: c18e8458da3745b47a24ad27af9eba48, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
   m_Transform:
     e00: 1
     e01: 0

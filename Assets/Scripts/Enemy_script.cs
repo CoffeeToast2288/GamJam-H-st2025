@@ -373,7 +373,7 @@ public class Enemy_Script : MonoBehaviour
         health -= damage;
         if (health <= 0 && !tanky)
         {
-            StartCoroutine(Die(0.3f));
+            StartCoroutine(Die(0.5f));
         }
         else if (tanky && health <= 0)
         {
@@ -406,7 +406,7 @@ public class Enemy_Script : MonoBehaviour
             StartCoroutine(RemoveOnDestroy(enemy));
             yield return new WaitForSeconds(0.4f);
         }
-        StartCoroutine(Die(1f));
+        StartCoroutine(Die(4f));
     }
     void ApplySmoll(Enemy_Script enemy)
     {

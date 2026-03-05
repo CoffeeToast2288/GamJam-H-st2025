@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 // Isak has been here no one else
 public class DSM : MonoBehaviour
 {
-    public PlayerHealth playerHealth;
+    public Health_Script playerHealth;
     public GameObject deathScreen;
 
 
@@ -15,7 +15,7 @@ public class DSM : MonoBehaviour
     {
         // If not assigned in Inspector, try to find it on the same GameObject or in the scene
         if (playerHealth == null)
-            playerHealth = GetComponent<PlayerHealth>();
+            playerHealth = GetComponent<Health_Script>();
 
     }
     public void Update()

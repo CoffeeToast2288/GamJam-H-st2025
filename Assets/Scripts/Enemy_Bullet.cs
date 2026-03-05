@@ -8,7 +8,7 @@ public class Enemy_Bullet : MonoBehaviour
     public float lifetime = 7.5f;
     public float damage; // damage is set by the enemy when spawned
 
-    public PlayerHealth player;
+    public Health_Script player;
     public string targetTag = "Player";
 
     void Start()
@@ -18,7 +18,7 @@ public class Enemy_Bullet : MonoBehaviour
 
         // Find player if not assigned
         if (player == null)
-            player = FindFirstObjectByType<PlayerHealth>();
+            player = FindFirstObjectByType<Health_Script>();
     }
 
     void Update()

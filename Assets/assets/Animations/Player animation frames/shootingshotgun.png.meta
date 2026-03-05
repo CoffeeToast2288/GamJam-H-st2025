@@ -1,0 +1,333 @@
+fileFormatVersion: 2
+guid: bff7b950044c02d4a9dd502668922281
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6916085908353070313
+    second: shootingshotgun_0
+  - first:
+      213: -4782322953830575138
+    second: shootingshotgun_1
+  - first:
+      213: -9171828147772170710
+    second: shootingshotgun_2
+  - first:
+      213: 6541682795840049477
+    second: shootingshotgun_3
+  - first:
+      213: 2586703238839598308
+    second: shootingshotgun_4
+  - first:
+      213: -744752679714435041
+    second: shootingshotgun_5
+  - first:
+      213: -2693829477717949508
+    second: shootingshotgun_6
+  - first:
+      213: 4998769278909931521
+    second: shootingshotgun_7
+  - first:
+      213: 6973307807946881702
+    second: shootingshotgun_8
+  - first:
+      213: -992713888160300921
+    second: shootingshotgun_9
+  - first:
+      213: -625602480556759643
+    second: shootingshotgun_10
+  - first:
+      213: 585189042667029670
+    second: shootingshotgun_11
+  - first:
+      213: 7087849692742847825
+    second: shootingshotgun_12
+  - first:
+      213: 537376951116238171
+    second: shootingshotgun_13
+  - first:
+      213: -4813211536108795128
+    second: shootingshotgun_14
+  - first:
+      213: -1221948567747032335
+    second: shootingshotgun_15
+  - first:
+      213: -3020850230186128073
+    second: shootingshotgun_16
+  - first:
+      213: 2621229294436148816
+    second: shootingshotgun_17
+  - first:
+      213: -7430288511772608312
+    second: shootingshotgun_18
+  - first:
+      213: 6169982991873147423
+    second: shootingshotgun_19
+  - first:
+      213: -4289920116247168400
+    second: shootingshotgun_20
+  - first:
+      213: -4589205795860178625
+    second: shootingshotgun_21
+  - first:
+      213: 4217988050952211622
+    second: shootingshotgun_22
+  - first:
+      213: 8128723618321096026
+    second: shootingshotgun_23
+  - first:
+      213: 6776473551608754087
+    second: shootingshotgun_24
+  - first:
+      213: -7753117090321954485
+    second: shootingshotgun_25
+  - first:
+      213: -3196110442320330186
+    second: shootingshotgun_26
+  - first:
+      213: 3767170978275506723
+    second: shootingshotgun_27
+  - first:
+      213: 8375077366414607940
+    second: shootingshotgun_28
+  - first:
+      213: -7403645519553951687
+    second: shootingshotgun_29
+  - first:
+      213: 1395766837567869338
+    second: shootingshotgun_30
+  - first:
+      213: 1005174394641655422
+    second: shootingshotgun_31
+  - first:
+      213: -5280825795171091740
+    second: shootingshotgun_32
+  - first:
+      213: 4054182077181708967
+    second: shootingshotgun_33
+  - first:
+      213: -1257939672752617120
+    second: shootingshotgun_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shootingshotgun_0
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 254
+        width: 176
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e4387b9d7fdaff50800000000000000
+      internalID: 6916085908353070313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shootingshotgun_7
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 254
+        width: 162
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 100ef8fac223f5540800000000000000
+      internalID: 4998769278909931521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shootingshotgun_9
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 254
+        width: 122
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 780cb947afb2932f0800000000000000
+      internalID: -992713888160300921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shootingshotgun_15
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 4
+        width: 161
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa04a57044ca0fe0800000000000000
+      internalID: -1221948567747032335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shootingshotgun_34
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 4
+        width: 145
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06985b05886ea8ee0800000000000000
+      internalID: -1257939672752617120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a057c8d7eee53574eb5cb1b48541466e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      shootingshotgun_35: 517618060
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

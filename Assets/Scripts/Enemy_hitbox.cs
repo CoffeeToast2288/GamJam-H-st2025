@@ -6,7 +6,7 @@ public class Enemy_hitbox : MonoBehaviour
     // Isaks code mine mine mine mine
     [Header("References")]
     public Enemy_Script enemy;        // Reference to the parent enemy
-    public PlayerHealth player;       // Reference to the player’s health script
+    public Health_Script player;       // Reference to the player’s health script
 
     private float damage;             // Cached damage amount
 
@@ -23,7 +23,7 @@ public class Enemy_hitbox : MonoBehaviour
 
         // Optionally, find the player automatically if not set in Inspector
         if (player == null)
-            player = FindFirstObjectByType<PlayerHealth>();
+            player = FindFirstObjectByType<Health_Script>();
     }
 
     void OnTriggerEnter2D(Collider2D other)

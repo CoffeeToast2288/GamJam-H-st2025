@@ -35,7 +35,6 @@ public class upgrades : MonoBehaviour
         Shotgun, //✅
         BackAttack, //✅
         Pierce, //✅
-        PierceAmount, //✅
         BulletExplosion, //✅
         Doubleshot //✅
     } 
@@ -125,9 +124,9 @@ public class upgrades : MonoBehaviour
                 case UpgradeType.Shotgun:
                     gunlogic.Shotgun = true; break;
                 case UpgradeType.Pierce:
-                    stats.pierce = true; break;
-                case UpgradeType.PierceAmount:
-                    stats.pierceAmount += value; break;
+                    stats.pierce = true;
+                    stats.pierceAmount += value;
+                    break;
                 case UpgradeType.Doubleshot:
                     gunlogic.doubleshoot = true; break;
                 case UpgradeType.BulletExplosion:

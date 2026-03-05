@@ -8,7 +8,7 @@ using UnityEngine.Rendering;
 public class PlayerStats : MonoBehaviour
 {
     [Header("Refrences")] // Refrenc to the varius scripts that the stats interact with - Nino
-    [SerializeField] PlayerHealth HealthScript;
+    [SerializeField] Health_Script HealthScript;
     [SerializeField] PlayerAttack AttacScript;
     [SerializeField] Melee MeleeScript;
     [SerializeField] Bullet_Script Bullet;

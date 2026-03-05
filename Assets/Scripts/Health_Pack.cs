@@ -8,7 +8,7 @@ public class HealthPack : MonoBehaviour
     public string playerTag = "Player";      // Player tag
     public float magnetRange = 6f;           // Distance at which the pack starts moving
     public float magnetSpeed = 5f;           // How fast it moves toward the player
-    public PlayerHealth player;
+    public Health_Script player;
 
 
     private Transform playerTransform;
@@ -28,7 +28,7 @@ public class HealthPack : MonoBehaviour
         // Automatically find the player if not manually assigned
         if (player == null)
         {
-            player = FindFirstObjectByType<PlayerHealth>();
+            player = FindFirstObjectByType<Health_Script>();
         }
         upgradedhealAmount = (float)(healAmount * 1.5);
     }
