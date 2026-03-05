@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Enemy_Script : MonoBehaviour
 {
@@ -35,6 +37,7 @@ public class Enemy_Script : MonoBehaviour
     public SpriteRenderer spriteRenderer; // Sprite for this enemy
     public TrailRenderer trailRenderer;   // Trail used for lunging enemies
     public GameObject healthPackPrefab;
+    public GameObject enemyPrefab;
 
 
     // ===== TYPE FLAGS =====
@@ -43,6 +46,7 @@ public class Enemy_Script : MonoBehaviour
     public bool hitty;                    // Marks this enemy as melee
     public bool tanky;                    // Marks this enemy as tank type
     public bool lungie;                   // Marks this enemy as lunging type
+    public bool smoll;                    // Marks this enemy as Smoll
 
     // ===== ELITE SETTINGS =====
     [Header("Elite Settings")]
@@ -64,6 +68,8 @@ public class Enemy_Script : MonoBehaviour
     // ====== ANIMATIONS=========
     public Animator animator;
     public audiocontroler audiocontrol;
+
+    private List<GameObject> activeEnemies = new();  // Keeps track of alive enemies in current wave
 
 
     // ===== INITIALIZATION =====
@@ -101,26 +107,26 @@ public class Enemy_Script : MonoBehaviour
 
         // Automatically assign behavior based on type flag and sets the walking animation to start
         if (hitty)
-        {
-           
-            Hitty();
-           
+        {           
+            Hitty();           
         }
         else if (shooty)
-        {
-           
+        {            
             Shooty();
         }
         else if (tanky)
-        {
-           
+        {           
             Tanky();
         }
         else if (lungie)
-        {
-            
+        {            
             Lungie();
         }     
+        else if (smoll)
+        {
+            Smoll();
+        }
+
 
     }
 
@@ -147,6 +153,7 @@ public class Enemy_Script : MonoBehaviour
         // If close enough, perform melee attack
         else if (distance <= attackRange)
         {
+            animator.SetBool("Hitting", true);
             TryAttack();
         }
 
@@ -185,7 +192,7 @@ public class Enemy_Script : MonoBehaviour
     public void Tanky()
     {
         // Make it visually bigger
-        tankita.transform.localScale += new Vector3(1.2f, 1.2f, 1.2f);
+        tankita.transform.localScale += new Vector3(1.1f, 1.1f, 1.1f);
         moveSpeed += 1.5f;
         damage += 2f;
         health += 6f;
@@ -203,6 +210,16 @@ public class Enemy_Script : MonoBehaviour
         attackRange = 1.2f;
         isLungie = true;
         animator.SetBool("IsFast", true);
+    }
+    
+    public void Smoll()
+    {
+        moveSpeed = 5f;
+        damage = 1f;
+        stopDistance = 1.1f;
+        attackRange = 1.2f;
+        tankita.transform.localScale += new Vector3(0.6f, 0.6f, 0.6f);
+        animator.SetBool("IsSmoll", true);
     }
 
 
@@ -236,7 +253,7 @@ public class Enemy_Script : MonoBehaviour
         // Rotate enemy to face player
         Vector2 direction = (player.position - transform.position);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+        rb.rotation = angle - 90;
     }
 
     // ===== MELEE ATTACK =====
@@ -251,7 +268,6 @@ public class Enemy_Script : MonoBehaviour
     System.Collections.IEnumerator AttackRoutine()
     {
         canAttack = false;
-        animator.SetBool("Hitting", true);
         // Enable hitbox briefly for attack
         hitboxObject.SetActive(true);
         yield return new WaitForSeconds(0.4f);
@@ -274,7 +290,7 @@ public class Enemy_Script : MonoBehaviour
     {
         canshoot = false;
 
-        animator.SetTrigger("shoot");
+        animator.SetTrigger("Shoot");
 
         GameObject bulletObj = Instantiate(enemyBullet, spawnPos.position, spawnPos.rotation);
 
@@ -355,19 +371,60 @@ public class Enemy_Script : MonoBehaviour
 
 
         health -= damage;
-        if (health <= 0)
+        if (health <= 0 && !tanky)
         {
-            Die();
+            StartCoroutine(Die(0.3f));
+        }
+        else if (tanky && health <= 0)
+        {
+            int num = UnityEngine.Random.Range(2, 5);
+            StartCoroutine(TankyDie(num));
         }
     }
 
-    void Die()
+    IEnumerator Die(float time)
     {
+        animator.SetTrigger("Dead");
         isDead = true;
-        animator.SetBool("Dead", true);
+        yield return new WaitForSeconds(time);
         TryDropHealthPack();   // Attempt health pack drop
-
         Destroy(gameObject);         // Remove from scene
+    }
+
+    IEnumerator TankyDie(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+
+            GameObject enemy = Instantiate(enemyPrefab, tankita.transform.position, Quaternion.identity);
+            Enemy_Script enemyScript = enemy.GetComponent<Enemy_Script>();
+            enemyScript.player = GameObject.FindGameObjectWithTag("Player").transform;
+            ApplySmoll(enemyScript);
+
+            // Track active smoll
+            activeEnemies.Add(enemy);
+            StartCoroutine(RemoveOnDestroy(enemy));
+            yield return new WaitForSeconds(0.4f);
+        }
+        StartCoroutine(Die(1f));
+    }
+    void ApplySmoll(Enemy_Script enemy)
+    {
+        // Reset all flags first
+        enemy.hitty = false;
+        enemy.shooty = false;
+        enemy.tanky = false;
+        enemy.lungie = false;
+
+        // Make Smoll flag true
+        enemy.smoll = true;
+    }
+    IEnumerator RemoveOnDestroy(GameObject enemy)
+    {
+        while (enemy != null)
+            yield return null;
+
+        activeEnemies.RemoveAll(e => e == null);
     }
 
     void TryDropHealthPack()
@@ -388,4 +445,6 @@ public class Enemy_Script : MonoBehaviour
             return;
         }
     }
+
+
 }

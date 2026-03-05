@@ -66,7 +66,7 @@ public class Playermovment : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); // Get the RB2D
-        animator.Play(animations[0]); // Benjamin
+
         
     }
 

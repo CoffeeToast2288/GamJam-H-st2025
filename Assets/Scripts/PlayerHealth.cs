@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     public PlayerStats stats;
     public TextMeshProUGUI healthText;
     public GameObject playerHurtBox;
+    public GameObject Warning;
 
     private bool framed = false;
 
@@ -54,6 +55,14 @@ public class PlayerHealth : MonoBehaviour
         if (Hp > Hp_max)
             Hp = Hp_max;
 
+        while (Hp <= Hp_max / 2)
+        {
+            Warning.SetActive(true);
+        }
+        while (Hp >= Hp_max / 2)
+        {
+            Warning.SetActive(false);
+        }
 
         if (Hp <= 0)
         {
