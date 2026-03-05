@@ -1,8 +1,6 @@
 using System.Collections;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class Playermovment : MonoBehaviour
 {
