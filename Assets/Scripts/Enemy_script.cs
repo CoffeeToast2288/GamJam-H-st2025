@@ -274,7 +274,7 @@ public class Enemy_Script : MonoBehaviour
     {
         canshoot = false;
 
-        animator.SetTrigger("shooty shoot");
+        animator.SetTrigger("shoot");
 
         GameObject bulletObj = Instantiate(enemyBullet, spawnPos.position, spawnPos.rotation);
 

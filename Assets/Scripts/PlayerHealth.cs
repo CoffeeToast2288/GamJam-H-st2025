@@ -276,7 +276,7 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("PLAYER DIED!");
 
-        player_animator.Play(play_animations[3]);
+        animator.Play(play_animations[3]);
         // Stop movement
         var move = FindFirstObjectByType<Playermovment>();
         if (move) move.enabled = false;
