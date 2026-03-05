@@ -17,6 +17,7 @@ public class WaveSystem : MonoBehaviour
 
     [Tooltip("Upgrade logic that makes the start of the process work")]
     public GameObject upgradeParts;
+    [SerializeField] UpgradeOpen upgradingMore;
 
     [Tooltip("Possible spawn positions for enemies")]
     public Transform[] spawnPoints;
@@ -139,6 +140,7 @@ public class WaveSystem : MonoBehaviour
         if (uiController != null)
             yield return uiController.StartCoroutine(uiController.FadeOutMessage(1.5f));
 
+        upgradingMore.hasOpened = false;
         upgradeParts.SetActive(true);
 
         // --- Show Continue Prompt ---

@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class UpgradeOpen : MonoBehaviour
 {
+    public bool hasOpened;
     public GameObject upgrade;
     public void Open()
     {
-        upgrade.SetActive(true);
-        Time.timeScale = 0f;
+        if (!hasOpened)
+        {
+            hasOpened = true;
+            upgrade.SetActive(true);
+            Time.timeScale = 0f;
+        }
+
     }
 }

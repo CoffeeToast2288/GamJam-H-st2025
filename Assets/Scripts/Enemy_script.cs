@@ -64,7 +64,7 @@ public class Enemy_Script : MonoBehaviour
     private bool isLungie = false;        // Internal state for lunging type
     private bool isLunging = false;       // True while lunging
     private bool canLunge = true;         // Cooldown control for lunging
-
+    private bool isTanky = false;
     // ====== ANIMATIONS=========
     public Animator animator;
     public audiocontroler audiocontrol;
@@ -199,6 +199,7 @@ public class Enemy_Script : MonoBehaviour
         stopDistance = 1.8f;
         attackRange = 1.9f;
         animator.SetBool("IsTanky", true);
+        isTanky = true;
     }
 
     public void Lungie()
@@ -371,11 +372,11 @@ public class Enemy_Script : MonoBehaviour
 
 
         health -= damage;
-        if (health <= 0 && !tanky)
+        if (health <= 0 && !isTanky)
         {
             StartCoroutine(Die(0.5f));
         }
-        else if (tanky && health <= 0)
+        else if (isTanky && health <= 0)
         {
             int num = UnityEngine.Random.Range(2, 5);
             StartCoroutine(TankyDie(num));
@@ -393,9 +394,11 @@ public class Enemy_Script : MonoBehaviour
 
     IEnumerator TankyDie(int count)
     {
+        isDead = true;
+        StartCoroutine(Die(2f));
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < count; i++)
         {
-
             GameObject enemy = Instantiate(enemyPrefab, tankita.transform.position, Quaternion.identity);
             Enemy_Script enemyScript = enemy.GetComponent<Enemy_Script>();
             enemyScript.player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -406,7 +409,6 @@ public class Enemy_Script : MonoBehaviour
             StartCoroutine(RemoveOnDestroy(enemy));
             yield return new WaitForSeconds(0.4f);
         }
-        StartCoroutine(Die(4f));
     }
     void ApplySmoll(Enemy_Script enemy)
     {
