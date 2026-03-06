@@ -75,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 125
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,12 +127,12 @@ TextureImporter:
       name: Crawler (1)_0
       rect:
         serializedVersion: 2
-        x: 70
-        y: 630
-        width: 156
-        height: 231
+        x: 71
+        y: 631
+        width: 154
+        height: 229
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -149,12 +149,12 @@ TextureImporter:
       name: Crawler (1)_1
       rect:
         serializedVersion: 2
-        x: 370
-        y: 617
-        width: 169
-        height: 231
+        x: 371
+        y: 618
+        width: 167
+        height: 229
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -171,12 +171,12 @@ TextureImporter:
       name: Crawler (1)_2
       rect:
         serializedVersion: 2
-        x: 74
-        y: 321
-        width: 165
-        height: 227
+        x: 75
+        y: 322
+        width: 163
+        height: 225
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: Crawler (1)_3
       rect:
         serializedVersion: 2
-        x: 378
-        y: 321
-        width: 157
-        height: 240
+        x: 379
+        y: 313
+        width: 155
+        height: 247
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,59 +212,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crawler (1)_4
-      rect:
-        serializedVersion: 2
-        x: 445
-        y: 312
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4849d7270379d3380800000000000000
-      internalID: -8989863046826584956
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crawler (1)_5
-      rect:
-        serializedVersion: 2
-        x: 471
-        y: 317
-        width: 11
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fddd550cd731e7f80800000000000000
-      internalID: -8107020848401621537
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Crawler (1)_6
       rect:
         serializedVersion: 2
-        x: 65
-        y: 17
-        width: 170
-        height: 231
+        x: 66
+        y: 18
+        width: 168
+        height: 229
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,37 +234,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crawler (1)_7
-      rect:
-        serializedVersion: 2
-        x: 153
-        y: 17
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2cee0fbe317c8d840800000000000000
-      internalID: 5249164254077054658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Crawler (1)_8
       rect:
         serializedVersion: 2
-        x: 365
-        y: 17
-        width: 165
-        height: 231
+        x: 366
+        y: 18
+        width: 163
+        height: 229
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,7 +259,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: eccc46af1e7990046929a7b69224b377
     internalID: 0
     vertices: []
     indices: 
@@ -334,7 +268,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Crawler (1)_0: 6688721787773866987
+      Crawler (1)_1: -305947868934599704
+      Crawler (1)_2: 4396642521091996792
+      Crawler (1)_3: -8438154306772193727
+      Crawler (1)_4: -8989863046826584956
+      Crawler (1)_5: -8107020848401621537
+      Crawler (1)_6: -7238719176316809556
+      Crawler (1)_7: 5249164254077054658
+      Crawler (1)_8: -233512245677399811
+      Crawler (1)_9: -530828467
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

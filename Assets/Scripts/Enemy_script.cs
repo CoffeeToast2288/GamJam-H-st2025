@@ -38,6 +38,7 @@ public class Enemy_Script : MonoBehaviour
     public TrailRenderer trailRenderer;   // Trail used for lunging enemies
     public GameObject healthPackPrefab;
     public GameObject enemyPrefab;
+    public BoxCollider2D box;
 
 
     // ===== TYPE FLAGS =====
@@ -87,6 +88,7 @@ public class Enemy_Script : MonoBehaviour
         }
 
         rb = GetComponent<Rigidbody2D>();
+        box = GetComponent<BoxCollider2D>();
 
         // Automatically find player if not set in Inspector
         if (player == null)
@@ -126,6 +128,7 @@ public class Enemy_Script : MonoBehaviour
         {
             Smoll();
         }
+
 
 
     }
@@ -169,12 +172,28 @@ public class Enemy_Script : MonoBehaviour
     // Adjust stats depending on enemy type and sets thier animations
     public void Hitty()
     {
-        moveSpeed += 3f;
-        damage += 1f;
-        health += 3f;
-        stopDistance = 1.1f;
-        attackRange = 1.2f;
-        animator.SetBool("IsHitty", true);
+        int num = UnityEngine.Random.Range(0, 3);
+
+        if (num == 1 || num == 0) 
+        {
+            moveSpeed += 3f;
+            damage += 1f;
+            health += 3f;
+            stopDistance = 1.1f;
+            attackRange = 1.2f;
+            animator.SetBool("IsHitty", true);
+        }
+        else if (num == 2)
+        {
+            moveSpeed += 1.5f;
+            damage += 1f;
+            health += 4f;
+            stopDistance = 1.1f;
+            attackRange = 1.2f;
+            animator.SetBool("IsCrawling", true);
+            animator.SetBool("IsHitty", false);
+        }
+
     }
 
     public void Shooty()
@@ -385,6 +404,7 @@ public class Enemy_Script : MonoBehaviour
 
     IEnumerator Die(float time)
     {
+        Destroy(box);
         animator.SetTrigger("Dead");
         isDead = true;
         yield return new WaitForSeconds(time);
@@ -394,12 +414,12 @@ public class Enemy_Script : MonoBehaviour
 
     IEnumerator TankyDie(int count)
     {
-        isDead = true;
         StartCoroutine(Die(2f));
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < count; i++)
         {
             GameObject enemy = Instantiate(enemyPrefab, tankita.transform.position, Quaternion.identity);
+            Instantiate(box, enemyPrefab.transform.parent);
             Enemy_Script enemyScript = enemy.GetComponent<Enemy_Script>();
             enemyScript.player = GameObject.FindGameObjectWithTag("Player").transform;
             ApplySmoll(enemyScript);
@@ -413,13 +433,13 @@ public class Enemy_Script : MonoBehaviour
     void ApplySmoll(Enemy_Script enemy)
     {
         // Reset all flags first
-        enemy.hitty = false;
-        enemy.shooty = false;
-        enemy.tanky = false;
-        enemy.lungie = false;
+        hitty = false;
+        shooty = false;
+        tanky = false;
+        lungie = false;
 
         // Make Smoll flag true
-        enemy.smoll = true;
+        smoll = true;
     }
     IEnumerator RemoveOnDestroy(GameObject enemy)
     {

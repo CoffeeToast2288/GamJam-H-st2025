@@ -223,6 +223,7 @@ MonoBehaviour:
   trailRenderer: {fileID: 8064449365702610019}
   healthPackPrefab: {fileID: 7022408064233455878, guid: fa7215cad5fd8654c998b0a0210cf88c, type: 3}
   enemyPrefab: {fileID: 5354378433924161553}
+  box: {fileID: 6769594783083612128}
   shooty: 0
   hitty: 0
   tanky: 0
