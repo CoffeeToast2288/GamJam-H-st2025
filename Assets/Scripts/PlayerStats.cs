@@ -33,7 +33,6 @@ public class PlayerStats : MonoBehaviour
     public bool pierce;
     public float pierceAmount;
 
-
     public void ResetStats()
     {
         damage = baseDamage;

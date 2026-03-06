@@ -49,6 +49,7 @@ public class Enemy_Script : MonoBehaviour
     public bool lungie;                   // Marks this enemy as lunging type
     public bool smoll;                    // Marks this enemy as Smoll
     public bool crawler;
+    public bool flyer;
 
     // ===== ELITE SETTINGS =====
     [Header("Elite Settings")]
@@ -172,9 +173,9 @@ public class Enemy_Script : MonoBehaviour
     // Adjust stats depending on enemy type and sets thier animations
     public void Hitty()
     {
-        int num = UnityEngine.Random.Range(0, 3);
+        int num = UnityEngine.Random.Range(0, 10);
 
-        if (num == 1 || num == 0) 
+        if (num > 3 && num != 6) 
         {
             moveSpeed += 3f;
             damage += 1f;
@@ -183,7 +184,7 @@ public class Enemy_Script : MonoBehaviour
             attackRange = 1.2f;
             animator.SetBool("IsHitty", true);
         }
-        else if (num == 2)
+        else if (num <= 3)
         {
             moveSpeed += 1.5f;
             damage += 1f;
@@ -191,8 +192,19 @@ public class Enemy_Script : MonoBehaviour
             stopDistance = 1.1f;
             attackRange = 1.2f;
             crawler = true;
-            hitty = false;
             animator.SetBool("IsCrawling", true);
+            animator.SetBool("IsHitty", false);
+        }
+        else if (num == 6)
+        {
+            moveSpeed += 4f;
+            damage += 1f;
+            health += 2f;
+            stopDistance = 1.1f;
+            attackRange = 1.2f;
+            flyer = true;
+            animator.SetBool("IsFlying", true);
+            animator.SetBool("IsCrawling", false);
             animator.SetBool("IsHitty", false);
         }
 
@@ -395,8 +407,7 @@ public class Enemy_Script : MonoBehaviour
         health -= damage;
         if (health <= 0 && !isTanky)
         {
-            if (hitty) StartCoroutine(Die(1f));
-            else if (crawler) StartCoroutine(Die(1f));
+            if (hitty || crawler || flyer) StartCoroutine(Die(1f));
             else StartCoroutine(Die(0.5f));
 
         }
