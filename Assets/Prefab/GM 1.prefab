@@ -5147,6 +5147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5354378433924161553, guid: 3058aea366e656d458cf8bb0f7e678f3, type: 3}
   upgradeParts: {fileID: 6957420905340272090}
+  upgradingMore: {fileID: 0}
   spawnPoints:
   - {fileID: 5149336549158209444}
   - {fileID: 943696266868619041}
@@ -8588,17 +8589,12 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7303725490812719643, guid: 4469e9d60820f0e40a3124a8d8ec75ea, type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8770950681887749913, guid: 4469e9d60820f0e40a3124a8d8ec75ea, type: 3}
       propertyPath: m_Name
       value: Pause menu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 2393294218738494420, guid: 4469e9d60820f0e40a3124a8d8ec75ea, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4469e9d60820f0e40a3124a8d8ec75ea, type: 3}

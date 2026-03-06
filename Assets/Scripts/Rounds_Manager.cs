@@ -108,8 +108,8 @@ public class WaveSystem : MonoBehaviour
             Debug.Log($"--- WAVE {currentWave} CLEARED ---");
             uiController?.ShowMessage("Wave Cleared!");
 
-            // --- Safe Zone Phase Trigger (Every 3rd Wave) ---
-            if (currentWave % 3 == 0 && safeEventScript != null)
+            // --- Safe Zone Phase Trigger (Every 2nd Wave) ---
+            if (currentWave % 2 == 0 && safeEventScript != null)
             {
                 yield return StartCoroutine(SafeZonePhase());
             }

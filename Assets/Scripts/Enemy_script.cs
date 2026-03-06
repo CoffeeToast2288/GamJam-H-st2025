@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
 public class Enemy_Script : MonoBehaviour
@@ -38,7 +39,6 @@ public class Enemy_Script : MonoBehaviour
     public TrailRenderer trailRenderer;   // Trail used for lunging enemies
     public GameObject healthPackPrefab;
     public GameObject enemyPrefab;
-    public BoxCollider2D box;
 
 
     // ===== TYPE FLAGS =====
@@ -48,6 +48,7 @@ public class Enemy_Script : MonoBehaviour
     public bool tanky;                    // Marks this enemy as tank type
     public bool lungie;                   // Marks this enemy as lunging type
     public bool smoll;                    // Marks this enemy as Smoll
+    public bool crawler;
 
     // ===== ELITE SETTINGS =====
     [Header("Elite Settings")]
@@ -88,7 +89,6 @@ public class Enemy_Script : MonoBehaviour
         }
 
         rb = GetComponent<Rigidbody2D>();
-        box = GetComponent<BoxCollider2D>();
 
         // Automatically find player if not set in Inspector
         if (player == null)
@@ -190,6 +190,8 @@ public class Enemy_Script : MonoBehaviour
             health += 4f;
             stopDistance = 1.1f;
             attackRange = 1.2f;
+            crawler = true;
+            hitty = false;
             animator.SetBool("IsCrawling", true);
             animator.SetBool("IsHitty", false);
         }
@@ -393,7 +395,10 @@ public class Enemy_Script : MonoBehaviour
         health -= damage;
         if (health <= 0 && !isTanky)
         {
-            StartCoroutine(Die(0.5f));
+            if (hitty) StartCoroutine(Die(1f));
+            else if (crawler) StartCoroutine(Die(1f));
+            else StartCoroutine(Die(0.5f));
+
         }
         else if (isTanky && health <= 0)
         {
@@ -404,7 +409,6 @@ public class Enemy_Script : MonoBehaviour
 
     IEnumerator Die(float time)
     {
-        Destroy(box);
         animator.SetTrigger("Dead");
         isDead = true;
         yield return new WaitForSeconds(time);
@@ -419,9 +423,9 @@ public class Enemy_Script : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             GameObject enemy = Instantiate(enemyPrefab, tankita.transform.position, Quaternion.identity);
-            Instantiate(box, enemyPrefab.transform.parent);
             Enemy_Script enemyScript = enemy.GetComponent<Enemy_Script>();
             enemyScript.player = GameObject.FindGameObjectWithTag("Player").transform;
+            Debug.Log("what?");
             ApplySmoll(enemyScript);
 
             // Track active smoll
@@ -433,13 +437,13 @@ public class Enemy_Script : MonoBehaviour
     void ApplySmoll(Enemy_Script enemy)
     {
         // Reset all flags first
-        hitty = false;
-        shooty = false;
-        tanky = false;
-        lungie = false;
+        enemy.hitty = false;
+        enemy.shooty = false;
+        enemy.tanky = false;
+        enemy.lungie = false;
 
         // Make Smoll flag true
-        smoll = true;
+        enemy.smoll = true;
     }
     IEnumerator RemoveOnDestroy(GameObject enemy)
     {

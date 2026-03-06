@@ -16,6 +16,7 @@ public class upgrades : MonoBehaviour
     [SerializeField] PlayerStats stats;
     [SerializeField] PlayerAttack gunlogic;
     public Transform spawn1, spawn2, spawn3;
+    public Animator animator;
 
     public int num1;
     public int num2;
@@ -171,7 +172,10 @@ public class upgrades : MonoBehaviour
         Debug.Log("the first number is " + num1 + " the secound number is " + num2 + " the third number is " + num3);
         Debug.Log("It should work because the " + upgradesLogics[num1].name + " is num1 and " + upgradesLogics[num2].name + " is num2 and finally " + upgradesLogics[num3].name + " is num3");
         Time.timeScale = 1f;
+        animator.SetBool("done", false);
+        animator.SetTrigger("Roll");
         yield return new WaitForSeconds(2f);
+        animator.SetBool("done", true); 
         GameObject upgrade1 = Instantiate(upgradesLogics[num1].Button, ButtonContainer.transform);
         upgrade1.transform.position = spawn1.position;
         upgrade1.GetComponent<Button>().onClick.AddListener(delegate { GainUpgrade(index1); });
