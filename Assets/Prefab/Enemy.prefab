@@ -223,12 +223,13 @@ MonoBehaviour:
   trailRenderer: {fileID: 8064449365702610019}
   healthPackPrefab: {fileID: 7022408064233455878, guid: fa7215cad5fd8654c998b0a0210cf88c, type: 3}
   enemyPrefab: {fileID: 5354378433924161553}
-  box: {fileID: 6769594783083612128}
   shooty: 0
   hitty: 0
   tanky: 0
   lungie: 0
   smoll: 0
+  crawler: 0
+  flyer: 0
   isElite: 0
   eliteMultiplier: 1.5
   animator: {fileID: 6340765055564286118}
@@ -291,7 +292,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0

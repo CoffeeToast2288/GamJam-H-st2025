@@ -9,6 +9,7 @@ public class Playermovment : MonoBehaviour
     [Header("Refrences")] //Refrenc player stats and attack scripts for future use 
     public PlayerStats stats;
     public PlayerAttack attack;
+    public Health_Script deathLogic;
 
     [Header("General veriables")] 
     public float speed = 10f; // how fast is the player 
@@ -77,32 +78,36 @@ public class Playermovment : MonoBehaviour
     }
     void HandleMovementInput()
     {
-        input.x = Input.GetAxisRaw("Horizontal");
-        input.y = Input.GetAxisRaw("Vertical");
-        if (input.y != 0 && input.x != 0 || input.x != 0 || input.y != 0) 
+        if (!deathLogic.dead)
         {
-            animator.SetBool("isRunning", true);
+            input.x = Input.GetAxisRaw("Horizontal");
+            input.y = Input.GetAxisRaw("Vertical");
+            if (input.y != 0 && input.x != 0 || input.x != 0 || input.y != 0) 
+            {
+                animator.SetBool("isRunning", true);
             
-        }
-        else
+            }
+            else
             {
                 animator.SetBool("isRunning", false); 
             }     
 
-        input.Normalize();
+            input.Normalize();
 
-        lookattmous();
+            lookattmous();
 
-        // Start walking sound if moving and not already playing
-        if ((input.x != 0 || input.y != 0) && !walkingSoundsPlaying)
-        {
-            walkingSoundsPlaying = true;
-            StartCoroutine(WalkingSoundsPlay());
+            // Start walking sound if moving and not already playing
+            if ((input.x != 0 || input.y != 0) && !walkingSoundsPlaying)
+            {
+                walkingSoundsPlaying = true;
+                StartCoroutine(WalkingSoundsPlay());
+            }
+
         }
     }
     void HandleDashInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && currentDashCharges > 0 && !isDashing)
+        if (Input.GetKeyDown(KeyCode.Space) && currentDashCharges > 0 && !isDashing && !deathLogic.dead)
         {
             StartDash();
         }

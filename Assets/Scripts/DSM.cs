@@ -8,6 +8,9 @@ public class DSM : MonoBehaviour
 {
     public Health_Script playerHealth;
     public GameObject deathScreen;
+    public GameObject buttons;
+    public Animator animator;
+    public Animator animator1;
 
 
 
@@ -22,13 +25,19 @@ public class DSM : MonoBehaviour
     {
         // Check the PlayerHealth's dead bool directly
         if (playerHealth != null && playerHealth.dead)
-        {                    
-            // Activate death screen only once
-            if (!deathScreen.activeSelf)
-
-                deathScreen.SetActive(true);
-            Time.timeScale = 0f;
+        {
+            StartCoroutine(Dies());
         }
+    }
+
+    public IEnumerator Dies()
+    {
+        deathScreen.SetActive(true);
+        animator.SetTrigger("Start");
+        yield return new WaitForSeconds(2.5f);
+        buttons.SetActive(true);
+        animator1.SetTrigger("Start2");
+
     }
     
 
