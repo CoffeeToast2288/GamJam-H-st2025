@@ -4,7 +4,7 @@ using TMPro;
 public class HealthPack : MonoBehaviour
 {
     [Header("Heal Settings")]
-    public float healAmount = 10f;           // How much HP to restore
+    public float healAmount = 1.2f;           // How much HP to restore
     public string playerTag = "Player";      // Player tag
     public float magnetRange = 6f;           // Distance at which the pack starts moving
     public float magnetSpeed = 5f;           // How fast it moves toward the player

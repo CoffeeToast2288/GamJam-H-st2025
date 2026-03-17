@@ -26,12 +26,11 @@ public class Health_Script : MonoBehaviour
     public void Start()
     {
         health = stats.baseHP;
-        healthText.text = health + "/" + maxHealth;
+        healthText.text = "Hp:" + health + "/" + maxHealth;
     }
     // Update is called once per frame
     void Update()
     {
-
         if (health <= 0)
         {
             health = 0;
@@ -44,12 +43,13 @@ public class Health_Script : MonoBehaviour
     {
         if (health < maxHealth)
         {
-            health += healing;
+            health *= healing;
+            float healingText = health * healing;
             if (health > maxHealth) health = maxHealth;
             if (health >= maxHealth) Warning.SetActive(false);
-            healthText.text = health + "/" + maxHealth;
+            healthText.text = "Hp:"+health + "/" + maxHealth;
             if (flashText != null)
-                StartCoroutine(ShowFlash($"+{healing} HP!"));
+                StartCoroutine(ShowFlash($"+{healingText} HP!"));
         }
     }
     public void TakeDamage(float damage)
@@ -58,7 +58,7 @@ public class Health_Script : MonoBehaviour
         if (framed)
             return;
         health -= damage;
-        healthText.text = health + "/" + maxHealth;
+        healthText.text = "Hp:" + health + "/" + maxHealth;
         StartCoroutine(IFrames());
         if (health <= maxHealth / 2) Warning.SetActive(true);
         if (health <= 0)
@@ -122,6 +122,7 @@ public class Health_Script : MonoBehaviour
     public void updatehealth()
     {       
         maxHealth = stats.hp;
-        healthText.text = health + "/" + maxHealth;
+        health = maxHealth;
+        healthText.text = "Hp" + health + "/" + maxHealth;
     }
 }

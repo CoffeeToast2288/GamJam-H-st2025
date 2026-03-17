@@ -39,6 +39,7 @@ public class Enemy_Script : MonoBehaviour
     public TrailRenderer trailRenderer;   // Trail used for lunging enemies
     public GameObject healthPackPrefab;
     public GameObject enemyPrefab;
+    public GameObject warningLight;
 
 
     // ===== TYPE FLAGS =====
@@ -357,10 +358,13 @@ public class Enemy_Script : MonoBehaviour
         float chargeTimer = 0f;
         while (chargeTimer < chargeTime)
         {
+            warningLight.SetActive(true);
             chargeTimer += Time.deltaTime;
-            transform.position = originalPosition + (Vector3)(Random.insideUnitCircle * 0.05f);
-            yield return null;
+            transform.position = originalPosition + (Vector3)(Random.insideUnitCircle * 0.05f);            
+            yield return null;            
         }
+
+        warningLight.SetActive(false);
 
         // Reset position after charge
         transform.position = originalPosition;

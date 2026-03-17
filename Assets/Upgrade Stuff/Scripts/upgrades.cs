@@ -20,11 +20,17 @@ public class upgrades : MonoBehaviour
     public Transform spawn1, spawn2, spawn3;
     public Animator animator;
 
+    [Tooltip("Text element showing how many picks remain. Place anywhere in your Canvas.")]
+    public TMPro.TMP_Text picksRemainingText;
+
     public int num1;
     public int num2;
     public int num3;
     public Upgrade[] upgradesLogics;
     public bool rolled;
+
+    private int picksRemaining = 0;
+    private int currentWaveRef = 0;
 
     public enum UpgradeType
     {
@@ -70,6 +76,34 @@ public class upgrades : MonoBehaviour
 
         upgradesLogics[i].level++;
         CalculateStats();
+
+        picksRemaining--;
+        UpdatePicksText();
+
+        Runit(); // Clear existing buttons
+
+        if (picksRemaining > 0)
+        {
+            // Show how many picks are left then re-roll
+            StartCoroutine(RollAfterFrame());
+        }
+        else
+        {
+            StartCoroutine(CloseAfterFrame());
+        }
+    }
+
+    IEnumerator RollAfterFrame()
+    {
+        yield return null;
+        rolled = false;   // Allow re-roll
+        StartRoll();
+    }
+
+    IEnumerator CloseAfterFrame()
+    {
+        yield return null;
+        DoneTimeToStart();
     }
     float GetRarityMultiplier(Rarity rarity)
     {
@@ -139,11 +173,12 @@ public class upgrades : MonoBehaviour
 
 
         stats.ApplyStats();
-        DoneTimeToStart(); // Stänger UI direkt efter uppdatering
     }
 
     public void DoneTimeToStart()
     {
+        if (picksRemainingText != null)
+            picksRemainingText.text = "";
         button.SetActive(false);
         logic.hasOpened = false;
         rolled = false;
@@ -157,6 +192,21 @@ public class upgrades : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+    }
+
+    public void StartSafeZone(int wave)
+    {
+        currentWaveRef = wave;
+        picksRemaining = PicksForWave(wave);
+        UpdatePicksText();
+    }
+
+    int PicksForWave(int wave)
+    {
+        if (wave >= 20) return 4;
+        if (wave >= 15) return 3;
+        if (wave >= 10) return 2;
+        return 1;
     }
 
     public void StartRoll()
@@ -196,7 +246,10 @@ public class upgrades : MonoBehaviour
         upgrade3.GetComponent<Button>().onClick.AddListener(delegate { GainUpgrade(index3); });
     }
 
-
-
+    void UpdatePicksText()
+    {
+        if (picksRemainingText != null)
+            picksRemainingText.text = $"Picks remaining: {picksRemaining}";
+    }
 }
 

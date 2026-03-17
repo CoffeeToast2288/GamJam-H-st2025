@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7df919107c71747a23a62d338cf519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 4615771161727363192, guid: c44a563a52fd5f04b8e07c29e1c55707, type: 3}
+  stats: {fileID: 0}
   kancrit: 0
 --- !u!1 &484446145487421218
 GameObject:
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7df919107c71747a23a62d338cf519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 4615771161727363192, guid: c44a563a52fd5f04b8e07c29e1c55707, type: 3}
+  stats: {fileID: 0}
   kancrit: 0
 --- !u!1 &1587515144230980122
 GameObject:
@@ -483,7 +483,7 @@ Transform:
   m_GameObject: {fileID: 1587515144230980122}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.502
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
@@ -519,7 +519,7 @@ MonoBehaviour:
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
   m_ShadowsEnabled: 1
-  m_ShadowIntensity: 0.75
+  m_ShadowIntensity: 0.769
   m_ShadowSoftness: 0.3
   m_ShadowSoftnessFalloffIntensity: 0.5
   m_ShadowVolumeIntensityEnabled: 0
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 360
+  m_PointLightInnerAngle: 195.42865
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
   m_PointLightOuterRadius: 7
@@ -867,7 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7df919107c71747a23a62d338cf519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 4615771161727363192, guid: c44a563a52fd5f04b8e07c29e1c55707, type: 3}
+  stats: {fileID: 0}
   kancrit: 0
 --- !u!1 &3206371838692462472
 GameObject:
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.1
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -1179,8 +1179,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.50445, y: -2.4411998, z: 0}
-    m_Extent: {x: 7.26455, y: 7.3297, z: 0}
+    m_Center: {x: 2.7546997, y: -2.69175, z: 0}
+    m_Extent: {x: 7.7436, y: 7.80845, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1188,12 +1188,18 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 2.77
+  m_ShapeLightFalloffSize: 3
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: 2, y: -7, z: 0}
-  - {x: 5, y: -5, z: 0}
-  - {x: 7, y: -2, z: 0}
+  - {x: 2.4, y: -7.5, z: 0}
+  - {x: 3.150872, y: -7.437877, z: 0}
+  - {x: 4.1174126, y: -7.183245, z: 0}
+  - {x: 5.0926914, y: -6.738085, z: 0}
+  - {x: 5.909962, y: -5.9867525, z: 0}
+  - {x: 6.666215, y: -5.172298, z: 0}
+  - {x: 7.2123294, y: -4.1303368, z: 0}
+  - {x: 7.4112363, y: -3.2130342, z: 0}
+  - {x: 7.5, y: -2.5, z: 0}
   - {x: -1.9894638, y: 2.11836, z: 0}
 --- !u!1001 &616989647416576218
 PrefabInstance:
@@ -1206,7 +1212,7 @@ PrefabInstance:
     - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: stats
       value: 
-      objectReference: {fileID: 4615771161727363192, guid: c44a563a52fd5f04b8e07c29e1c55707, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 523188325183504780, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: attack
       value: 
@@ -1261,7 +1267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1542395940406879610, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1542395940406879610, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1302,7 +1308,7 @@ PrefabInstance:
     - target: {fileID: 1900701924466430226, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: stats
       value: 
-      objectReference: {fileID: 4615771161727363192, guid: c44a563a52fd5f04b8e07c29e1c55707, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3542204243777171711, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -1326,7 +1332,7 @@ PrefabInstance:
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: stats
       value: 
-      objectReference: {fileID: 4615771161727363192, guid: c44a563a52fd5f04b8e07c29e1c55707, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: sword
       value: 0
@@ -1339,6 +1345,10 @@ PrefabInstance:
       propertyPath: Shotgun
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 8896741948791612900}
     - target: {fileID: 4809175442998585360, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: AttackBack
       value: 
@@ -1464,6 +1474,10 @@ PrefabInstance:
       value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6533774160585832094, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8759964331584115659, guid: f942f67002c60b74085aba8b63b4b98d, type: 3}
+    - target: {fileID: 6533774160585832094, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -1479,6 +1493,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8356551682126097726, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4fcca81ab72fddd448c43863020737a6, type: 2}
     - target: {fileID: 8471230148172533061, guid: e1cfa4aaae1b4c046998d6420ee0a97a, type: 3}
       propertyPath: m_Size.x
       value: 1.1
