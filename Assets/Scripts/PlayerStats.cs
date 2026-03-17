@@ -18,10 +18,10 @@ public class PlayerStats : MonoBehaviour
     public float dash_coldown_reduction = 1;
 
     [Header("Base Stats")]
-    public float baseDamage = 1;
-    public float baseHP = 4;
-    public float baseSpeed = 5;
-    public float baseAttackSpeed = 5;
+    public float baseDamage;
+    public float baseHP;
+    public float baseSpeed;
+    public float baseAttackSpeed;
 
     [Header("Runtime Stats")]
     public float damage;

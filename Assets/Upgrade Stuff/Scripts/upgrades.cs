@@ -149,7 +149,7 @@ public class upgrades : MonoBehaviour
                 case UpgradeType.Speed:
                     stats.speed += value; break;
                 case UpgradeType.AttackSpeed:
-                    stats.attack_speed += value; break;
+                    stats.attack_speed += value/10; break;
                 case UpgradeType.DashChargers:
                     stats.dash_chargers += value; break;
                 case UpgradeType.DashCooldown:
